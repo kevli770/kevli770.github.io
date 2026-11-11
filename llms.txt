@@ -32,8 +32,8 @@
 
 ## מאמרים
 - [כמה עולה סדנת AI לארגון, ומה משפיע על המחיר](https://kevli770.github.io/blog/ai-workshop-cost): מה משפיע על המחיר של סדנת AI לארגון: משך, מספר משתתפים, התאמה, פורמט וחומרים. איך משווים הצעות, ומה חייב להיות כלול.
-- [איך מתחילים הטמעת AI בארגון: 6 שלבים מהשטח](https://kevli770.github.io/blog/how-to-start-ai-adoption): מדריך מעשי להטמעת AI בארגון, מניסיון בארגון גדול: שימוש אישי, POC תוך יום-יומיים, ניצחון מהיר, תשתית, צינור רעיונות וקנה מידה.
 - [מה ההבדל בין צ׳טבוט, עוזר AI וסוכן AI?](https://kevli770.github.io/blog/chatbot-assistant-agent): ההבדל בין צ׳טבוט, עוזר AI וסוכן AI, עם אותה משימה בשלושה דורות. מתי מספיק צ׳אט, מתי צריך עוזר, ומתי כדאי לבנות סוכן.
+- [איך מתחילים הטמעת AI בארגון: 6 שלבים מהשטח](https://kevli770.github.io/blog/how-to-start-ai-adoption): מדריך מעשי להטמעת AI בארגון, מניסיון בארגון גדול: שימוש אישי, POC תוך יום-יומיים, ניצחון מהיר, תשתית, צינור רעיונות וקנה מידה.
 
 ## מדריכים
 מדריכי AI מעשיים בעברית, מהחדש לישן. הספרייה המלאה: https://kevli770.github.io/guides
@@ -167,8 +167,8 @@
 - [Claude Code: מדריך התקנה ב-3 דקות](https://kevli770.github.io/guides/claude-code-install): יש כמה דרכים להתקין, המדריך הזה מראה את הדרך שבה רוב האנשים מתקינים: VS Code + תוסף Claude. נכנסים לאתר של Claude ולוקחים מנוי Pro, 20 דולר לחודש.
 - [Opus 4.7: 5 דברים שצריך לדעת עכשיו](https://kevli770.github.io/guides/opus-47-features): כולם מדברים על זה אבל הנה 5 דברים שבאמת משנים את איך עובדים עם Claude Code. עד עכשיו Claude שאל אישור על כל פעולה.
 - [Claude Design: מדריך מפורט, מרעיון לעיצוב מקצועי](https://kevli770.github.io/guides/claude-design): Claude Design הוא מוצר חדש של Anthropic Labs שהושק ב-17 באפריל 2026. הוא מאפשר ליצור עיצובים מקצועיים דרך שיחה עם Claude.
-- [AI Tool by Task: הכלי ה-AI הנכונים לכל משימה](https://kevli770.github.io/guides/ai-tool-matching): הטעות הכי נפוצה היא לנסות לעשות הכל עם כלי אחד. המדריך הזה מתאים לכל משימה את הכלי הנכון.
 - [Anthropic Certification: 9 קורסים בחינם להסכמה רשמית](https://kevli770.github.io/guides/anthropic-courses): Anthropic שחררו הסכמה רשמית ששווה הרבה כסף, ואיתה 9 קורסים בחינם. ההסכמה מוכיחה ידע מעשי לעבודה עם Claude, מהבסיס ועד בניה של סוכני AI ואינטגרציה עם AWS ו-Google Cloud.
+- [AI Tool by Task: הכלי ה-AI הנכונים לכל משימה](https://kevli770.github.io/guides/ai-tool-matching): הטעות הכי נפוצה היא לנסות לעשות הכל עם כלי אחד. המדריך הזה מתאים לכל משימה את הכלי הנכון.
 - [Claude מול Claude Code](https://kevli770.github.io/guides/claude-vs-claude-code): Claude זה הצ'אט. אתם כותבים לו שאלה, הוא עונה.
 - [7 Google Free Tools: 7 כלים בחינם שהורגים כלים בתשלום](https://kevli770.github.io/guides/google-tools): גוגל שיחררו 7 כלים בחינם שהורגים כלים בתשלום. וזה לא הגזמה.
 - [Claude Desktop: Dispatch, Computer Use וסנכרון מובייל](https://kevli770.github.io/guides/claude-desktop): האפליקציה הרשמית של Anthropic לעבודה עם Claude על המחשב.
