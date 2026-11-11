@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="he" dir="rtl" data-look="control"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר | קווין ליאקס</title><meta name="description" content="בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון…"><link rel="canonical" href="https://kevli770.github.io/guides/claude-plugin-eval"><meta name="robots" content="noindex, nofollow"><meta name="author" content="קווין ליאקס"><meta name="theme-color" content="#f6f6f4"><link rel="preload" as="font" type="font/woff2" href="/_astro/rubik-hebrew-wght-normal.BIkpbuMU.woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:site_name" content="קווין ליאקס"><meta property="og:locale" content="he_IL"><meta property="og:title" content="Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר | קווין ליאקס"><meta property="og:description" content="בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון…"><meta property="og:url" content="https://kevli770.github.io/guides/claude-plugin-eval"><meta property="og:image" content="https://kevli770.github.io/_astro/hero.DZfb5bFZ_1IRbuO.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר | קווין ליאקס"><meta name="twitter:description" content="בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון…"><meta name="twitter:image" content="https://kevli770.github.io/_astro/hero.DZfb5bFZ_1IRbuO.jpg"><meta property="article:published_time" content="2026-09-18T00:00:00.000Z"><meta property="article:modified_time" content="2026-09-18T00:00:00.000Z"><meta property="article:section" content="Claude ו-Claude Code"><meta property="article:tag" content="Claude Plugin Eval"><meta property="article:tag" content="מדריך Claude Plugin Eval"><meta property="article:tag" content="מה זה claude plugin eval"><meta property="article:tag" content="איך נראה מקרה בדיקה אחד"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kevli770.github.io/#website","url":"https://kevli770.github.io/","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","inLanguage":"he-IL","publisher":{"@id":"https://kevli770.github.io/#business"}},{"@type":"ProfessionalService","@id":"https://kevli770.github.io/#business","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","alternateName":"Kevin Liaks","url":"https://kevli770.github.io/","email":"kevin.liaks@gmail.com","telephone":"+972545334770","image":"https://kevli770.github.io/og/default.png","logo":{"@type":"ImageObject","url":"https://kevli770.github.io/logo.png","width":512,"height":512},"description":"סדנאות AI פרקטיות לארגונים, הטמעת AI וסוכני AI בעסקים, ו-AI Engineering לצוותי פיתוח. קווין ליאקס, מוביל AI ודאטה בקבוצה עסקית גדולה.","areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","en"],"founder":{"@id":"https://kevli770.github.io/about#kevin"},"knowsAbout":["סדנאות AI","הדרכות AI לארגונים","הטמעת AI בארגונים","ארכיטקטורת AI","סוכני AI","AI Engineering","Claude Code","Microsoft Copilot","אוטומציות"],"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"Person","@id":"https://kevli770.github.io/about#kevin","name":"קווין ליאקס","alternateName":"Kevin Liaks","jobTitle":"AI Solutions Architect","url":"https://kevli770.github.io/about","image":"https://kevli770.github.io/og/kevin.jpg","email":"kevin.liaks@gmail.com","knowsAbout":["Artificial intelligence","AI agents","AI adoption in organizations","AI engineering","AI architecture","Business intelligence","Claude Code","Automation"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Shenkar College of Engineering and Design"},"worksFor":{"@id":"https://kevli770.github.io/#business"},"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://kevli770.github.io/"},{"@type":"ListItem","position":2,"name":"מדריכים","item":"https://kevli770.github.io/guides"},{"@type":"ListItem","position":3,"name":"Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר את קלוד, ותבנית לשבע בדיקות אמיתיות","item":"https://kevli770.github.io/guides/claude-plugin-eval"}]},{"@type":"TechArticle","@id":"https://kevli770.github.io/guides/claude-plugin-eval#article","headline":"Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר את קלוד, ותבנית לשבע בדיקות אמיתיות","alternativeHeadline":"Claude Plugin Eval","description":"בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון…","abstract":"בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון, ואז מריצה את אותן משימות בדיוק בלי הפלאגין, כדי להראות מה הוא באמת הוסיף.","datePublished":"2026-09-18T00:00:00.000Z","dateModified":"2026-09-18T00:00:00.000Z","inLanguage":"he-IL","author":{"@id":"https://kevli770.github.io/about#kevin"},"publisher":{"@id":"https://kevli770.github.io/#business"},"mainEntityOfPage":"https://kevli770.github.io/guides/claude-plugin-eval","isPartOf":{"@id":"https://kevli770.github.io/guides#collection"},"image":"https://kevli770.github.io/_astro/hero.DZfb5bFZ_1IRbuO.jpg","keywords":"Claude Plugin Eval, מדריך Claude Plugin Eval, מה זה claude plugin eval, איך נראה מקרה בדיקה אחד","articleSection":"Claude ו-Claude Code","wordCount":1535}]}</script><script>
+      // העדפות נגישות נשמרות בדפדפן ומוחלות לפני הציור, כדי שלא יהיה הבהוב.
+      try {
+        var p = JSON.parse(localStorage.getItem('a11y') || '{}');
+        var r = document.documentElement;
+        if (p.scale) r.style.setProperty('--a11y-scale', p.scale);
+        if (p.contrast) r.classList.add('a11y-contrast');
+        if (p.links) r.classList.add('a11y-links');
+        if (p.noMotion) r.classList.add('a11y-no-motion');
+      } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/about.DqAyRUrx.css">
+<style>.faq-layout[data-astro-cid-z6gx6xcw]{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:5rem;align-items:start}@media(max-width:880px){.faq-layout[data-astro-cid-z6gx6xcw]{grid-template-columns:minmax(0,1fr);gap:1.6rem}}.faq[data-astro-cid-z6gx6xcw]{border-top:1px solid #d4d9cf}details[data-astro-cid-z6gx6xcw]{border-bottom:1px solid #d4d9cf}summary[data-astro-cid-z6gx6xcw]{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center}summary[data-astro-cid-z6gx6xcw]::-webkit-details-marker{display:none}summary[data-astro-cid-z6gx6xcw] h3[data-astro-cid-z6gx6xcw]{font-size:1.08rem;margin:0;font-weight:800;letter-spacing:-.01em;line-height:1.6}summary[data-astro-cid-z6gx6xcw]:after{content:"+";font:1.7rem/1 var(--latin);color:var(--accent-ink);flex:none}details[data-astro-cid-z6gx6xcw][open] summary[data-astro-cid-z6gx6xcw]:after{content:"−"}.faq-a[data-astro-cid-z6gx6xcw]{padding:0 0 1.2rem;color:var(--soft)}.faq-a[data-astro-cid-z6gx6xcw] p[data-astro-cid-z6gx6xcw]{margin:0;max-width:64ch}
+.author[data-astro-cid-dwrmp7mt]{display:flex;gap:1rem;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1.25rem;margin-block:2rem;max-width:72ch}.author-img[data-astro-cid-dwrmp7mt]{border-radius:50%;flex:none;object-fit:cover}.author[data-astro-cid-dwrmp7mt] p[data-astro-cid-dwrmp7mt]{margin:0}.author-name[data-astro-cid-dwrmp7mt]{font-weight:600}
+.post[data-astro-cid-2u677oxp]{padding-block:2rem 1rem}.post-head[data-astro-cid-2u677oxp]{max-width:72ch}.post-head[data-astro-cid-2u677oxp] h1[data-astro-cid-2u677oxp]{font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem)}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:inherit;text-decoration:none}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{text-decoration:underline}.tldr[data-astro-cid-2u677oxp]{background:var(--cream);border-inline-start:3px solid var(--accent);border-radius:0;padding:1.1rem 1.3rem;margin-top:1rem}.tldr-h[data-astro-cid-2u677oxp]{font-weight:800;color:var(--accent-ink);margin-bottom:.3rem}.tldr[data-astro-cid-2u677oxp] p[data-astro-cid-2u677oxp]:last-child{margin:0;font-size:1.08rem}.reel[data-astro-cid-2u677oxp]{margin:1.4rem 0 0;max-width:320px}.reel[data-astro-cid-2u677oxp] video[data-astro-cid-2u677oxp]{display:block;width:100%;aspect-ratio:9 / 16;object-fit:cover;border-radius:var(--radius);background:var(--ink)}.reel[data-astro-cid-2u677oxp] figcaption[data-astro-cid-2u677oxp]{margin-top:.5rem}.hero-img[data-astro-cid-2u677oxp]{display:block;width:100%;max-width:760px;height:auto;margin-block:1.6rem .5rem;border:1px solid var(--line);border-radius:var(--radius-sm)}.toc[data-astro-cid-2u677oxp]{max-width:72ch;margin-block:1.5rem;border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.3rem;background:var(--surface)}.toc-h[data-astro-cid-2u677oxp]{font-weight:700;margin-bottom:.4rem}.toc[data-astro-cid-2u677oxp] ol[data-astro-cid-2u677oxp]{margin:0}.guide-body[data-astro-cid-2u677oxp]>:nth-child(n+6){content-visibility:auto;contain-intrinsic-size:auto 140px}.guide-body[data-astro-cid-2u677oxp] th,.guide-body[data-astro-cid-2u677oxp] td{min-width:120px}.guide-body[data-astro-cid-2u677oxp] pre{direction:ltr;text-align:left;padding:1rem 1.2rem;margin-block:1.2rem;border-radius:var(--radius-sm);font-size:.88rem;line-height:1.65;overflow-x:auto;white-space:pre}.guide-body[data-astro-cid-2u677oxp] pre code{background:none;padding:0;border-radius:0;font-size:inherit}.guide-body[data-astro-cid-2u677oxp] :not(pre)>code{direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] img{display:block;border:1px solid var(--line);border-radius:var(--radius-sm);margin-block:1.2rem .4rem}.guide-body[data-astro-cid-2u677oxp] p:has(>img)+p>em:only-child{display:block;font-size:var(--fs-sm);color:var(--mute)}.guide-body[data-astro-cid-2u677oxp] blockquote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--cream);border-inline-start:3px solid var(--accent)}.guide-body[data-astro-cid-2u677oxp] blockquote p:last-child{margin-bottom:0}.guide-body[data-astro-cid-2u677oxp] a{overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] li+li{margin-top:.35rem}.rel-title[data-astro-cid-2u677oxp]{font-size:1.1rem;line-height:1.5}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:var(--ink);text-decoration:none}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{color:var(--accent);text-decoration:underline}.all-link[data-astro-cid-2u677oxp]{margin-top:1.4rem}.cta-grid[data-astro-cid-2u677oxp]{display:grid;gap:2rem 4rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}.cta-grid[data-astro-cid-2u677oxp]>[data-astro-cid-2u677oxp]{min-width:0}
+</style></head> <body> <a class="skip-link" href="#main">דלג לתוכן הראשי</a> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container bar" data-astro-cid-3ef6ksr2> <a class="logo" href="/" data-astro-cid-3ef6ksr2> <span class="logo-word" lang="en" dir="ltr" data-astro-cid-3ef6ksr2>Kevin Liaks<span class="logo-dot" data-astro-cid-3ef6ksr2>.</span></span> <small data-astro-cid-3ef6ksr2>AI בארגונים. בפועל.</small> <span class="sr-only" data-astro-cid-3ef6ksr2>קווין ליאקס, לדף הבית</span> </a> <a class="hdr-cta" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a> <nav class="nav" aria-label="ניווט ראשי" data-astro-cid-3ef6ksr2> <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" data-astro-cid-3ef6ksr2> <span class="bars" aria-hidden="true" data-astro-cid-3ef6ksr2><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i></span> <span class="sr-only" data-astro-cid-3ef6ksr2>תפריט</span> </button> <ul id="nav-list" class="nav-list" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/workshops" data-astro-cid-3ef6ksr2>סדנאות</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-implementation" data-astro-cid-3ef6ksr2>הטמעת AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-agents" data-astro-cid-3ef6ksr2>סוכני AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-engineering" data-astro-cid-3ef6ksr2>AI Engineering</a></li><li data-astro-cid-3ef6ksr2><a href="/guides" aria-current="page" data-astro-cid-3ef6ksr2>מדריכים ומאמרים</a></li><li data-astro-cid-3ef6ksr2><a href="/about" data-astro-cid-3ef6ksr2>אודות</a></li> <li class="nav-cta" data-astro-cid-3ef6ksr2><a class="btn btn--dark" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a></li> </ul> </nav> </div> </header>  <script type="module">const e=document.querySelector(".nav-toggle"),s=document.getElementById("nav-list");if(e&&s){const a=e.querySelector(".sr-only"),n=t=>{e.setAttribute("aria-expanded",String(t)),s.classList.toggle("open",t),a.textContent=t?"סגירת התפריט":"תפריט"};e.addEventListener("click",()=>n(e.getAttribute("aria-expanded")!=="true")),document.addEventListener("keydown",t=>{t.key==="Escape"&&e.getAttribute("aria-expanded")==="true"&&(n(!1),e.focus())}),window.addEventListener("resize",()=>{e.offsetParent||n(!1)})}</script> <div class="crumbs-band" data-astro-cid-ilhxcym7><nav class="crumbs container" aria-label="פירורי לחם" data-astro-cid-ilhxcym7> <ol data-astro-cid-ilhxcym7> <li data-astro-cid-ilhxcym7> <a href="/" data-astro-cid-ilhxcym7>דף הבית</a> </li><li data-astro-cid-ilhxcym7> <a href="/guides" data-astro-cid-ilhxcym7>מדריכים</a> </li><li data-astro-cid-ilhxcym7> <span aria-current="page" data-astro-cid-ilhxcym7>Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר את קלוד, ותבנית לשבע בדיקות אמיתיות</span> </li> </ol> </nav></div>  <main id="main" tabindex="-1">     <article class="container post guide-post" data-astro-cid-2u677oxp> <header class="post-head" data-astro-cid-2u677oxp> <ul class="tags" data-astro-cid-2u677oxp> <li class="tag" data-astro-cid-2u677oxp><a href="/guides?topic=Claude%20%D7%95-Claude%20Code#all-h" data-astro-cid-2u677oxp>Claude ו-Claude Code</a></li> <li class="tag" data-astro-cid-2u677oxp>8 דקות קריאה</li> <li class="tag" data-astro-cid-2u677oxp>עודכן <time datetime="2026-09-18T00:00:00.000Z" data-astro-cid-2u677oxp>18 בספטמבר 2026</time></li> </ul> <h1 data-astro-cid-2u677oxp>Claude Plugin Eval: איך לבדוק אם הסקיל שלכם באמת משפר את קלוד, ותבנית לשבע בדיקות אמיתיות</h1> <div class="tldr" data-astro-cid-2u677oxp> <p class="tldr-h" data-astro-cid-2u677oxp>בשורה התחתונה</p> <p data-astro-cid-2u677oxp>בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון, ואז מריצה את אותן משימות בדיוק בלי הפלאגין, כדי להראות מה הוא באמת הוסיף.</p> </div>  </header> <img src="/_astro/hero.DZfb5bFZ_1ONxyR.webp" srcset="/_astro/hero.DZfb5bFZ_2jv7sT.webp 480w, /_astro/hero.DZfb5bFZ_1Fd7YN.webp 800w, /_astro/hero.DZfb5bFZ_1ONxyR.webp 1200w" alt="איור פתיחה למדריך: Claude Plugin Eval" sizes="(min-width: 860px) 760px, 100vw" loading="eager" fetchpriority="high" data-astro-cid-2u677oxp="true" decoding="async" width="1200" height="670" class="hero-img"> <nav class="toc" aria-label="תוכן המדריך" data-astro-cid-2u677oxp> <p class="toc-h" data-astro-cid-2u677oxp>במדריך</p> <ol data-astro-cid-2u677oxp><li data-astro-cid-2u677oxp><a href="#מה-זה-claude-plugin-eval" data-astro-cid-2u677oxp>מה זה claude plugin eval</a></li><li data-astro-cid-2u677oxp><a href="#מה-צריך-לפני-שמתחילים" data-astro-cid-2u677oxp>מה צריך לפני שמתחילים</a></li><li data-astro-cid-2u677oxp><a href="#איך-מתחילים-שלוש-פקודות" data-astro-cid-2u677oxp>איך מתחילים: שלוש פקודות</a></li><li data-astro-cid-2u677oxp><a href="#מבנה-התיקייה" data-astro-cid-2u677oxp>מבנה התיקייה</a></li><li data-astro-cid-2u677oxp><a href="#שישה-סוגי-בדיקות" data-astro-cid-2u677oxp>שישה סוגי בדיקות</a></li><li data-astro-cid-2u677oxp><a href="#איך-נראה-מקרה-בדיקה-אחד" data-astro-cid-2u677oxp>איך נראה מקרה בדיקה אחד</a></li><li data-astro-cid-2u677oxp><a href="#התבנית-שבע-בדיקות-אמיתיות" data-astro-cid-2u677oxp>התבנית: שבע בדיקות אמיתיות</a></li><li data-astro-cid-2u677oxp><a href="#איך-קוראים-את-הדוח" data-astro-cid-2u677oxp>איך קוראים את הדוח</a></li><li data-astro-cid-2u677oxp><a href="#האופציות-שכדאי-להכיר" data-astro-cid-2u677oxp>האופציות שכדאי להכיר</a></li><li data-astro-cid-2u677oxp><a href="#להריץ-את-זה-ב-ci" data-astro-cid-2u677oxp>להריץ את זה ב-CI</a></li><li data-astro-cid-2u677oxp><a href="#איפה-הקאץ" data-astro-cid-2u677oxp>איפה הקאץ</a></li><li data-astro-cid-2u677oxp><a href="#טיפים" data-astro-cid-2u677oxp>טיפים</a></li><li data-astro-cid-2u677oxp><a href="#לינקים" data-astro-cid-2u677oxp>לינקים</a></li></ol> </nav> <div class="prose post-body guide-body" data-astro-cid-2u677oxp><h2 id="מה-זה-claude-plugin-eval">מה זה claude plugin eval</h2>
+<p>בגרסה 2.1.269 של Claude Code נוספה פקודה חדשה: claude plugin eval. היא לוקחת את הפלאגין או הסקיל שכתבתם, מריצה מולו כמה משימות אמיתיות, נותנת לכל הרצה ציון, ואז מריצה את אותן משימות בדיוק בלי הפלאגין, כדי להראות מה הוא באמת הוסיף.</p>
+<p><strong>עד עכשיו בדקתם סקיל בדרך אחת: הרצתם אותו פעם אחת, ראיתם תשובה יפה, והנחתם שהוא עובד. הבעיה היא שסוכן הוא לא דטרמיניסטי, אותה בקשה יכולה לתת תשובה אחרת בכל פעם. הרצה אחת לא מספרת כלום.</strong></p>
+<p>הפקודה פותרת את זה בשלוש דרכים: כל משימה רצה שלוש פעמים כברירת מחדל, כל הרצה מתחילה בסשן נקי לגמרי, וכל משימה רצה בשתי זרועות, עם הפלאגין ובלי. ההפרש בין השתיים הוא המספר שמעניין אתכם.</p>
+<h2 id="מה-צריך-לפני-שמתחילים">מה צריך לפני שמתחילים</h2>
+<ul>
+<li>Claude Code בגרסה 2.1.269 ומעלה. בדקו עם claude —version ועדכנו עם claude update.</li>
+<li>תיקיית פלאגין עם plugin.json או .claude-plugin/plugin.json, או פלאגין מסוג תיקיית סקילים.</li>
+<li>אותו חשבון שאתם עובדים איתו רגיל. כל הרצה וכל שופט הם קריאת מודל אמיתית שנספרת במכסה שלכם או בחשבון ה-API.</li>
+</ul>
+<h2 id="איך-מתחילים-שלוש-פקודות">איך מתחילים: שלוש פקודות</h2>
+<h3 id="1-שהסוכן-יכתוב-לכם-את-הבדיקות">1. שהסוכן יכתוב לכם את הבדיקות</h3>
+<p>נכנסים לתיקיית הפלאגין ומריצים:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my-plugin</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> eval</span><span style="color:#9ECBFF"> init</span></span></code></pre>
+<p>הפקודה שואלת אתכם על הפלאגין, מציעה מקרי בדיקה וגריידרים, מנסה אותם וכותבת את הקבצים. זה המסלול המומלץ: לא צריך לכתוב את הסוויטה ביד.</p>
+<h3 id="2-להריץ-את-כל-הסוויטה">2. להריץ את כל הסוויטה</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> eval</span><span style="color:#9ECBFF"> .</span></span></code></pre>
+<p>כל מקרה רץ שלוש פעמים עם הפלאגין ושלוש פעמים בלי, כלומר מקרה אחד הוא שש הרצות.</p>
+<h3 id="3-לקרוא-את-הסיכום">3. לקרוא את הסיכום</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>CASE        WITH  W/OUT  D      RUNS  COST</span></span>
+<span class="line"><span>first-case  1.00  0.33   +0.67  6     $0.41</span></span>
+<span class="line"><span>1 case(s) - mean D +0.67 - 74s - $0.41</span></span></code></pre>
+<p>WITH הוא הציון עם הפלאגין, W/OUT בלעדיו, ו-D חיובי אומר שהפלאגין העלה את הציון. אם D יוצא אפס: הפלאגין לא תרם כלום, והרגע חסכתם לעצמכם עבודה.</p>
+<h2 id="מבנה-התיקייה">מבנה התיקייה</h2>
+<p>סוויטת בדיקות היא תיקייה בשם evals בתוך הפלאגין. כל מקרה הוא תת-תיקייה משלו:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my-plugin/</span></span>
+<span class="line"><span>  .claude-plugin/plugin.json</span></span>
+<span class="line"><span>  skills/...</span></span>
+<span class="line"><span>  evals/</span></span>
+<span class="line"><span>    first-case/</span></span>
+<span class="line"><span>      prompt.md          # frontmatter + the prompt</span></span>
+<span class="line"><span>      graders/</span></span>
+<span class="line"><span>        criteria.md      # grader on the result</span></span>
+<span class="line"><span>        skill-fired.md   # grader on how it got there</span></span>
+<span class="line"><span>      case.yaml          # optional: context fields only</span></span>
+<span class="line"><span>    results/             # written by every run - gitignore it</span></span></code></pre>
+<h2 id="שישה-סוגי-בדיקות">שישה סוגי בדיקות</h2>
+<p>כל קובץ בתוך graders הוא בדיקה אחת שרצה אחרי ההרצה. ארבעה סוגים מחושבים מהתמליל ומהקבצים ולא עולים שקל. שניים קוראים למודל שופט ומוסיפים לעלות.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>סוג</th><th>אפשרויות</th><th>עובר כאשר</th><th>עלות</th></tr></thead><tbody><tr><td><code>regex</code></td><td><code>pattern, flags, match, target</code></td><td>הביטוי נמצא בטקסט שבדקתם</td><td><strong>חינם</strong></td></tr><tr><td><code>tool_used</code></td><td><code>tool, input_match, min, max</code></td><td>הכלי או הסקיל נקרא במספר הפעמים שהגדרתם</td><td><strong>חינם</strong></td></tr><tr><td><code>tool_order</code></td><td><code>before, after</code></td><td>שני הכלים נקראו, והראשון לפני השני</td><td><strong>חינם</strong></td></tr><tr><td><code>file_exists</code></td><td><code>path, exists</code></td><td>נוצר קובץ שמתאים לתבנית, ורק קבצים מההרצה נספרים</td><td><strong>חינם</strong></td></tr><tr><td><code>llm</code></td><td><code>criteria, focus</code></td><td>מודל שופט מצביע PASS בשתיים משלוש הצבעות</td><td><strong>עולה כסף</strong></td></tr><tr><td><code>baseline</code></td><td><code>baseline_file, criteria</code></td><td>השופט מוצא שההרצה טובה לפחות כמו תמליל ייחוס</td><td><strong>עולה כסף</strong></td></tr></tbody></table></div>
+<p><strong>אין גריידרים עם קוד משלכם. הכלל המעשי: בנו את רוב הבדיקות על ארבע החינמיות, ושמרו את השופט רק למקומות שבאמת דורשים שיפוט.</strong></p>
+<h2 id="איך-נראה-מקרה-בדיקה-אחד">איך נראה מקרה בדיקה אחד</h2>
+<p>הקובץ prompt.md מכיל את ההודעה שקלוד מקבל, ובראש שלו את מגבלות ההרצה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">max_turns: 10</span></span>
+<span class="line"><span style="color:#E1E4E8">allowed_tools: [Read, Glob, Grep, Skill]</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">Write me a commit message for this change: I renamed getUser</span></span>
+<span class="line"><span style="color:#E1E4E8">to fetchUser and updated the three call sites.</span></span></code></pre>
+<p>כתבו את הבקשה כמו שמשתמש היה מקליד אותה, בלי להזכיר את שם הסקיל. זאת בדיוק הנקודה: אתם בודקים אם קלוד בוחר בסקיל לבד.</p>
+<p>כל קובץ בתוך graders הוא בדיקה. גריידר של שופט נראה ככה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">type: llm</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">PASS if the message has a short imperative subject line.</span></span>
+<span class="line"><span style="color:#E1E4E8">FAIL if it describes the rename in more than one sentence.</span></span></code></pre>
+<p>וגריידר חינמי שבודק שהסקיל בכלל נטען:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"><span style="color:#E1E4E8">type: tool_used</span></span>
+<span class="line"><span style="color:#E1E4E8">tool: Skill</span></span>
+<span class="line"><span style="color:#E1E4E8">min: 1</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span></code></pre>
+<h2 id="התבנית-שבע-בדיקות-אמיתיות">התבנית: שבע בדיקות אמיתיות</h2>
+<p><strong>זאת התבנית שהבטחתי בסרטון. שבעה מקרים שמכסים את מה שבאמת שובר פלאגין: חמישה בודקים שהוא עובד, ושניים שליליים בודקים שהוא לא נטען איפה שהוא לא שייך.</strong></p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>מס</th><th>שם המקרה</th><th>מה הוא בודק</th><th>גריידרים</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><code>happy-path</code></td><td>הבקשה הכי נפוצה שלשמה בניתם את הסקיל, בניסוח של משתמש</td><td><code>tool_used + llm</code></td></tr><tr><td><strong>2</strong></td><td><code>paraphrased</code></td><td>אותה בקשה במילים אחרות לגמרי. כאן נופל תיאור סקיל גרוע</td><td><code>tool_used</code></td></tr><tr><td><strong>3</strong></td><td><code>produces-file</code></td><td>בקשה שאמורה לייצר קובץ, ושהתוכן שלו נכון</td><td><code>file_exists + regex</code></td></tr><tr><td><strong>4</strong></td><td><code>multi-step</code></td><td>משימה שדורשת סדר פעולות נכון ולא רק תוצאה נכונה</td><td><code>tool_order + llm</code></td></tr><tr><td><strong>5</strong></td><td><code>edge-case</code></td><td>קלט חלקי או חסר. הסקיל אמור לבקש את מה שחסר, לא להמציא</td><td><code>regex + llm</code></td></tr><tr><td><strong>6</strong></td><td><code>neg-unrelated</code></td><td>בקשה שלא קשורה לסקיל. הוא לא אמור להיטען בכלל</td><td><code>tool_used: max 0</code></td></tr><tr><td><strong>7</strong></td><td><code>neg-adjacent</code></td><td>בקשה קרובה אבל לא שלו. הפח הכי נפוץ של סקילים רעבים</td><td><code>tool_used: max 0</code></td></tr></tbody></table></div>
+<p><strong>שני המקרים השליליים נראים כמו בזבוז עד שרואים אותם בדוח: ה-D שלהם יהיה אפס כשהכול תקין, ושלילי ברגע שהסקיל מתחיל להיטען איפה שלא צריך. זה בדיוק מה שלא הייתם מגלים בלי בדיקה.</strong></p>
+<p>הדרך המהירה לבנות את זה: להריץ את init ואז לתת לסוכן את הטבלה הזאת -</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> eval</span><span style="color:#9ECBFF"> init</span></span></code></pre>
+<p>ובתוך השיחה: תבנה לי שבעה מקרים לפי הטבלה הזאת, ותשתמש רק בגריידרים הקבועים חוץ מהמקומות שמסומנים llm.</p>
+<h2 id="איך-קוראים-את-הדוח">איך קוראים את הדוח</h2>
+<p>בסוף ההרצה נפתח דוח HTML עם חמישה מספרים בראש. אלה המספרים מהדוח לדוגמה בתיעוד הרשמי:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>מדד</th><th>בדוגמה</th><th>מה הוא אומר</th></tr></thead><tbody><tr><td><code>SUITE SCORE WITH PLUGIN</code></td><td><code>94.4%</code></td><td>ממוצע הציונים של כל המקרים, עם הפלאגין</td></tr><tr><td><code>ABLATION D</code></td><td><code>+33.3</code></td><td>כמה נקודות הפלאגין הוסיף מעל הבסיס. זה המספר היחיד שבאמת חשוב</td></tr><tr><td><code>BASELINE SCORE</code></td><td><code>61.1%</code></td><td>מה קלוד עשה בלי הפלאגין בכלל</td></tr><tr><td><code>CASES</code></td><td><code>3 of 3</code></td><td>כמה מקרים עברו את הסף שהגדרתם</td></tr><tr><td><code>PERFECT RUNS</code></td><td><code>88.9%</code></td><td>אחוז ההרצות שבהן כל הגריידרים עברו. מדד היציבות</td></tr></tbody></table></div>
+<p>בשורת המטא-דאטה מופיעים גם הזמן והעלות. בדוגמה: 2m 22s ו-0.93 דולר ל-18 הרצות.</p>
+<p><strong>הממצא הכי נפוץ בהרצה הראשונה הוא D קרוב לאפס יחד עם גריידר tool_used שנכשל. זה אומר שקלוד לא בוחר בסקיל שלכם בניסוח טבעי, והבעיה היא כמעט תמיד התיאור של הסקיל ולא הקוד.</strong></p>
+<h2 id="האופציות-שכדאי-להכיר">האופציות שכדאי להכיר</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>אופציה</th><th>ברירת מחדל</th><th>מה היא עושה</th></tr></thead><tbody><tr><td><code>--runs &#x3C;n></code></td><td><code>3</code></td><td>כמה הרצות לכל מקרה בכל זרוע. הורידו ל-1 כדי לנסות רעיון בזול</td></tr><tr><td><code>--ablation &#x3C;mode></code></td><td><code>with-without</code></td><td>הערך none מריץ זרוע אחת בלי הבסיס: חצי מהעלות, אבל בלי D</td></tr><tr><td><code>--max-cost-usd &#x3C;usd></code></td><td>ללא תקרה</td><td>תקרת עלות שנבדקת לפני כל הרצה. שימו אחת בהרצה הראשונה</td></tr><tr><td><code>--threshold &#x3C;0..1></code></td><td><code>1.0</code></td><td>מאיזה ציון מקרה נחשב עובר. מתחת לזה הפקודה מסיימת בקוד 1</td></tr><tr><td><code>--judge-model &#x3C;model></code></td><td>מודל קטן ומהיר</td><td>המודל שמשמש כשופט. שדרגו רק לרובריקות עדינות</td></tr><tr><td><code>--model &#x3C;model></code></td><td>ברירת המחדל שלכם</td><td>המודל הנבדק. נעלו אותו ב-CI כדי לא לבלבל עדכון מודל עם רגרסיה</td></tr><tr><td><code>--allow-tools &#x3C;tools></code></td><td>רק קריאה</td><td>פותח כלים כמו Bash ו-Write. בלי זה הם מוסרים מהסשן</td></tr><tr><td><code>-j, --concurrency &#x3C;n></code></td><td><code>1</code></td><td>עד 8 הרצות במקביל. מקצר זמן, לא עוקף את מגבלת החשבון</td></tr></tbody></table></div>
+<p>לבדוק מקרה אחד בזול, לפני שמריצים את הכול:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> eval</span><span style="color:#9ECBFF"> .</span><span style="color:#79B8FF"> --case</span><span style="color:#9ECBFF"> first-case</span><span style="color:#79B8FF"> --runs</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> --ablation</span><span style="color:#9ECBFF"> none</span></span></code></pre>
+<p>הרצה אחת היא רועשת. אשרו כל שינוי בשלוש ההרצות הרגילות לפני שאתם סומכים עליו.</p>
+<h2 id="להריץ-את-זה-ב-ci">להריץ את זה ב-CI</h2>
+<p>הפקודה מחזירה קוד יציאה, אז אפשר לחסום מיזוג של שינוי שמוריד את הציון. שני דגלים חשובים ב-CI: נעילת המודל, ואישור אמון לתיקייה, שבלעדיו ההרצה נדחית.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> plugin</span><span style="color:#9ECBFF"> eval</span><span style="color:#9ECBFF"> .</span><span style="color:#79B8FF"> --trust-plugin</span><span style="color:#79B8FF"> --model</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">model-i</span><span style="color:#E1E4E8">d</span><span style="color:#F97583">></span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --threshold</span><span style="color:#79B8FF"> 0.8</span><span style="color:#79B8FF"> --max-cost-usd</span><span style="color:#79B8FF"> 5</span></span></code></pre>
+<p>קוד יציאה 0: כל המקרים עברו את הסף. קוד 1: מקרה נכשל. קוד 2: נגמרה תקרת העלות והרצות לא התחילו.</p>
+<h2 id="איפה-הקאץ">איפה הקאץ</h2>
+<p><strong>שלושה דברים שחשוב להבין לפני שמריצים:</strong></p>
+<ul>
+<li>עלות: כל הרצה וכל שופט הם קריאת מודל אמיתית על החשבון שלכם. שבעה מקרים בשלוש הרצות ובשתי זרועות הם 42 הרצות סוכן. התחילו עם runs 1 ותקרת עלות.</li>
+<li>הרשאות: פלאגין שאתם לא מכירים רץ עם ההרשאות שלכם, וה-hooks וה-MCP שלו רצים בשמכם. הריצו eval רק על פלאגין שהייתם מריצים ממילא.</li>
+<li>בידוד: כל הרצה מקבלת בית וקונפיגורציה חד-פעמיים. ה-CLAUDE.md, ה-hooks, ה-MCP והסקילים האחרים שלכם לא נטענים. אם המשימה צריכה משהו, שימו אותו בפרומפט או ב-scaffold_script.</li>
+</ul>
+<h2 id="טיפים">טיפים</h2>
+<ul>
+<li>כתבו את הפרומפט כמו משתמש ולא כמו מפתח. ברגע שכתבתם תשתמש בסקיל, ביטלתם את הבדיקה.</li>
+<li>שני גריידרים לכל מקרה: אחד על התוצאה, כמו regex או llm, ואחד על הדרך, כמו tool_used או tool_order.</li>
+<li>פלט ארוך תבדקו עם regex ולא עם שופט. שופט קורא טקסט ארוך ומשנה דעה בין הרצות.</li>
+<li>רובריקה של llm נכתבת כתנאי PASS ו-FAIL קונקרטיים, לא כבקשה לבדוק אם זה טוב.</li>
+<li>כשהציון נמוך, חשדו קודם בשופט ורק אחר כך בסקיל. כך כתוב גם בתיעוד הרשמי.</li>
+<li>הוסיפו את התיקייה evals/results ל-gitignore. כל הרצה כותבת לשם.</li>
+<li>D אפס הוא לא כישלון של הבדיקה. זאת התשובה: הפלאגין לא תרם.</li>
+<li>הריצו מחדש אחרי כל שחרור מודל. סקיל שעבד מצוין יכול להפסיק להיטען במודל חדש, וזאת בדיוק הסיבה שהפיצר נבנה.</li>
+</ul>
+<h2 id="לינקים">לינקים</h2>
+<ul>
+<li>התיעוד הרשמי: <a href="https://code.claude.com/docs/en/plugin-evals">code.claude.com/docs/en/plugin-evals</a></li>
+<li>הודעת ההשקה: <a href="https://x.com/ClaudeDevs/status/2098500999656923145">x.com/ClaudeDevs</a></li>
+<li>ההסבר של הצוות על init: <a href="https://x.com/trq212/status/2098531560643539440">x.com/trq212</a></li>
+</ul></div> <div class="author" data-astro-cid-dwrmp7mt> <img src="/_astro/kevin-portrait.Bp8WjBPp_Z1fXe8s.webp" alt data-astro-cid-dwrmp7mt="true" loading="lazy" decoding="async" fetchpriority="auto" width="72" height="72" class="author-img"> <div data-astro-cid-dwrmp7mt> <p class="author-name" data-astro-cid-dwrmp7mt>נכתב על ידי <a href="/about" rel="author" data-astro-cid-dwrmp7mt>קווין ליאקס</a></p> <p class="small muted" data-astro-cid-dwrmp7mt>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <p class="small muted" data-astro-cid-dwrmp7mt>עודכן לאחרונה: <time datetime="2026-09-18T00:00:00.000Z" data-astro-cid-dwrmp7mt>18 בספטמבר 2026</time></p> </div> </div>  </article> <section class="section" aria-labelledby="related-h" data-astro-cid-2u677oxp> <div class="container" data-astro-cid-2u677oxp> <h2 id="related-h" data-astro-cid-2u677oxp>עוד מדריכים על Claude ו-Claude Code</h2> <div class="grid grid-3" data-astro-cid-2u677oxp> <article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-code-projects" data-astro-cid-2u677oxp>Claude Code Projects: תבנית להגדרת יעד, חלוקת אחריות ובדיקת תוצרים</a></h3> <p class="muted small" data-astro-cid-2u677oxp>ב-17 בספטמבר 2026 אנתרופיק שינו את המשמעות של Projects בקלוד קוד. עד אז פרויקט היה בעיקר תיקייה: קבצי רקע, הוראות, וכמה שיחות שאתם פתחתם בעצמכם ותחזקתם בראש.</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-slides" data-astro-cid-2u677oxp>Claude Slides: מהנתונים והמקורות ועד מצגת מוכנה להצגה, באותה שיחה</a></h3> <p class="muted small" data-astro-cid-2u677oxp>ב-16 בספטמבר 2026 אנתרופיק איחדה את Claude Cowork עם הצ&#39;אט הרגיל לקלוד אחד, והכניסה שלושה כלי יצירה לתוך כל שיחה: Claude Docs למסמכים, Claude Slides למצגות…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/plugin-eval" data-astro-cid-2u677oxp>Claude Plugin Eval: תבנית שבע בדיקות אמיתיות לפלאגין שלכם</a></h3> <p class="muted small" data-astro-cid-2u677oxp>בנית פלאגין או סקיל לקלוד קוד. הוא עובד אצלך. אבל האם הוא באמת משפר משהו, או שקלוד היה מגיע לאותה תוצאה גם בלעדיו? עד עכשיו לא הייתה דרך לענות על זה חוץ מלהריץ…</p> </article> </div> <p class="all-link" data-astro-cid-2u677oxp><a class="text-link" href="/guides" data-astro-cid-2u677oxp>לכל המדריכים</a></p> </div> </section><section class="section section--alt" aria-labelledby="guide-cta-h" data-astro-cid-2u677oxp> <div class="container cta-grid" data-astro-cid-2u677oxp> <div data-astro-cid-2u677oxp> <h2 id="guide-cta-h" data-astro-cid-2u677oxp>רוצים שהצוות שלכם יעבוד ככה?</h2> <p class="lead" data-astro-cid-2u677oxp>אני עובד עם צוותי פיתוח על Claude Code, סוכני קוד, MCP ותשתיות AI, מהתכנון ועד הייצור.</p> <div class="btn-row" data-astro-cid-2u677oxp> <a class="btn" href="/ai-engineering" data-astro-cid-2u677oxp>AI Engineering לצוותי פיתוח</a> <a class="text-link" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%22Claude%20Plugin%20Eval%3A%20%D7%90%D7%99%D7%9A%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%90%D7%9D%20%D7%94%D7%A1%D7%A7%D7%99%D7%9C%20%D7%A9%D7%9C%D7%9B%D7%9D%20%D7%91%D7%90%D7%9E%D7%AA%20%D7%9E%D7%A9%D7%A4%D7%A8%20%D7%90%D7%AA%20%D7%A7%D7%9C%D7%95%D7%93%2C%20%D7%95%D7%AA%D7%91%D7%A0%D7%99%D7%AA%20%D7%9C%D7%A9%D7%91%D7%A2%20%D7%91%D7%93%D7%99%D7%A7%D7%95%D7%AA%20%D7%90%D7%9E%D7%99%D7%AA%D7%99%D7%95%D7%AA%22%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" rel="noopener" target="_blank" data-astro-cid-2u677oxp>שאלה על המדריך? כתבו לי בוואטסאפ<span class="sr-only" data-astro-cid-2u677oxp> (נפתח בחלון חדש)</span></a> </div> </div> <div class="community" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p> <p class="c-text" data-astro-cid-fxan7676>הקהילה הגדולה בישראל לבנייה עם AI: שאלות, דמואים, מדריכים ומפגשים. בלי ספאם, רק אנשים שבונים.</p> <a class="btn" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a> <p class="small muted c-note" data-astro-cid-fxan7676>המספר מתעדכן ידנית. נכון ל-<span class="ltr" data-astro-cid-fxan7676>10/2026</span>.</p> </div>  <script type="module" src="/_astro/CommunityCounter.astro_astro_type_script_index_0_lang.C7a3xHHQ.js"></script> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="cols" data-astro-cid-sz7xmlte> <div class="col about" data-astro-cid-sz7xmlte> <p class="f-brand" lang="en" dir="ltr" data-astro-cid-sz7xmlte>Kevin Liaks<span data-astro-cid-sz7xmlte>.</span></p> <p class="f-motto" data-astro-cid-sz7xmlte>אדם, תהליך, טכנולוגיה.</p> <p class="muted" data-astro-cid-sz7xmlte>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <div class="community compact" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p>  <a class="btn btn--ghost" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a>  </div>   </div> <nav class="col" aria-label="עמודים" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>עמודים</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops" data-astro-cid-sz7xmlte>סדנאות</a></li><li data-astro-cid-sz7xmlte><a href="/ai-implementation" data-astro-cid-sz7xmlte>הטמעת AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-agents" data-astro-cid-sz7xmlte>סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-engineering" data-astro-cid-sz7xmlte>AI Engineering</a></li><li data-astro-cid-sz7xmlte><a href="/guides" data-astro-cid-sz7xmlte>מדריכים ומאמרים</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>אודות</a></li> <li data-astro-cid-sz7xmlte><a href="/blog" data-astro-cid-sz7xmlte>בלוג</a></li> <li data-astro-cid-sz7xmlte><a href="/faq" data-astro-cid-sz7xmlte>שאלות נפוצות</a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>צור קשר</a></li> </ul> </nav> <nav class="col" aria-label="סדנאות" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>סדנאות</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-employees" data-astro-cid-sz7xmlte>סדנת AI לעובדים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-managers" data-astro-cid-sz7xmlte>סדנת AI למנהלים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-lecture" data-astro-cid-sz7xmlte>הרצאת AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/copilot" data-astro-cid-sz7xmlte>סדנת Copilot</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/claude-code" data-astro-cid-sz7xmlte>סדנת Claude Code</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-agents" data-astro-cid-sz7xmlte>סדנת בניית סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/vibe-coding" data-astro-cid-sz7xmlte>סדנת Vibe Coding</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-teachers" data-astro-cid-sz7xmlte>AI לצוותי הוראה</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-course" data-astro-cid-sz7xmlte>קורס AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-customer-service" data-astro-cid-sz7xmlte>סדנת AI לשירות לקוחות</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-hr" data-astro-cid-sz7xmlte>סדנת AI למשאבי אנוש</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-finance" data-astro-cid-sz7xmlte>סדנת AI לכספים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-sales" data-astro-cid-sz7xmlte>סדנת AI למכירות</a></li> </ul> </nav> <div class="col" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>יצירת קשר</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="mailto:kevin.liaks@gmail.com" data-astro-cid-sz7xmlte>kevin.liaks@gmail.com</a></li> <li data-astro-cid-sz7xmlte><a href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>וואטסאפ<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>השאירו פרטים</a></li> </ul> <h2 class="f-h" data-astro-cid-sz7xmlte>עקבו</h2> <ul class="social" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://www.youtube.com/@kevinliaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>יוטיוב<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.instagram.com/kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>אינסטגרם<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>קבוצת הפייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/kevin.liaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>פייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.linkedin.com/in/kevin-liaks-30b2a698" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>לינקדאין<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.tiktok.com/@kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>טיקטוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> </ul> </div> </div> <div class="legal" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>© <span class="ltr" data-astro-cid-sz7xmlte>2026</span> קווין ליאקס. עודכן לאחרונה: 30 באוקטובר 2026.</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/accessibility" data-astro-cid-sz7xmlte>הצהרת נגישות</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>מדיניות פרטיות</a></li> </ul> </div> </div> </footer>  <aside class="quick" aria-label="יצירת קשר מהירה" data-astro-cid-fbt5meba> <a class="float-contact" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" aria-label="שליחת הודעה בוואטסאפ (נפתח בחלון חדש)" data-astro-cid-fbt5meba> <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" data-astro-cid-fbt5meba><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z" data-astro-cid-fbt5meba></path></svg> <span class="label" data-astro-cid-fbt5meba>וואטסאפ</span> </a> </aside>  <script type="module">const l=[[/^\/workshops\/[^/]+$/,"ראיתי באתר את העמוד על"],[/^\/workshops$/,"ראיתי באתר את הסדנאות."],[/^\/ai-agents/,"מעניין אותי סוכן AI לארגון."],[/^\/ai-implementation/,"מעניין אותי להטמיע AI בארגון."],[/^\/ai-engineering/,"מעניין אותי AI Engineering לצוות הפיתוח."],[/^\/guides\/[^/]+$/,"קראתי באתר את המדריך"],[/^\/blog\/[^/]+$/,"קראתי באתר את המאמר"]];function m(o){const e=location.pathname.replace(/\.html$/,"").replace(/\/$/,"")||"/",n=document.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()??"",t=["היי קווין, הגעתי מהאתר."],r=l.find(([a])=>a.test(e));r&&t.push(r[1].endsWith(".")?r[1]:`${r[1]} "${n}".`);const i=o.closest("form.lead-form")??document.querySelector("form.lead-form"),s=i?.querySelector("select[name=topic]"),c=i?.querySelector("textarea[name=message]")?.value.trim();if(s&&s.value&&s.value!=="other"&&(c||o.closest("form"))&&t.push(`מה מעניין אותי: ${s.options[s.selectedIndex].text}.`),c)t.push(c.slice(0,400));else try{const a=JSON.parse(sessionStorage.getItem("kl-marks")||"[]");a.length&&t.push("מה שקורה אצלנו: "+a.join(" "))}catch{}return t.push("אשמח לשמוע פרטים."),t.join(`
+`)}document.addEventListener("click",o=>{const e=o.target?.closest?.('a[href^="https://wa.me/"]');if(!e)return;const n=new URL(e.href);n.searchParams.set("text",m(e)),e.href=n.toString()},!0);</script> <div class="a11y" data-astro-cid-l6h6emqy> <button class="a11y-btn" type="button" aria-expanded="false" aria-controls="a11y-panel" data-astro-cid-l6h6emqy> <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" data-astro-cid-l6h6emqy><circle cx="12" cy="4" r="2" fill="currentColor" data-astro-cid-l6h6emqy></circle><path fill="currentColor" d="M20 8.5 14 9.6V13l2 7.5a1 1 0 0 1-1.9.5L12 15l-2.1 6a1 1 0 0 1-1.9-.5l2-7.5V9.6L4 8.5a1 1 0 1 1 .3-2l6.2 1.1h3l6.2-1.1a1 1 0 1 1 .3 2Z" data-astro-cid-l6h6emqy></path></svg> <span class="sr-only" data-astro-cid-l6h6emqy>תפריט נגישות</span> </button> <div id="a11y-panel" class="a11y-panel" role="region" aria-label="הגדרות נגישות" hidden data-astro-cid-l6h6emqy> <p class="a11y-title" data-astro-cid-l6h6emqy>נגישות</p> <div class="a11y-row" role="group" aria-label="גודל טקסט" data-astro-cid-l6h6emqy> <span data-astro-cid-l6h6emqy>גודל טקסט</span> <span class="a11y-sizes" data-astro-cid-l6h6emqy> <button type="button" data-scale="-1" aria-label="א- הקטנת טקסט" data-astro-cid-l6h6emqy>א-</button> <button type="button" data-scale="0" aria-label="רגיל: איפוס גודל טקסט" data-astro-cid-l6h6emqy>רגיל</button> <button type="button" data-scale="1" aria-label="א+ הגדלת טקסט" data-astro-cid-l6h6emqy>א+</button> </span> </div> <button type="button" class="a11y-toggle" data-key="contrast" aria-pressed="false" data-astro-cid-l6h6emqy>ניגודיות גבוהה</button> <button type="button" class="a11y-toggle" data-key="links" aria-pressed="false" data-astro-cid-l6h6emqy>הדגשת קישורים</button> <button type="button" class="a11y-toggle" data-key="noMotion" aria-pressed="false" data-astro-cid-l6h6emqy>עצירת אנימציות</button> <button type="button" class="a11y-reset" data-astro-cid-l6h6emqy>איפוס הכול</button> <a href="/accessibility" data-astro-cid-l6h6emqy>הצהרת נגישות</a> </div> </div>  <script type="module">const r=document.documentElement,s=document.querySelector(".a11y-btn"),a=document.getElementById("a11y-panel"),i=()=>{try{return JSON.parse(localStorage.getItem("a11y")||"{}")}catch{return{}}},y=e=>{try{localStorage.setItem("a11y",JSON.stringify(e))}catch{}};let t=i();const l={contrast:"a11y-contrast",links:"a11y-links",noMotion:"a11y-no-motion"},c=()=>{r.style.setProperty("--a11y-scale",String(t.scale||1));for(const e of Object.keys(l))r.classList.toggle(l[e],!!t[e]);a.querySelectorAll(".a11y-toggle").forEach(e=>e.setAttribute("aria-pressed",String(!!t[e.dataset.key]))),y(t),document.dispatchEvent(new CustomEvent("a11y-change"))},o=e=>{s.setAttribute("aria-expanded",String(e)),a.hidden=!e};s.addEventListener("click",()=>o(a.hidden));document.addEventListener("keydown",e=>{e.key==="Escape"&&!a.hidden&&(o(!1),s.focus())});document.addEventListener("click",e=>{!a.hidden&&!e.target.closest(".a11y")&&o(!1)});a.querySelectorAll("[data-scale]").forEach(e=>e.addEventListener("click",()=>{const n=Number(e.dataset.scale),d=t.scale||1;t.scale=n===0?1:Math.min(1.5,Math.max(.9,Math.round((d+n*.1)*10)/10)),c()}));a.querySelectorAll(".a11y-toggle").forEach(e=>e.addEventListener("click",()=>{const n=e.dataset.key;t[n]=!t[n],c()}));a.querySelector(".a11y-reset").addEventListener("click",()=>{t={},c()});c();</script> <script type="module">const t=document.querySelector(".consent");if(t){const a=t.dataset.gtm,n=()=>{const e=document.createElement("script");e.async=!0,e.src=`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(a)}`,document.head.appendChild(e)};let c=null;try{c=localStorage.getItem("consent")}catch{}c==="yes"?n():c||(t.hidden=!1),t.querySelectorAll("[data-consent]").forEach(e=>e.addEventListener("click",()=>{const o=e.dataset.consent;try{localStorage.setItem("consent",o),localStorage.setItem("consent-date",new Date().toISOString())}catch{}t.hidden=!0,o==="yes"&&n()}))}</script> </body></html> 

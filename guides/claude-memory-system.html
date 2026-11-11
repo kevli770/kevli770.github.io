@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="he" dir="rtl" data-look="control"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Claude Memory System: איך לגרום ל-Claude לזכור הכל | קווין ליאקס</title><meta name="description" content="בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים. אתם חוזרים על אותו הסבר שוב…"><link rel="canonical" href="https://kevli770.github.io/guides/claude-memory-system"><meta name="robots" content="noindex, nofollow"><meta name="author" content="קווין ליאקס"><meta name="theme-color" content="#f6f6f4"><link rel="preload" as="font" type="font/woff2" href="/_astro/rubik-hebrew-wght-normal.BIkpbuMU.woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:site_name" content="קווין ליאקס"><meta property="og:locale" content="he_IL"><meta property="og:title" content="Claude Memory System: איך לגרום ל-Claude לזכור הכל | קווין ליאקס"><meta property="og:description" content="בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים. אתם חוזרים על אותו הסבר שוב…"><meta property="og:url" content="https://kevli770.github.io/guides/claude-memory-system"><meta property="og:image" content="https://kevli770.github.io/_astro/hero.CPDOaip6_Z1RL49g.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude Memory System: איך לגרום ל-Claude לזכור הכל | קווין ליאקס"><meta name="twitter:description" content="בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים. אתם חוזרים על אותו הסבר שוב…"><meta name="twitter:image" content="https://kevli770.github.io/_astro/hero.CPDOaip6_Z1RL49g.jpg"><meta property="article:published_time" content="2026-06-29T00:00:00.000Z"><meta property="article:modified_time" content="2026-06-29T00:00:00.000Z"><meta property="article:section" content="Claude ו-Claude Code"><meta property="article:tag" content="Claude Memory System"><meta property="article:tag" content="מדריך Claude Memory System"><meta property="article:tag" content="מה זה מערכת זיכרון ל-Claude"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kevli770.github.io/#website","url":"https://kevli770.github.io/","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","inLanguage":"he-IL","publisher":{"@id":"https://kevli770.github.io/#business"}},{"@type":"ProfessionalService","@id":"https://kevli770.github.io/#business","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","alternateName":"Kevin Liaks","url":"https://kevli770.github.io/","email":"kevin.liaks@gmail.com","telephone":"+972545334770","image":"https://kevli770.github.io/og/default.png","logo":{"@type":"ImageObject","url":"https://kevli770.github.io/logo.png","width":512,"height":512},"description":"סדנאות AI פרקטיות לארגונים, הטמעת AI וסוכני AI בעסקים, ו-AI Engineering לצוותי פיתוח. קווין ליאקס, מוביל AI ודאטה בקבוצה עסקית גדולה.","areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","en"],"founder":{"@id":"https://kevli770.github.io/about#kevin"},"knowsAbout":["סדנאות AI","הדרכות AI לארגונים","הטמעת AI בארגונים","ארכיטקטורת AI","סוכני AI","AI Engineering","Claude Code","Microsoft Copilot","אוטומציות"],"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"Person","@id":"https://kevli770.github.io/about#kevin","name":"קווין ליאקס","alternateName":"Kevin Liaks","jobTitle":"AI Solutions Architect","url":"https://kevli770.github.io/about","image":"https://kevli770.github.io/og/kevin.jpg","email":"kevin.liaks@gmail.com","knowsAbout":["Artificial intelligence","AI agents","AI adoption in organizations","AI engineering","AI architecture","Business intelligence","Claude Code","Automation"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Shenkar College of Engineering and Design"},"worksFor":{"@id":"https://kevli770.github.io/#business"},"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://kevli770.github.io/"},{"@type":"ListItem","position":2,"name":"מדריכים","item":"https://kevli770.github.io/guides"},{"@type":"ListItem","position":3,"name":"Claude Memory System: איך לגרום ל-Claude לזכור הכל לאורך עשרות סשנים","item":"https://kevli770.github.io/guides/claude-memory-system"}]},{"@type":"TechArticle","@id":"https://kevli770.github.io/guides/claude-memory-system#article","headline":"Claude Memory System: איך לגרום ל-Claude לזכור הכל לאורך עשרות סשנים","alternativeHeadline":"Claude Memory System","description":"בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים. אתם חוזרים על אותו הסבר שוב…","abstract":"בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים.","datePublished":"2026-06-29T00:00:00.000Z","dateModified":"2026-06-29T00:00:00.000Z","inLanguage":"he-IL","author":{"@id":"https://kevli770.github.io/about#kevin"},"publisher":{"@id":"https://kevli770.github.io/#business"},"mainEntityOfPage":"https://kevli770.github.io/guides/claude-memory-system","isPartOf":{"@id":"https://kevli770.github.io/guides#collection"},"image":"https://kevli770.github.io/_astro/hero.CPDOaip6_Z1RL49g.jpg","keywords":"Claude Memory System, מדריך Claude Memory System, מה זה מערכת זיכרון ל-Claude","articleSection":"Claude ו-Claude Code","wordCount":1974}]}</script><script>
+      // העדפות נגישות נשמרות בדפדפן ומוחלות לפני הציור, כדי שלא יהיה הבהוב.
+      try {
+        var p = JSON.parse(localStorage.getItem('a11y') || '{}');
+        var r = document.documentElement;
+        if (p.scale) r.style.setProperty('--a11y-scale', p.scale);
+        if (p.contrast) r.classList.add('a11y-contrast');
+        if (p.links) r.classList.add('a11y-links');
+        if (p.noMotion) r.classList.add('a11y-no-motion');
+      } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/about.DqAyRUrx.css">
+<style>.faq-layout[data-astro-cid-z6gx6xcw]{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:5rem;align-items:start}@media(max-width:880px){.faq-layout[data-astro-cid-z6gx6xcw]{grid-template-columns:minmax(0,1fr);gap:1.6rem}}.faq[data-astro-cid-z6gx6xcw]{border-top:1px solid #d4d9cf}details[data-astro-cid-z6gx6xcw]{border-bottom:1px solid #d4d9cf}summary[data-astro-cid-z6gx6xcw]{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center}summary[data-astro-cid-z6gx6xcw]::-webkit-details-marker{display:none}summary[data-astro-cid-z6gx6xcw] h3[data-astro-cid-z6gx6xcw]{font-size:1.08rem;margin:0;font-weight:800;letter-spacing:-.01em;line-height:1.6}summary[data-astro-cid-z6gx6xcw]:after{content:"+";font:1.7rem/1 var(--latin);color:var(--accent-ink);flex:none}details[data-astro-cid-z6gx6xcw][open] summary[data-astro-cid-z6gx6xcw]:after{content:"−"}.faq-a[data-astro-cid-z6gx6xcw]{padding:0 0 1.2rem;color:var(--soft)}.faq-a[data-astro-cid-z6gx6xcw] p[data-astro-cid-z6gx6xcw]{margin:0;max-width:64ch}
+.author[data-astro-cid-dwrmp7mt]{display:flex;gap:1rem;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1.25rem;margin-block:2rem;max-width:72ch}.author-img[data-astro-cid-dwrmp7mt]{border-radius:50%;flex:none;object-fit:cover}.author[data-astro-cid-dwrmp7mt] p[data-astro-cid-dwrmp7mt]{margin:0}.author-name[data-astro-cid-dwrmp7mt]{font-weight:600}
+.post[data-astro-cid-2u677oxp]{padding-block:2rem 1rem}.post-head[data-astro-cid-2u677oxp]{max-width:72ch}.post-head[data-astro-cid-2u677oxp] h1[data-astro-cid-2u677oxp]{font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem)}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:inherit;text-decoration:none}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{text-decoration:underline}.tldr[data-astro-cid-2u677oxp]{background:var(--cream);border-inline-start:3px solid var(--accent);border-radius:0;padding:1.1rem 1.3rem;margin-top:1rem}.tldr-h[data-astro-cid-2u677oxp]{font-weight:800;color:var(--accent-ink);margin-bottom:.3rem}.tldr[data-astro-cid-2u677oxp] p[data-astro-cid-2u677oxp]:last-child{margin:0;font-size:1.08rem}.reel[data-astro-cid-2u677oxp]{margin:1.4rem 0 0;max-width:320px}.reel[data-astro-cid-2u677oxp] video[data-astro-cid-2u677oxp]{display:block;width:100%;aspect-ratio:9 / 16;object-fit:cover;border-radius:var(--radius);background:var(--ink)}.reel[data-astro-cid-2u677oxp] figcaption[data-astro-cid-2u677oxp]{margin-top:.5rem}.hero-img[data-astro-cid-2u677oxp]{display:block;width:100%;max-width:760px;height:auto;margin-block:1.6rem .5rem;border:1px solid var(--line);border-radius:var(--radius-sm)}.toc[data-astro-cid-2u677oxp]{max-width:72ch;margin-block:1.5rem;border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.3rem;background:var(--surface)}.toc-h[data-astro-cid-2u677oxp]{font-weight:700;margin-bottom:.4rem}.toc[data-astro-cid-2u677oxp] ol[data-astro-cid-2u677oxp]{margin:0}.guide-body[data-astro-cid-2u677oxp]>:nth-child(n+6){content-visibility:auto;contain-intrinsic-size:auto 140px}.guide-body[data-astro-cid-2u677oxp] th,.guide-body[data-astro-cid-2u677oxp] td{min-width:120px}.guide-body[data-astro-cid-2u677oxp] pre{direction:ltr;text-align:left;padding:1rem 1.2rem;margin-block:1.2rem;border-radius:var(--radius-sm);font-size:.88rem;line-height:1.65;overflow-x:auto;white-space:pre}.guide-body[data-astro-cid-2u677oxp] pre code{background:none;padding:0;border-radius:0;font-size:inherit}.guide-body[data-astro-cid-2u677oxp] :not(pre)>code{direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] img{display:block;border:1px solid var(--line);border-radius:var(--radius-sm);margin-block:1.2rem .4rem}.guide-body[data-astro-cid-2u677oxp] p:has(>img)+p>em:only-child{display:block;font-size:var(--fs-sm);color:var(--mute)}.guide-body[data-astro-cid-2u677oxp] blockquote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--cream);border-inline-start:3px solid var(--accent)}.guide-body[data-astro-cid-2u677oxp] blockquote p:last-child{margin-bottom:0}.guide-body[data-astro-cid-2u677oxp] a{overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] li+li{margin-top:.35rem}.rel-title[data-astro-cid-2u677oxp]{font-size:1.1rem;line-height:1.5}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:var(--ink);text-decoration:none}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{color:var(--accent);text-decoration:underline}.all-link[data-astro-cid-2u677oxp]{margin-top:1.4rem}.cta-grid[data-astro-cid-2u677oxp]{display:grid;gap:2rem 4rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}.cta-grid[data-astro-cid-2u677oxp]>[data-astro-cid-2u677oxp]{min-width:0}
+</style></head> <body> <a class="skip-link" href="#main">דלג לתוכן הראשי</a> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container bar" data-astro-cid-3ef6ksr2> <a class="logo" href="/" data-astro-cid-3ef6ksr2> <span class="logo-word" lang="en" dir="ltr" data-astro-cid-3ef6ksr2>Kevin Liaks<span class="logo-dot" data-astro-cid-3ef6ksr2>.</span></span> <small data-astro-cid-3ef6ksr2>AI בארגונים. בפועל.</small> <span class="sr-only" data-astro-cid-3ef6ksr2>קווין ליאקס, לדף הבית</span> </a> <a class="hdr-cta" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a> <nav class="nav" aria-label="ניווט ראשי" data-astro-cid-3ef6ksr2> <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" data-astro-cid-3ef6ksr2> <span class="bars" aria-hidden="true" data-astro-cid-3ef6ksr2><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i></span> <span class="sr-only" data-astro-cid-3ef6ksr2>תפריט</span> </button> <ul id="nav-list" class="nav-list" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/workshops" data-astro-cid-3ef6ksr2>סדנאות</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-implementation" data-astro-cid-3ef6ksr2>הטמעת AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-agents" data-astro-cid-3ef6ksr2>סוכני AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-engineering" data-astro-cid-3ef6ksr2>AI Engineering</a></li><li data-astro-cid-3ef6ksr2><a href="/guides" aria-current="page" data-astro-cid-3ef6ksr2>מדריכים ומאמרים</a></li><li data-astro-cid-3ef6ksr2><a href="/about" data-astro-cid-3ef6ksr2>אודות</a></li> <li class="nav-cta" data-astro-cid-3ef6ksr2><a class="btn btn--dark" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a></li> </ul> </nav> </div> </header>  <script type="module">const e=document.querySelector(".nav-toggle"),s=document.getElementById("nav-list");if(e&&s){const a=e.querySelector(".sr-only"),n=t=>{e.setAttribute("aria-expanded",String(t)),s.classList.toggle("open",t),a.textContent=t?"סגירת התפריט":"תפריט"};e.addEventListener("click",()=>n(e.getAttribute("aria-expanded")!=="true")),document.addEventListener("keydown",t=>{t.key==="Escape"&&e.getAttribute("aria-expanded")==="true"&&(n(!1),e.focus())}),window.addEventListener("resize",()=>{e.offsetParent||n(!1)})}</script> <div class="crumbs-band" data-astro-cid-ilhxcym7><nav class="crumbs container" aria-label="פירורי לחם" data-astro-cid-ilhxcym7> <ol data-astro-cid-ilhxcym7> <li data-astro-cid-ilhxcym7> <a href="/" data-astro-cid-ilhxcym7>דף הבית</a> </li><li data-astro-cid-ilhxcym7> <a href="/guides" data-astro-cid-ilhxcym7>מדריכים</a> </li><li data-astro-cid-ilhxcym7> <span aria-current="page" data-astro-cid-ilhxcym7>Claude Memory System: איך לגרום ל-Claude לזכור הכל לאורך עשרות סשנים</span> </li> </ol> </nav></div>  <main id="main" tabindex="-1">     <article class="container post guide-post" data-astro-cid-2u677oxp> <header class="post-head" data-astro-cid-2u677oxp> <ul class="tags" data-astro-cid-2u677oxp> <li class="tag" data-astro-cid-2u677oxp><a href="/guides?topic=Claude%20%D7%95-Claude%20Code#all-h" data-astro-cid-2u677oxp>Claude ו-Claude Code</a></li> <li class="tag" data-astro-cid-2u677oxp>10 דקות קריאה</li> <li class="tag" data-astro-cid-2u677oxp>עודכן <time datetime="2026-06-29T00:00:00.000Z" data-astro-cid-2u677oxp>29 ביוני 2026</time></li> </ul> <h1 data-astro-cid-2u677oxp>Claude Memory System: איך לגרום ל-Claude לזכור הכל לאורך עשרות סשנים</h1> <div class="tldr" data-astro-cid-2u677oxp> <p class="tldr-h" data-astro-cid-2u677oxp>בשורה התחתונה</p> <p data-astro-cid-2u677oxp>בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים.</p> </div>  </header> <img src="/_astro/hero.CPDOaip6_Z1LOH5d.webp" srcset="/_astro/hero.CPDOaip6_Z5Gwqq.webp 480w, /_astro/hero.CPDOaip6_ZIYvTw.webp 800w, /_astro/hero.CPDOaip6_Z1LOH5d.webp 1200w" alt="איור פתיחה למדריך: Claude Memory System" sizes="(min-width: 860px) 760px, 100vw" loading="eager" fetchpriority="high" data-astro-cid-2u677oxp="true" decoding="async" width="1200" height="670" class="hero-img"> <nav class="toc" aria-label="תוכן המדריך" data-astro-cid-2u677oxp> <p class="toc-h" data-astro-cid-2u677oxp>במדריך</p> <ol data-astro-cid-2u677oxp><li data-astro-cid-2u677oxp><a href="#מה-זה-מערכת-זיכרון-ל-claude" data-astro-cid-2u677oxp>מה זה מערכת זיכרון ל-Claude</a></li><li data-astro-cid-2u677oxp><a href="#שני-המנגנונים-של-claude-code" data-astro-cid-2u677oxp>שני המנגנונים של Claude Code</a></li><li data-astro-cid-2u677oxp><a href="#ארבעת-קבצי-הזיכרון" data-astro-cid-2u677oxp>ארבעת קבצי הזיכרון</a></li><li data-astro-cid-2u677oxp><a href="#מבנה-התיקיות-בפרויקט" data-astro-cid-2u677oxp>מבנה התיקיות בפרויקט</a></li><li data-astro-cid-2u677oxp><a href="#הקובץ-המרכזי-claudemd" data-astro-cid-2u677oxp>הקובץ המרכזי: CLAUDE.md</a></li><li data-astro-cid-2u677oxp><a href="#תוכן-מוכן-להעתקה-לארבעת-הקבצים" data-astro-cid-2u677oxp>תוכן מוכן-להעתקה לארבעת הקבצים</a></li><li data-astro-cid-2u677oxp><a href="#שני-הפרומפטים-המדויקים" data-astro-cid-2u677oxp>שני הפרומפטים המדויקים</a></li><li data-astro-cid-2u677oxp><a href="#יום-עבודה-עם-המערכת-צעד-אחרי-צעד" data-astro-cid-2u677oxp>יום עבודה עם המערכת: צעד אחרי צעד</a></li><li data-astro-cid-2u677oxp><a href="#הקסם-סשן-1-לעומת-סשן-50" data-astro-cid-2u677oxp>הקסם: סשן 1 לעומת סשן 50</a></li><li data-astro-cid-2u677oxp><a href="#בונוס-ה-auto-memory-המובנה" data-astro-cid-2u677oxp>בונוס: ה-Auto Memory המובנה</a></li><li data-astro-cid-2u677oxp><a href="#טיפים-מהשטח" data-astro-cid-2u677oxp>טיפים מהשטח</a></li><li data-astro-cid-2u677oxp><a href="#מגבלות-שכדאי-להכיר" data-astro-cid-2u677oxp>מגבלות שכדאי להכיר</a></li><li data-astro-cid-2u677oxp><a href="#לינקים" data-astro-cid-2u677oxp>לינקים</a></li></ol> </nav> <div class="prose post-body guide-body" data-astro-cid-2u677oxp><h2 id="מה-זה-מערכת-זיכרון-ל-claude">מה זה מערכת זיכרון ל-Claude</h2>
+<p>בכל פעם שאתם פותחים סשן חדש מול Claude, הוא מתחיל מאפס. אין לו מושג מי אתם, מה הפרויקט, מה החלטתם אתמול, ומה תיקנתם שלוש פעמים. אתם חוזרים על אותו הסבר שוב ושוב.</p>
+<p>מערכת זיכרון פותרת את זה. במקום להסביר מחדש כל בוקר, אתם בונים קבוצה קטנה של קבצי Markdown ש-Claude קורא בתחילת כל סשן ומעדכן בסופו. התוצאה: הסוכן זוכר את הלקוח, את הסטאק, את ההחלטות והתיקונים, לאורך עשרות סשנים, גם בצ’אט חדש לגמרי.</p>
+<p><strong>המדריך הזה הוא הגרסה המעשית. לא תיאוריה: הקבצים האמיתיים, הפרומפטים המדויקים, ומה בדיוק לכתוב כדי שזה יעבוד אצלכם היום.</strong></p>
+<h2 id="שני-המנגנונים-של-claude-code">שני המנגנונים של Claude Code</h2>
+<p>ל-Claude Code יש שני מנגנוני זיכרון מובנים, ושניהם נטענים אוטומטית בתחילת כל סשן. חשוב להבין את ההבדל לפני שבונים:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>מאפיין</th><th>CLAUDE.md</th><th>Auto Memory</th></tr></thead><tbody><tr><td><strong>מי כותב</strong></td><td>אתם, ביד</td><td><strong>Claude, לבד</strong></td></tr><tr><td><strong>מה יש בו</strong></td><td>הוראות, חוקים, מבנה הפרויקט</td><td>תובנות והעדפות ש-Claude לומד תוך כדי עבודה</td></tr><tr><td><strong>מיקום</strong></td><td><code>CLAUDE.md בפרויקט</code></td><td><code>~/.claude/projects/.../memory/</code></td></tr><tr><td><strong>נטען</strong></td><td>במלואו, בכל סשן</td><td>200 שורות ראשונות מ-MEMORY.md בכל סשן</td></tr></tbody></table></div>
+<p>המדריך הזה בונה מערכת מפורשת מעל <code>CLAUDE.md</code>, כי כך יש לכם שליטה מלאה על מה נשמר ואיפה. בסוף נראה גם איך לנצל את ה-Auto Memory המובנה.</p>
+<h2 id="ארבעת-קבצי-הזיכרון">ארבעת קבצי הזיכרון</h2>
+<p>הלב של המערכת הוא ארבעה קבצים, כל אחד עם תפקיד אחד ברור. הם יושבים בתיקיית <code>.claude/memory/</code> בתוך הפרויקט שלכם:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>הקובץ</th><th>התפקיד</th><th>מה נשמר בו</th></tr></thead><tbody><tr><td><code>working.md</code></td><td><strong>זיכרון עבודה</strong></td><td>מה קורה עכשיו: המשימה הנוכחית, צעדים שנשארו, באג שאתם באמצע</td></tr><tr><td><code>sessions.md</code></td><td><strong>סשנים קודמים</strong></td><td>יומן החלטות ותיקונים: מה נבחר, למה, ומה Claude טעה בו ותוקן</td></tr><tr><td><code>facts.md</code></td><td><strong>עובדות קבועות</strong></td><td>דברים שלא משתנים: הלקוח, הסטאק הטכנולוגי, העדפות קוד, פקודות build</td></tr><tr><td><code>identity.md</code></td><td><strong>זהות</strong></td><td>מי הסוכן, מה התפקיד שלו, מה מותר ומה אסור, איך הוא מדבר</td></tr></tbody></table></div>
+<p><strong>ההפרדה הזו היא לא קישוט. כשכל סוג מידע יושב בקובץ נפרד, Claude מושך בתחילת סשן רק את מה שרלוונטי למשימה, ובסוף יודע בדיוק לאיזה קובץ לשמור כל פיסת מידע חדשה.</strong></p>
+<h2 id="מבנה-התיקיות-בפרויקט">מבנה התיקיות בפרויקט</h2>
+<p>ככה נראה הפרויקט אחרי שמתקינים את המערכת. שימו לב: הכל קבצי טקסט רגילים, אפשר לפתוח ולערוך אותם ביד בכל רגע.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my-project/</span></span>
+<span class="line"><span>├── CLAUDE.md            &#x3C;- המנצח: טוען ומנהל את הכל</span></span>
+<span class="line"><span>├── .claude/</span></span>
+<span class="line"><span>│   └── memory/</span></span>
+<span class="line"><span>│       ├── working.md   &#x3C;- זיכרון עבודה (הסשן הנוכחי)</span></span>
+<span class="line"><span>│       ├── sessions.md  &#x3C;- החלטות ותיקונים מסשנים קודמים</span></span>
+<span class="line"><span>│       ├── facts.md     &#x3C;- עובדות קבועות (לקוח, סטאק, העדפות)</span></span>
+<span class="line"><span>│       └── identity.md  &#x3C;- זהות הסוכן</span></span>
+<span class="line"><span>└── ... שאר הפרויקט</span></span></code></pre>
+<p>את הקובץ <code>CLAUDE.md</code> מומלץ להעלות ל-git כדי שכל הצוות יקבל אותו. את התיקייה <code>.claude/memory/</code> אפשר להעלות ל-git (כדי לשתף זיכרון) או להוסיף ל-<code>.gitignore</code> (אם הזיכרון אישי). שתי הגישות עובדות.</p>
+<h2 id="הקובץ-המרכזי-claudemd">הקובץ המרכזי: CLAUDE.md</h2>
+<p>זה הקובץ ש-Claude קורא אוטומטית בתחילת כל סשן, במלואו. הוא עושה שני דברים: מייבא את ארבעת קבצי הזיכרון, ומגדיר את שני הפרוטוקולים, טעינה בהתחלה ושמירה בסוף.</p>
+<p>התחביר <code>@path</code> <strong>הוא ייבוא אמיתי של Claude Code: כל קובץ שמסומן ב-@ נטען לתוך ההקשר בתחילת הסשן. נתיבים יחסיים מחושבים ביחס לקובץ ש-CLAUDE.md יושב בו. בפעם הראשונה Claude יבקש אישור לייבוא, מאשרים פעם אחת.</strong></p>
+<p>העתיקו את התוכן הבא לקובץ <code>CLAUDE.md</code> בשורש הפרויקט:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Project Memory System</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Memory files (loaded every session)</span></span>
+<span class="line"><span style="color:#E1E4E8">@.claude/memory/identity.md</span></span>
+<span class="line"><span style="color:#E1E4E8">@.claude/memory/facts.md</span></span>
+<span class="line"><span style="color:#E1E4E8">@.claude/memory/sessions.md</span></span>
+<span class="line"><span style="color:#E1E4E8">@.claude/memory/working.md</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## LOAD protocol - run at the START of every session</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8"> Read identity.md first - know who you are and the rules.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8"> Read facts.md - the client, the stack, the preferences.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8"> Read working.md - what was in progress.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8"> Pull from sessions.md ONLY the decisions relevant</span></span>
+<span class="line"><span style="color:#E1E4E8">   to the current task. Do not dump the whole log.</span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8"> Briefly confirm to me what you loaded, then start.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## SAVE protocol - run at the END of every session</span></span>
+<span class="line"><span style="color:#E1E4E8">When I say "save memory" (or the session is ending):</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8"> Review what happened this session.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8"> Extract only what matters for the future.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8"> Write each item to the CORRECT file:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> new permanent fact      -> facts.md</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> a decision or a fix     -> sessions.md (dated)</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> unfinished work / TODO  -> working.md</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> a rule about my agent   -> identity.md</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8"> Keep each file tight. Delete stale lines in working.md.</span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8"> Tell me in one line what you saved and where.</span></span></code></pre>
+<p>שימו לב לסדר הייבוא: <code>identity</code> ראשון, אחר כך <code>facts</code>, ואז <code>sessions</code> ו-<code>working</code>. זה הסדר שבו Claude יקרא אותם, מהיציב ביותר אל המשתנה ביותר.</p>
+<p>טיפ: שמרו את CLAUDE.md מתחת ל-200 שורות. הוא נטען בכל סשן וצורך טוקנים, ופחות הוא יותר, דבקות גבוהה יותר בהוראות.</p>
+<h2 id="תוכן-מוכן-להעתקה-לארבעת-הקבצים">תוכן מוכן-להעתקה לארבעת הקבצים</h2>
+<p>אלה תבניות התחלה. החליפו את התוכן בפרטים שלכם, אבל שמרו על המבנה, הכותרות בתוך כל קובץ עוזרות ל-Claude למקם מידע חדש במקום הנכון.</p>
+<h3 id="הקובץ-הראשון-identitymd">הקובץ הראשון: identity.md</h3>
+<p>מי הסוכן, מה התפקיד, ומה הגבולות. זה הקובץ שנקרא ראשון.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Agent Identity</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Who you are</span></span>
+<span class="line"><span style="color:#E1E4E8">You are my senior engineering partner on this project.</span></span>
+<span class="line"><span style="color:#E1E4E8">You think before you code, and you flag risks early.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## How you work</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Ask before large refactors. Small fixes: just do them.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Match the existing code style. Do not introduce new libs</span></span>
+<span class="line"><span style="color:#E1E4E8">  without asking.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> After every change: run the build and report errors.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Hard rules</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Never commit secrets or .env files.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Never push to main directly.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Speak to me in Hebrew, write code/comments in English.</span></span></code></pre>
+<h3 id="הקובץ-השני-factsmd">הקובץ השני: facts.md</h3>
+<p>עובדות שלא משתנות. זה מה שחוסך לכם את ההסבר החוזר בכל בוקר.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Permanent Facts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Client / Project</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Client: Acme Ltd, B2B invoicing SaaS.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Main goal this quarter: ship the billing rewrite.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Tech stack</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Frontend: Next.js 15, TypeScript, Tailwind v4.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Backend: Node + Postgres (Prisma).</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Deploy: Vercel. CI on GitHub Actions.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Commands</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Install: npm install</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Dev:     npm run dev</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Build:   npm run build   (must pass before any commit)</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Test:    npm test</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Preferences</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> 2-space indentation. Named exports, not default.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> API handlers live in src/api/handlers/.</span></span></code></pre>
+<h3 id="הקובץ-השלישי-sessionsmd">הקובץ השלישי: sessions.md</h3>
+<p>יומן החלטות ותיקונים, עם תאריך. כל שורה כאן היא משהו ש-Claude לא יצטרך ללמוד פעמיים.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Session Log (decisions &#x26; fixes)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 2026-06-20</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> DECISION: chose Prisma over raw SQL for the billing module</span></span>
+<span class="line"><span style="color:#E1E4E8">  (team familiarity). Do not suggest switching.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> FIX: Kevin corrected me - dates are stored in UTC,</span></span>
+<span class="line"><span style="color:#E1E4E8">  convert to local only in the UI layer.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 2026-06-22</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> DECISION: invoice PDFs generated server-side, not client.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> FIX: the staging URL is staging.acme.dev, not the prod one.</span></span></code></pre>
+<h3 id="הקובץ-הרביעי-workingmd">הקובץ הרביעי: working.md</h3>
+<p>מה קורה עכשיו. הקובץ הזה הוא היחיד שמתנקה ומתעדכן כל הזמן, מה שהסתיים נמחק.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Working Memory (current state)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## In progress</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Refactoring the invoice total calculation in</span></span>
+<span class="line"><span style="color:#E1E4E8">  src/api/handlers/invoice.ts.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Next steps</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8"> Add tax rounding (banker's rounding) - half done.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8"> Wire the new total into the PDF generator.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8"> Write a test for the 0% tax edge case.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Open question for Kevin</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Should credit notes use negative totals or a separate flag?</span></span></code></pre>
+<h2 id="שני-הפרומפטים-המדויקים">שני הפרומפטים המדויקים</h2>
+<p>הפרוטוקול כבר כתוב בתוך CLAUDE.md, אבל אלה הפרומפטים שאתם מקלידים ביד כדי להפעיל אותו. העתיקו אותם כמו שהם.</p>
+<h3 id="פרומפט-טעינה-בתחילת-כל-סשן">פרומפט טעינה: בתחילת כל סשן</h3>
+<p>בדרך כלל Claude טוען לבד דרך הייבוא ב-CLAUDE.md, אבל אם פתחתם צ’אט והוא לא התייחס לזיכרון, הדביקו את זה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Load my memory before we start.</span></span>
+<span class="line"><span>Read identity.md, then facts.md, then working.md.</span></span>
+<span class="line"><span>From sessions.md pull only what's relevant to this task:</span></span>
+<span class="line"><span>"""&#x3C;תיאור המשימה של היום בשורה אחת>"""</span></span>
+<span class="line"><span>Then tell me in 3 lines what you remember, and we begin.</span></span></code></pre>
+<h3 id="פרומפט-שמירה-בסוף-כל-סשן">פרומפט שמירה: בסוף כל סשן</h3>
+<p>זה הפרומפט הכי חשוב במערכת. בלי שמירה: אין זיכרון. הריצו אותו לפני שאתם סוגרים:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Save memory now.</span></span>
+<span class="line"><span>Review everything we did this session, then update the files:</span></span>
+<span class="line"><span>- Any new permanent fact   -> facts.md</span></span>
+<span class="line"><span>- Any decision I made or a mistake you fixed -> sessions.md</span></span>
+<span class="line"><span>  (add today's date as a heading)</span></span>
+<span class="line"><span>- Unfinished work and next steps -> working.md</span></span>
+<span class="line"><span>  (and delete what's already done)</span></span>
+<span class="line"><span>- Any new rule about how you should work -> identity.md</span></span>
+<span class="line"><span>Keep each file tight. Then list what you saved, one line each.</span></span></code></pre>
+<p>טיפ זהב: אפשר להפוך את פקודת השמירה לקבועה. הקלידו בצ’אט <code># always run the SAVE protocol when I say "save"</code> <strong>וזה ייכנס לזיכרון של Claude Code עצמו. סימן ה-# הוא קיצור מובנה שמוסיף שורה ל-CLAUDE.md.</strong></p>
+<h2 id="יום-עבודה-עם-המערכת-צעד-אחרי-צעד">יום עבודה עם המערכת: צעד אחרי צעד</h2>
+<p>ככה נראה יום שלם, מהפתיחה ועד הסגירה:</p>
+<ul>
+<li>
+<ol>
+<li>פותחים את הפרויקט ומריצים claude. הקובץ CLAUDE.md נטען לבד, ואיתו ארבעת קבצי הזיכרון.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Claude מסכם לכם בכמה שורות מה הוא זוכר: הלקוח, הסטאק, ומה הייתם באמצע. אתם מאשרים ומתחילים.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>עובדים כרגיל. במהלך העבודה, כשמתקבלת החלטה חשובה, אומרים לו “תרשום את זה ל-sessions”.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>לקראת הסוף, מריצים את פרומפט השמירה. Claude עובר על מה שקרה, ומחלק את המידע לקבצים הנכונים.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>סוגרים. מחר, או בעוד שבועיים, בצ’אט חדש לגמרי, הוא ימשיך בדיוק מאיפה שעצרתם.</li>
+</ol>
+</li>
+</ul>
+<p><strong>הכלל היחיד שאסור לשבור: תמיד להריץ שמירה לפני שסוגרים סשן משמעותי. סשן בלי שמירה הוא סשן שאבד.</strong></p>
+<h2 id="הקסם-סשן-1-לעומת-סשן-50">הקסם: סשן 1 לעומת סשן 50</h2>
+<p>זאת הדוגמה מהסרטון, עכשיו עם הקבצים האמיתיים מאחורי הקלעים.</p>
+<h3 id="סשן-1-יום-שני">סשן 1: יום שני</h3>
+<p>אתם אומרים ל-Claude אגב, באמצע שיחה על קוד:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"by the way, our client Acme stores all dates in UTC - never local time"</span></span></code></pre>
+<p>בסוף הסשן אתם מריצים שמירה. Claude כותב ל-<code>facts.md</code> שורה אחת:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>- All dates are stored in UTC, never local time. (Acme rule)</span></span></code></pre>
+<h3 id="סשן-50-חמישה-שבועות-אחר-כך">סשן 50: חמישה שבועות אחר כך</h3>
+<p>צ’אט חדש לגמרי. מחשב אחר, אולי. אתם שואלים:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"how should I store the new reminder timestamps?"</span></span></code></pre>
+<p>Claude עונה מיד, בלי שחזרתם אפילו על מילה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"In UTC, like all our dates - convert to local only in the UI. (per the Acme rule in facts.md)"</span></span></code></pre>
+<p>לא קסם. בתחילת הסשן Claude טען את <code>facts.md</code> <strong>דרך הייבוא ב-CLAUDE.md, וראה את השורה שכתב לפני 49 סשנים. זה כל הסוד: וזה עובד כל עוד אתם שומרים בסוף.</strong></p>
+<h2 id="בונוס-ה-auto-memory-המובנה">בונוס: ה-Auto Memory המובנה</h2>
+<p>מגרסה 2.1.59 ל-Claude Code יש זיכרון אוטומטי משלו. הוא כותב לעצמו הערות תוך כדי עבודה, פקודות build, תיקונים שלמד מהתיקונים שלכם, העדפות, ושומר אותן ב-<code>~/.claude/projects/.../memory/MEMORY.md</code>.</p>
+<ul>
+<li>הוא דולק כברירת מחדל. לכבות או להדליק: דרך הפקודה /memory.</li>
+<li>כדי לראות מה הוא שמר ומה נטען בסשן הנוכחי, הריצו /memory, היא מציגה את כל קבצי הזיכרון הפעילים.</li>
+<li>אפשר לבקש ממנו ישירות: “remember that we use pnpm, not npm”, והוא ישמור לעצמו.</li>
+</ul>
+<p><strong>אז למה בכל זאת לבנות מערכת ידנית? כי המערכת הידנית נותנת לכם שליטה: אתם מחליטים בדיוק מה נשמר, באיזה קובץ, ובאיזה מבנה. ה-Auto Memory הוא משלים מצוין, תנו לו לתפוס את הקטנות, ותשמרו את ההחלטות הגדולות בקבצים שלכם.</strong></p>
+<h2 id="טיפים-מהשטח">טיפים מהשטח</h2>
+<ul>
+<li>קובץ אחד, תפקיד אחד. אל תערבבו עובדות עם משימות פתוחות, זה מה שמבלבל את Claude בטעינה.</li>
+<li>working.md תמיד נקי. מה שהסתיים: נמחק. הקובץ הזה אמור לשקף רק את ההווה.</li>
+<li>תארכו כל רשומה ב-sessions.md. התאריך עוזר ל-Claude לדעת מה עדכני ומה ישן.</li>
+<li>שמרו את CLAUDE.md קצר (מתחת ל-200 שורות). הוא נטען בכל סשן, וקובץ עמוס פוגע בדבקות בהוראות.</li>
+<li>רשמו תיקונים, לא רק החלטות. כשתיקנתם את Claude: זה בדיוק מה שחייב להישמר כדי שלא יחזור על הטעות.</li>
+<li>הריצו /memory מדי פעם כדי לוודא שהקבצים באמת נטענים. אם קובץ לא מופיע ברשימה, Claude לא רואה אותו.</li>
+<li>אל תסמכו על הזיכרון של Claude לשמור לבד. פרומפט השמירה המפורש בסוף הוא מה שמבטיח שכלום לא הולך לאיבוד.</li>
+<li>סקרו את הקבצים פעם בשבוע. מחקו שורות מיותרות וסותרות: הוראות סותרות גורמות ל-Claude לבחור באקראי.</li>
+</ul>
+<h2 id="מגבלות-שכדאי-להכיר">מגבלות שכדאי להכיר</h2>
+<ul>
+<li>זיכרון הוא הקשר, לא חוק ברזל. Claude קורא את הקבצים ומשתדל לציית, אבל אין ערובה לציות מוחלט. להוראה קריטית שחייבת לרוץ תמיד, השתמשו ב-hook.</li>
+<li>ייבוא @ מוגבל ל-4 רמות עומק. אל תבנו שרשרת ייבוא עמוקה מדי.</li>
+<li>קבצים שמיובאים נטענים במלואם בכל סשן וצורכים טוקנים. שמרו אותם רזים.</li>
+<li>ה-Auto Memory הוא מקומי למחשב ולא מסונכרן בין מכונות. המערכת הידנית, אם תעלו אותה ל-git, כן עוברת בין מכונות וחברי צוות.</li>
+</ul>
+<h2 id="לינקים">לינקים</h2>
+<ul>
+<li>התיעוד הרשמי של זיכרון Claude Code: <a href="https://code.claude.com/docs/en/memory">code.claude.com/docs/en/memory</a></li>
+<li>הורדה והתקנה של Claude Code: <a href="https://www.claude.com/product/claude-code">claude.com/claude-code</a></li>
+</ul></div> <div class="author" data-astro-cid-dwrmp7mt> <img src="/_astro/kevin-portrait.Bp8WjBPp_Z1fXe8s.webp" alt data-astro-cid-dwrmp7mt="true" loading="lazy" decoding="async" fetchpriority="auto" width="72" height="72" class="author-img"> <div data-astro-cid-dwrmp7mt> <p class="author-name" data-astro-cid-dwrmp7mt>נכתב על ידי <a href="/about" rel="author" data-astro-cid-dwrmp7mt>קווין ליאקס</a></p> <p class="small muted" data-astro-cid-dwrmp7mt>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <p class="small muted" data-astro-cid-dwrmp7mt>עודכן לאחרונה: <time datetime="2026-06-29T00:00:00.000Z" data-astro-cid-dwrmp7mt>29 ביוני 2026</time></p> </div> </div>  </article> <section class="section" aria-labelledby="related-h" data-astro-cid-2u677oxp> <div class="container" data-astro-cid-2u677oxp> <h2 id="related-h" data-astro-cid-2u677oxp>עוד מדריכים על Claude ו-Claude Code</h2> <div class="grid grid-3" data-astro-cid-2u677oxp> <article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-science" data-astro-cid-2u677oxp>Claude Science: המדריך המלא, איך להתחיל עם ה-AI שמריץ מחקר מדעי</a></h3> <p class="muted small" data-astro-cid-2u677oxp>אנתרופיק השיקה כלי חדש בשם Claude Science, סביבת עבודה אחת שמאחדת את כל הכלים, מאגרי המידע וכוח המחשוב שחוקרים צריכים, למקום אחד. במקום לקפוץ בין עשרים חלונות…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/artifacts" data-astro-cid-2u677oxp>Claude Code Artifacts: המדריך המלא, להפוך פלט טרמינל לדף חי בדפדפן</a></h3> <p class="muted small" data-astro-cid-2u677oxp>Anthropic שחררו פיצ&#39;ר חדש ל-Claude Code בשם Artifacts, ורוב האנשים עדיין לא מכירים אותו. במקום להסתכל על שורות טקסט ופלט בטרמינל שחור, אתם מבקשים מ-Claude…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-fork" data-astro-cid-2u677oxp>Claude Code Fork: לשכפל את השיחה לרקע, בלי לחכות לסוכן ובלי לאבד הקשר</a></h3> <p class="muted small" data-astro-cid-2u677oxp>אתם מכירים את הרגע הזה: נתתם לקלוד קוד משימה, הוא רץ, ואתם תקועים. רוצים לשאול אותו עוד משהו בצד? אי אפשר, הוא באמצע. פותחים חלון חדש ומאבדים את כל ההקשר וצריך…</p> </article> </div> <p class="all-link" data-astro-cid-2u677oxp><a class="text-link" href="/guides" data-astro-cid-2u677oxp>לכל המדריכים</a></p> </div> </section><section class="section section--alt" aria-labelledby="guide-cta-h" data-astro-cid-2u677oxp> <div class="container cta-grid" data-astro-cid-2u677oxp> <div data-astro-cid-2u677oxp> <h2 id="guide-cta-h" data-astro-cid-2u677oxp>רוצים שהצוות שלכם יעבוד ככה?</h2> <p class="lead" data-astro-cid-2u677oxp>אני עובד עם צוותי פיתוח על Claude Code, סוכני קוד, MCP ותשתיות AI, מהתכנון ועד הייצור.</p> <div class="btn-row" data-astro-cid-2u677oxp> <a class="btn" href="/ai-engineering" data-astro-cid-2u677oxp>AI Engineering לצוותי פיתוח</a> <a class="text-link" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%22Claude%20Memory%20System%3A%20%D7%90%D7%99%D7%9A%20%D7%9C%D7%92%D7%A8%D7%95%D7%9D%20%D7%9C-Claude%20%D7%9C%D7%96%D7%9B%D7%95%D7%A8%20%D7%94%D7%9B%D7%9C%20%D7%9C%D7%90%D7%95%D7%A8%D7%9A%20%D7%A2%D7%A9%D7%A8%D7%95%D7%AA%20%D7%A1%D7%A9%D7%A0%D7%99%D7%9D%22%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" rel="noopener" target="_blank" data-astro-cid-2u677oxp>שאלה על המדריך? כתבו לי בוואטסאפ<span class="sr-only" data-astro-cid-2u677oxp> (נפתח בחלון חדש)</span></a> </div> </div> <div class="community" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p> <p class="c-text" data-astro-cid-fxan7676>הקהילה הגדולה בישראל לבנייה עם AI: שאלות, דמואים, מדריכים ומפגשים. בלי ספאם, רק אנשים שבונים.</p> <a class="btn" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a> <p class="small muted c-note" data-astro-cid-fxan7676>המספר מתעדכן ידנית. נכון ל-<span class="ltr" data-astro-cid-fxan7676>10/2026</span>.</p> </div>  <script type="module" src="/_astro/CommunityCounter.astro_astro_type_script_index_0_lang.C7a3xHHQ.js"></script> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="cols" data-astro-cid-sz7xmlte> <div class="col about" data-astro-cid-sz7xmlte> <p class="f-brand" lang="en" dir="ltr" data-astro-cid-sz7xmlte>Kevin Liaks<span data-astro-cid-sz7xmlte>.</span></p> <p class="f-motto" data-astro-cid-sz7xmlte>אדם, תהליך, טכנולוגיה.</p> <p class="muted" data-astro-cid-sz7xmlte>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <div class="community compact" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p>  <a class="btn btn--ghost" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a>  </div>   </div> <nav class="col" aria-label="עמודים" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>עמודים</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops" data-astro-cid-sz7xmlte>סדנאות</a></li><li data-astro-cid-sz7xmlte><a href="/ai-implementation" data-astro-cid-sz7xmlte>הטמעת AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-agents" data-astro-cid-sz7xmlte>סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-engineering" data-astro-cid-sz7xmlte>AI Engineering</a></li><li data-astro-cid-sz7xmlte><a href="/guides" data-astro-cid-sz7xmlte>מדריכים ומאמרים</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>אודות</a></li> <li data-astro-cid-sz7xmlte><a href="/blog" data-astro-cid-sz7xmlte>בלוג</a></li> <li data-astro-cid-sz7xmlte><a href="/faq" data-astro-cid-sz7xmlte>שאלות נפוצות</a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>צור קשר</a></li> </ul> </nav> <nav class="col" aria-label="סדנאות" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>סדנאות</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-employees" data-astro-cid-sz7xmlte>סדנת AI לעובדים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-managers" data-astro-cid-sz7xmlte>סדנת AI למנהלים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-lecture" data-astro-cid-sz7xmlte>הרצאת AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/copilot" data-astro-cid-sz7xmlte>סדנת Copilot</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/claude-code" data-astro-cid-sz7xmlte>סדנת Claude Code</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-agents" data-astro-cid-sz7xmlte>סדנת בניית סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/vibe-coding" data-astro-cid-sz7xmlte>סדנת Vibe Coding</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-teachers" data-astro-cid-sz7xmlte>AI לצוותי הוראה</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-course" data-astro-cid-sz7xmlte>קורס AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-customer-service" data-astro-cid-sz7xmlte>סדנת AI לשירות לקוחות</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-hr" data-astro-cid-sz7xmlte>סדנת AI למשאבי אנוש</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-finance" data-astro-cid-sz7xmlte>סדנת AI לכספים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-sales" data-astro-cid-sz7xmlte>סדנת AI למכירות</a></li> </ul> </nav> <div class="col" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>יצירת קשר</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="mailto:kevin.liaks@gmail.com" data-astro-cid-sz7xmlte>kevin.liaks@gmail.com</a></li> <li data-astro-cid-sz7xmlte><a href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>וואטסאפ<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>השאירו פרטים</a></li> </ul> <h2 class="f-h" data-astro-cid-sz7xmlte>עקבו</h2> <ul class="social" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://www.youtube.com/@kevinliaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>יוטיוב<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.instagram.com/kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>אינסטגרם<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>קבוצת הפייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/kevin.liaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>פייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.linkedin.com/in/kevin-liaks-30b2a698" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>לינקדאין<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.tiktok.com/@kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>טיקטוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> </ul> </div> </div> <div class="legal" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>© <span class="ltr" data-astro-cid-sz7xmlte>2026</span> קווין ליאקס. עודכן לאחרונה: 30 באוקטובר 2026.</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/accessibility" data-astro-cid-sz7xmlte>הצהרת נגישות</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>מדיניות פרטיות</a></li> </ul> </div> </div> </footer>  <aside class="quick" aria-label="יצירת קשר מהירה" data-astro-cid-fbt5meba> <a class="float-contact" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" aria-label="שליחת הודעה בוואטסאפ (נפתח בחלון חדש)" data-astro-cid-fbt5meba> <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" data-astro-cid-fbt5meba><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z" data-astro-cid-fbt5meba></path></svg> <span class="label" data-astro-cid-fbt5meba>וואטסאפ</span> </a> </aside>  <script type="module">const l=[[/^\/workshops\/[^/]+$/,"ראיתי באתר את העמוד על"],[/^\/workshops$/,"ראיתי באתר את הסדנאות."],[/^\/ai-agents/,"מעניין אותי סוכן AI לארגון."],[/^\/ai-implementation/,"מעניין אותי להטמיע AI בארגון."],[/^\/ai-engineering/,"מעניין אותי AI Engineering לצוות הפיתוח."],[/^\/guides\/[^/]+$/,"קראתי באתר את המדריך"],[/^\/blog\/[^/]+$/,"קראתי באתר את המאמר"]];function m(o){const e=location.pathname.replace(/\.html$/,"").replace(/\/$/,"")||"/",n=document.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()??"",t=["היי קווין, הגעתי מהאתר."],r=l.find(([a])=>a.test(e));r&&t.push(r[1].endsWith(".")?r[1]:`${r[1]} "${n}".`);const i=o.closest("form.lead-form")??document.querySelector("form.lead-form"),s=i?.querySelector("select[name=topic]"),c=i?.querySelector("textarea[name=message]")?.value.trim();if(s&&s.value&&s.value!=="other"&&(c||o.closest("form"))&&t.push(`מה מעניין אותי: ${s.options[s.selectedIndex].text}.`),c)t.push(c.slice(0,400));else try{const a=JSON.parse(sessionStorage.getItem("kl-marks")||"[]");a.length&&t.push("מה שקורה אצלנו: "+a.join(" "))}catch{}return t.push("אשמח לשמוע פרטים."),t.join(`
+`)}document.addEventListener("click",o=>{const e=o.target?.closest?.('a[href^="https://wa.me/"]');if(!e)return;const n=new URL(e.href);n.searchParams.set("text",m(e)),e.href=n.toString()},!0);</script> <div class="a11y" data-astro-cid-l6h6emqy> <button class="a11y-btn" type="button" aria-expanded="false" aria-controls="a11y-panel" data-astro-cid-l6h6emqy> <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" data-astro-cid-l6h6emqy><circle cx="12" cy="4" r="2" fill="currentColor" data-astro-cid-l6h6emqy></circle><path fill="currentColor" d="M20 8.5 14 9.6V13l2 7.5a1 1 0 0 1-1.9.5L12 15l-2.1 6a1 1 0 0 1-1.9-.5l2-7.5V9.6L4 8.5a1 1 0 1 1 .3-2l6.2 1.1h3l6.2-1.1a1 1 0 1 1 .3 2Z" data-astro-cid-l6h6emqy></path></svg> <span class="sr-only" data-astro-cid-l6h6emqy>תפריט נגישות</span> </button> <div id="a11y-panel" class="a11y-panel" role="region" aria-label="הגדרות נגישות" hidden data-astro-cid-l6h6emqy> <p class="a11y-title" data-astro-cid-l6h6emqy>נגישות</p> <div class="a11y-row" role="group" aria-label="גודל טקסט" data-astro-cid-l6h6emqy> <span data-astro-cid-l6h6emqy>גודל טקסט</span> <span class="a11y-sizes" data-astro-cid-l6h6emqy> <button type="button" data-scale="-1" aria-label="א- הקטנת טקסט" data-astro-cid-l6h6emqy>א-</button> <button type="button" data-scale="0" aria-label="רגיל: איפוס גודל טקסט" data-astro-cid-l6h6emqy>רגיל</button> <button type="button" data-scale="1" aria-label="א+ הגדלת טקסט" data-astro-cid-l6h6emqy>א+</button> </span> </div> <button type="button" class="a11y-toggle" data-key="contrast" aria-pressed="false" data-astro-cid-l6h6emqy>ניגודיות גבוהה</button> <button type="button" class="a11y-toggle" data-key="links" aria-pressed="false" data-astro-cid-l6h6emqy>הדגשת קישורים</button> <button type="button" class="a11y-toggle" data-key="noMotion" aria-pressed="false" data-astro-cid-l6h6emqy>עצירת אנימציות</button> <button type="button" class="a11y-reset" data-astro-cid-l6h6emqy>איפוס הכול</button> <a href="/accessibility" data-astro-cid-l6h6emqy>הצהרת נגישות</a> </div> </div>  <script type="module">const r=document.documentElement,s=document.querySelector(".a11y-btn"),a=document.getElementById("a11y-panel"),i=()=>{try{return JSON.parse(localStorage.getItem("a11y")||"{}")}catch{return{}}},y=e=>{try{localStorage.setItem("a11y",JSON.stringify(e))}catch{}};let t=i();const l={contrast:"a11y-contrast",links:"a11y-links",noMotion:"a11y-no-motion"},c=()=>{r.style.setProperty("--a11y-scale",String(t.scale||1));for(const e of Object.keys(l))r.classList.toggle(l[e],!!t[e]);a.querySelectorAll(".a11y-toggle").forEach(e=>e.setAttribute("aria-pressed",String(!!t[e.dataset.key]))),y(t),document.dispatchEvent(new CustomEvent("a11y-change"))},o=e=>{s.setAttribute("aria-expanded",String(e)),a.hidden=!e};s.addEventListener("click",()=>o(a.hidden));document.addEventListener("keydown",e=>{e.key==="Escape"&&!a.hidden&&(o(!1),s.focus())});document.addEventListener("click",e=>{!a.hidden&&!e.target.closest(".a11y")&&o(!1)});a.querySelectorAll("[data-scale]").forEach(e=>e.addEventListener("click",()=>{const n=Number(e.dataset.scale),d=t.scale||1;t.scale=n===0?1:Math.min(1.5,Math.max(.9,Math.round((d+n*.1)*10)/10)),c()}));a.querySelectorAll(".a11y-toggle").forEach(e=>e.addEventListener("click",()=>{const n=e.dataset.key;t[n]=!t[n],c()}));a.querySelector(".a11y-reset").addEventListener("click",()=>{t={},c()});c();</script> <script type="module">const t=document.querySelector(".consent");if(t){const a=t.dataset.gtm,n=()=>{const e=document.createElement("script");e.async=!0,e.src=`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(a)}`,document.head.appendChild(e)};let c=null;try{c=localStorage.getItem("consent")}catch{}c==="yes"?n():c||(t.hidden=!1),t.querySelectorAll("[data-consent]").forEach(e=>e.addEventListener("click",()=>{const o=e.dataset.consent;try{localStorage.setItem("consent",o),localStorage.setItem("consent-date",new Date().toISOString())}catch{}t.hidden=!0,o==="yes"&&n()}))}</script> </body></html> 

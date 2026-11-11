@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="he" dir="rtl" data-look="control"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Prompt Caching in Claude Code: איך לשמור את הקאש חי | קווין ליאקס</title><meta name="description" content="המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל…"><link rel="canonical" href="https://kevli770.github.io/guides/claude-cache"><meta name="robots" content="noindex, nofollow"><meta name="author" content="קווין ליאקס"><meta name="theme-color" content="#f6f6f4"><link rel="preload" as="font" type="font/woff2" href="/_astro/rubik-hebrew-wght-normal.BIkpbuMU.woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:site_name" content="קווין ליאקס"><meta property="og:locale" content="he_IL"><meta property="og:title" content="Prompt Caching in Claude Code: איך לשמור את הקאש חי | קווין ליאקס"><meta property="og:description" content="המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל…"><meta property="og:url" content="https://kevli770.github.io/guides/claude-cache"><meta property="og:image" content="https://kevli770.github.io/_astro/hero.CiwcxLHh_xpunj.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Prompt Caching in Claude Code: איך לשמור את הקאש חי | קווין ליאקס"><meta name="twitter:description" content="המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל…"><meta name="twitter:image" content="https://kevli770.github.io/_astro/hero.CiwcxLHh_xpunj.jpg"><meta property="article:published_time" content="2026-08-15T00:00:00.000Z"><meta property="article:modified_time" content="2026-08-15T00:00:00.000Z"><meta property="article:section" content="Claude ו-Claude Code"><meta property="article:tag" content="Prompt Caching in Claude Code"><meta property="article:tag" content="מדריך Prompt Caching in Claude Code"><meta property="article:tag" content="מה זה הקאש ולמה אכפת לכם"><meta property="article:tag" content="איך בודקים שזה בכלל עובד"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kevli770.github.io/#website","url":"https://kevli770.github.io/","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","inLanguage":"he-IL","publisher":{"@id":"https://kevli770.github.io/#business"}},{"@type":"ProfessionalService","@id":"https://kevli770.github.io/#business","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","alternateName":"Kevin Liaks","url":"https://kevli770.github.io/","email":"kevin.liaks@gmail.com","telephone":"+972545334770","image":"https://kevli770.github.io/og/default.png","logo":{"@type":"ImageObject","url":"https://kevli770.github.io/logo.png","width":512,"height":512},"description":"סדנאות AI פרקטיות לארגונים, הטמעת AI וסוכני AI בעסקים, ו-AI Engineering לצוותי פיתוח. קווין ליאקס, מוביל AI ודאטה בקבוצה עסקית גדולה.","areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","en"],"founder":{"@id":"https://kevli770.github.io/about#kevin"},"knowsAbout":["סדנאות AI","הדרכות AI לארגונים","הטמעת AI בארגונים","ארכיטקטורת AI","סוכני AI","AI Engineering","Claude Code","Microsoft Copilot","אוטומציות"],"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"Person","@id":"https://kevli770.github.io/about#kevin","name":"קווין ליאקס","alternateName":"Kevin Liaks","jobTitle":"AI Solutions Architect","url":"https://kevli770.github.io/about","image":"https://kevli770.github.io/og/kevin.jpg","email":"kevin.liaks@gmail.com","knowsAbout":["Artificial intelligence","AI agents","AI adoption in organizations","AI engineering","AI architecture","Business intelligence","Claude Code","Automation"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Shenkar College of Engineering and Design"},"worksFor":{"@id":"https://kevli770.github.io/#business"},"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://kevli770.github.io/"},{"@type":"ListItem","position":2,"name":"מדריכים","item":"https://kevli770.github.io/guides"},{"@type":"ListItem","position":3,"name":"Prompt Caching in Claude Code: איך לשמור את הקאש חי לאורך כל הסשן ולהפסיק לשלם פי 10","item":"https://kevli770.github.io/guides/claude-cache"}]},{"@type":"TechArticle","@id":"https://kevli770.github.io/guides/claude-cache#article","headline":"Prompt Caching in Claude Code: איך לשמור את הקאש חי לאורך כל הסשן ולהפסיק לשלם פי 10","alternativeHeadline":"Prompt Caching in Claude Code","description":"המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל…","abstract":"מה שמציל אתכם מלשלם על זה מחיר מלא בכל פעם זה ה-Prompt Caching. ה-API שומר את מה שהוא כבר עיבד, ובבקשה הבאה הוא מזהה שהתחילת הבקשה זהה, קורא אותה מהקאש בערך בעשירית מהמחיר, ומעבד במחיר מלא רק את מה שהשתנה.","datePublished":"2026-08-15T00:00:00.000Z","dateModified":"2026-08-15T00:00:00.000Z","inLanguage":"he-IL","author":{"@id":"https://kevli770.github.io/about#kevin"},"publisher":{"@id":"https://kevli770.github.io/#business"},"mainEntityOfPage":"https://kevli770.github.io/guides/claude-cache","isPartOf":{"@id":"https://kevli770.github.io/guides#collection"},"image":"https://kevli770.github.io/_astro/hero.CiwcxLHh_xpunj.jpg","keywords":"Prompt Caching in Claude Code, מדריך Prompt Caching in Claude Code, מה זה הקאש ולמה אכפת לכם, איך בודקים שזה בכלל עובד","articleSection":"Claude ו-Claude Code","wordCount":1552}]}</script><script>
+      // העדפות נגישות נשמרות בדפדפן ומוחלות לפני הציור, כדי שלא יהיה הבהוב.
+      try {
+        var p = JSON.parse(localStorage.getItem('a11y') || '{}');
+        var r = document.documentElement;
+        if (p.scale) r.style.setProperty('--a11y-scale', p.scale);
+        if (p.contrast) r.classList.add('a11y-contrast');
+        if (p.links) r.classList.add('a11y-links');
+        if (p.noMotion) r.classList.add('a11y-no-motion');
+      } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/about.DqAyRUrx.css">
+<style>.faq-layout[data-astro-cid-z6gx6xcw]{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:5rem;align-items:start}@media(max-width:880px){.faq-layout[data-astro-cid-z6gx6xcw]{grid-template-columns:minmax(0,1fr);gap:1.6rem}}.faq[data-astro-cid-z6gx6xcw]{border-top:1px solid #d4d9cf}details[data-astro-cid-z6gx6xcw]{border-bottom:1px solid #d4d9cf}summary[data-astro-cid-z6gx6xcw]{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center}summary[data-astro-cid-z6gx6xcw]::-webkit-details-marker{display:none}summary[data-astro-cid-z6gx6xcw] h3[data-astro-cid-z6gx6xcw]{font-size:1.08rem;margin:0;font-weight:800;letter-spacing:-.01em;line-height:1.6}summary[data-astro-cid-z6gx6xcw]:after{content:"+";font:1.7rem/1 var(--latin);color:var(--accent-ink);flex:none}details[data-astro-cid-z6gx6xcw][open] summary[data-astro-cid-z6gx6xcw]:after{content:"−"}.faq-a[data-astro-cid-z6gx6xcw]{padding:0 0 1.2rem;color:var(--soft)}.faq-a[data-astro-cid-z6gx6xcw] p[data-astro-cid-z6gx6xcw]{margin:0;max-width:64ch}
+.author[data-astro-cid-dwrmp7mt]{display:flex;gap:1rem;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1.25rem;margin-block:2rem;max-width:72ch}.author-img[data-astro-cid-dwrmp7mt]{border-radius:50%;flex:none;object-fit:cover}.author[data-astro-cid-dwrmp7mt] p[data-astro-cid-dwrmp7mt]{margin:0}.author-name[data-astro-cid-dwrmp7mt]{font-weight:600}
+.post[data-astro-cid-2u677oxp]{padding-block:2rem 1rem}.post-head[data-astro-cid-2u677oxp]{max-width:72ch}.post-head[data-astro-cid-2u677oxp] h1[data-astro-cid-2u677oxp]{font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem)}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:inherit;text-decoration:none}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{text-decoration:underline}.tldr[data-astro-cid-2u677oxp]{background:var(--cream);border-inline-start:3px solid var(--accent);border-radius:0;padding:1.1rem 1.3rem;margin-top:1rem}.tldr-h[data-astro-cid-2u677oxp]{font-weight:800;color:var(--accent-ink);margin-bottom:.3rem}.tldr[data-astro-cid-2u677oxp] p[data-astro-cid-2u677oxp]:last-child{margin:0;font-size:1.08rem}.reel[data-astro-cid-2u677oxp]{margin:1.4rem 0 0;max-width:320px}.reel[data-astro-cid-2u677oxp] video[data-astro-cid-2u677oxp]{display:block;width:100%;aspect-ratio:9 / 16;object-fit:cover;border-radius:var(--radius);background:var(--ink)}.reel[data-astro-cid-2u677oxp] figcaption[data-astro-cid-2u677oxp]{margin-top:.5rem}.hero-img[data-astro-cid-2u677oxp]{display:block;width:100%;max-width:760px;height:auto;margin-block:1.6rem .5rem;border:1px solid var(--line);border-radius:var(--radius-sm)}.toc[data-astro-cid-2u677oxp]{max-width:72ch;margin-block:1.5rem;border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.3rem;background:var(--surface)}.toc-h[data-astro-cid-2u677oxp]{font-weight:700;margin-bottom:.4rem}.toc[data-astro-cid-2u677oxp] ol[data-astro-cid-2u677oxp]{margin:0}.guide-body[data-astro-cid-2u677oxp]>:nth-child(n+6){content-visibility:auto;contain-intrinsic-size:auto 140px}.guide-body[data-astro-cid-2u677oxp] th,.guide-body[data-astro-cid-2u677oxp] td{min-width:120px}.guide-body[data-astro-cid-2u677oxp] pre{direction:ltr;text-align:left;padding:1rem 1.2rem;margin-block:1.2rem;border-radius:var(--radius-sm);font-size:.88rem;line-height:1.65;overflow-x:auto;white-space:pre}.guide-body[data-astro-cid-2u677oxp] pre code{background:none;padding:0;border-radius:0;font-size:inherit}.guide-body[data-astro-cid-2u677oxp] :not(pre)>code{direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] img{display:block;border:1px solid var(--line);border-radius:var(--radius-sm);margin-block:1.2rem .4rem}.guide-body[data-astro-cid-2u677oxp] p:has(>img)+p>em:only-child{display:block;font-size:var(--fs-sm);color:var(--mute)}.guide-body[data-astro-cid-2u677oxp] blockquote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--cream);border-inline-start:3px solid var(--accent)}.guide-body[data-astro-cid-2u677oxp] blockquote p:last-child{margin-bottom:0}.guide-body[data-astro-cid-2u677oxp] a{overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] li+li{margin-top:.35rem}.rel-title[data-astro-cid-2u677oxp]{font-size:1.1rem;line-height:1.5}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:var(--ink);text-decoration:none}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{color:var(--accent);text-decoration:underline}.all-link[data-astro-cid-2u677oxp]{margin-top:1.4rem}.cta-grid[data-astro-cid-2u677oxp]{display:grid;gap:2rem 4rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}.cta-grid[data-astro-cid-2u677oxp]>[data-astro-cid-2u677oxp]{min-width:0}
+</style></head> <body> <a class="skip-link" href="#main">דלג לתוכן הראשי</a> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container bar" data-astro-cid-3ef6ksr2> <a class="logo" href="/" data-astro-cid-3ef6ksr2> <span class="logo-word" lang="en" dir="ltr" data-astro-cid-3ef6ksr2>Kevin Liaks<span class="logo-dot" data-astro-cid-3ef6ksr2>.</span></span> <small data-astro-cid-3ef6ksr2>AI בארגונים. בפועל.</small> <span class="sr-only" data-astro-cid-3ef6ksr2>קווין ליאקס, לדף הבית</span> </a> <a class="hdr-cta" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a> <nav class="nav" aria-label="ניווט ראשי" data-astro-cid-3ef6ksr2> <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" data-astro-cid-3ef6ksr2> <span class="bars" aria-hidden="true" data-astro-cid-3ef6ksr2><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i></span> <span class="sr-only" data-astro-cid-3ef6ksr2>תפריט</span> </button> <ul id="nav-list" class="nav-list" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/workshops" data-astro-cid-3ef6ksr2>סדנאות</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-implementation" data-astro-cid-3ef6ksr2>הטמעת AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-agents" data-astro-cid-3ef6ksr2>סוכני AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-engineering" data-astro-cid-3ef6ksr2>AI Engineering</a></li><li data-astro-cid-3ef6ksr2><a href="/guides" aria-current="page" data-astro-cid-3ef6ksr2>מדריכים ומאמרים</a></li><li data-astro-cid-3ef6ksr2><a href="/about" data-astro-cid-3ef6ksr2>אודות</a></li> <li class="nav-cta" data-astro-cid-3ef6ksr2><a class="btn btn--dark" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a></li> </ul> </nav> </div> </header>  <script type="module">const e=document.querySelector(".nav-toggle"),s=document.getElementById("nav-list");if(e&&s){const a=e.querySelector(".sr-only"),n=t=>{e.setAttribute("aria-expanded",String(t)),s.classList.toggle("open",t),a.textContent=t?"סגירת התפריט":"תפריט"};e.addEventListener("click",()=>n(e.getAttribute("aria-expanded")!=="true")),document.addEventListener("keydown",t=>{t.key==="Escape"&&e.getAttribute("aria-expanded")==="true"&&(n(!1),e.focus())}),window.addEventListener("resize",()=>{e.offsetParent||n(!1)})}</script> <div class="crumbs-band" data-astro-cid-ilhxcym7><nav class="crumbs container" aria-label="פירורי לחם" data-astro-cid-ilhxcym7> <ol data-astro-cid-ilhxcym7> <li data-astro-cid-ilhxcym7> <a href="/" data-astro-cid-ilhxcym7>דף הבית</a> </li><li data-astro-cid-ilhxcym7> <a href="/guides" data-astro-cid-ilhxcym7>מדריכים</a> </li><li data-astro-cid-ilhxcym7> <span aria-current="page" data-astro-cid-ilhxcym7>Prompt Caching in Claude Code: איך לשמור את הקאש חי לאורך כל הסשן ולהפסיק לשלם פי 10</span> </li> </ol> </nav></div>  <main id="main" tabindex="-1">     <article class="container post guide-post" data-astro-cid-2u677oxp> <header class="post-head" data-astro-cid-2u677oxp> <ul class="tags" data-astro-cid-2u677oxp> <li class="tag" data-astro-cid-2u677oxp><a href="/guides?topic=Claude%20%D7%95-Claude%20Code#all-h" data-astro-cid-2u677oxp>Claude ו-Claude Code</a></li> <li class="tag" data-astro-cid-2u677oxp>8 דקות קריאה</li> <li class="tag" data-astro-cid-2u677oxp>עודכן <time datetime="2026-08-15T00:00:00.000Z" data-astro-cid-2u677oxp>15 באוגוסט 2026</time></li> </ul> <h1 data-astro-cid-2u677oxp>Prompt Caching in Claude Code: איך לשמור את הקאש חי לאורך כל הסשן ולהפסיק לשלם פי 10</h1> <div class="tldr" data-astro-cid-2u677oxp> <p class="tldr-h" data-astro-cid-2u677oxp>בשורה התחתונה</p> <p data-astro-cid-2u677oxp>מה שמציל אתכם מלשלם על זה מחיר מלא בכל פעם זה ה-Prompt Caching. ה-API שומר את מה שהוא כבר עיבד, ובבקשה הבאה הוא מזהה שהתחילת הבקשה זהה, קורא אותה מהקאש בערך בעשירית מהמחיר, ומעבד במחיר מלא רק את מה שהשתנה.</p> </div>  </header> <img src="/_astro/hero.CiwcxLHh_DlQrm.webp" srcset="/_astro/hero.CiwcxLHh_t6eMk.webp 480w, /_astro/hero.CiwcxLHh_ZabJFL.webp 800w, /_astro/hero.CiwcxLHh_DlQrm.webp 1200w" alt="איור פתיחה למדריך: Prompt Caching in Claude Code" sizes="(min-width: 860px) 760px, 100vw" loading="eager" fetchpriority="high" data-astro-cid-2u677oxp="true" decoding="async" width="1200" height="670" class="hero-img"> <nav class="toc" aria-label="תוכן המדריך" data-astro-cid-2u677oxp> <p class="toc-h" data-astro-cid-2u677oxp>במדריך</p> <ol data-astro-cid-2u677oxp><li data-astro-cid-2u677oxp><a href="#מה-זה-הקאש-ולמה-אכפת-לכם" data-astro-cid-2u677oxp>מה זה הקאש ולמה אכפת לכם</a></li><li data-astro-cid-2u677oxp><a href="#איך-הקאש-בנוי-שכבות" data-astro-cid-2u677oxp>איך הקאש בנוי: שכבות</a></li><li data-astro-cid-2u677oxp><a href="#שני-דברים-שנמצאים-במפתח-הקאש-ולא-רואים-אותם" data-astro-cid-2u677oxp>שני דברים שנמצאים במפתח הקאש ולא רואים אותם</a></li><li data-astro-cid-2u677oxp><a href="#מה-שובר-את-הקאש" data-astro-cid-2u677oxp>מה שובר את הקאש</a></li><li data-astro-cid-2u677oxp><a href="#מה-לא-שובר-את-הקאש" data-astro-cid-2u677oxp>מה לא שובר את הקאש</a></li><li data-astro-cid-2u677oxp><a href="#כמה-זמן-הקאש-חי" data-astro-cid-2u677oxp>כמה זמן הקאש חי</a></li><li data-astro-cid-2u677oxp><a href="#שלושת-ההרגלים-שמייקרים-לכם-את-השיחה" data-astro-cid-2u677oxp>שלושת ההרגלים שמייקרים לכם את השיחה</a></li><li data-astro-cid-2u677oxp><a href="#clear-מול-compact-מול-rewind" data-astro-cid-2u677oxp>clear מול compact מול rewind</a></li><li data-astro-cid-2u677oxp><a href="#איך-בודקים-שזה-בכלל-עובד" data-astro-cid-2u677oxp>איך בודקים שזה בכלל עובד</a></li><li data-astro-cid-2u677oxp><a href="#דברים-שכדאי-לדעת" data-astro-cid-2u677oxp>דברים שכדאי לדעת</a></li><li data-astro-cid-2u677oxp><a href="#צקליסט-איך-לשמור-את-הקאש-חי" data-astro-cid-2u677oxp>צ’קליסט: איך לשמור את הקאש חי</a></li><li data-astro-cid-2u677oxp><a href="#לינקים" data-astro-cid-2u677oxp>לינקים</a></li></ol> </nav> <div class="prose post-body guide-body" data-astro-cid-2u677oxp><h2 id="מה-זה-הקאש-ולמה-אכפת-לכם">מה זה הקאש ולמה אכפת לכם</h2>
+<p>המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל ההקשר: את הפרומפט המערכתי, את CLAUDE.md, כל הודעה קודמת, כל תוצאת כלי, ורק אז את ההודעה החדשה שלכם.</p>
+<p><strong>כלומר: הודעה מספר 40 בשיחה קוראת מחדש את 39 ההודעות שלפניה.</strong></p>
+<p>מה שמציל אתכם מלשלם על זה מחיר מלא בכל פעם זה ה-Prompt Caching. ה-API שומר את מה שהוא כבר עיבד, ובבקשה הבאה הוא מזהה שהתחילת הבקשה זהה, קורא אותה מהקאש בערך בעשירית מהמחיר, ומעבד במחיר מלא רק את מה שהשתנה.</p>
+<p>המשל הכי מדויק הוא שולחן שמורכב במסעדה: כל עוד אתם יושבים, אתם משלמים עשירית. ברגע שקמתם, עורכים לכם את כל השולחן מחדש, במחיר מלא.</p>
+<h2 id="איך-הקאש-בנוי-שכבות">איך הקאש בנוי: שכבות</h2>
+<p>ההתאמה של הקאש היא לפי <strong>תחילית מדויקת</strong> (prefix). המערכת משווה את תחילת הבקשה מול מה שהיא עיבדה לאחרונה, וההשוואה היא בייט-לבייט. שינוי אחד באמצע התחילית מבטל את כל מה שבא אחריו. אין קאש נפרד לכל קובץ ואין קאש לכל קטע.</p>
+<p>לכן Claude Code מסדר כל בקשה כך שמה שהכי פחות משתנה יופיע ראשון:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>שכבה</th><th>מה יש בה</th><th>מתי היא משתנה</th></tr></thead><tbody><tr><td><strong>פרומפט מערכתי</strong></td><td>הוראות ליבה, הגדרות כלים, סגנון פלט</td><td>כשמשתנות הגדרות הכלים, או כשמשדרגים את Claude Code</td></tr><tr><td><strong>הקשר הפרויקט</strong></td><td>CLAUDE.md, זיכרון אוטומטי, חוקים</td><td>בתחילת סשן, או אחרי clear/ ו-compact/</td></tr><tr><td><strong>השיחה</strong></td><td>ההודעות שלכם, התשובות, תוצאות הכלים</td><td>בכל תור</td></tr></tbody></table></div>
+<p>שינוי בשכבת השיחה משאיר את שתי השכבות שמעליה בקאש, וזה המצב הרגיל והבריא. שינוי בפרומפט המערכתי מבטל <strong>הכל</strong>, כי כל מה שאחריו יושב עכשיו מאחורי תחילית אחרת.</p>
+<h2 id="שני-דברים-שנמצאים-במפתח-הקאש-ולא-רואים-אותם">שני דברים שנמצאים במפתח הקאש ולא רואים אותם</h2>
+<p>שתי הגדרות הן חלק ממפתח הקאש למרות שהן בכלל לא טקסט בתוך הפרומפט:</p>
+<ul>
+<li>המודל: לכל מודל יש קאש נפרד משלו. החלפת מודל מאלצת חישוב מחדש של כל הבקשה, גם אם התוכן זהה לחלוטין.</li>
+<li>רמת האפרט: לכל רמת אפרט יש קאש נפרד, גם באותו מודל בדיוק. שינוי באמצע הסשן מחשב מחדש את כל הבקשה.</li>
+</ul>
+<p>זו בדיוק הסיבה שהחלפת מודל באמצע שיחה מרגישה בחינם, עד שאתם מרגישים את התור האיטי שבא אחריה. Claude Code אפילו מציג לכם דיאלוג אישור לפני שינוי אפרט שיבטל את הקאש.</p>
+<h2 id="מה-שובר-את-הקאש">מה שובר את הקאש</h2>
+<p>הפעולות הבאות גורמות לבקשה הבאה לפספס חלק מהקאש או את כולו. אתם משלמים תור אחד איטי ויקר יותר, ואז התחילית החדשה נכנסת לקאש:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>פעולה</th><th>מה קורה</th></tr></thead><tbody><tr><td><strong>החלפת מודל (model/)</strong></td><td>קורא את כל היסטוריית השיחה בלי אף פגיעה בקאש. גם opusplan נחשב: כל מעבר לפלאן מוד הוא החלפת מודל</td></tr><tr><td><strong>שינוי אפרט (effort/)</strong></td><td>הקאש ממופתח גם לפי רמת אפרט, אז הבקשה הבאה קוראת הכל מחדש</td></tr><tr><td><strong>הפעלת Fast Mode</strong></td><td>מוסיף כותרת בקשה שהיא חלק ממפתח הקאש. העלות היא חד-פעמית לשיחה, ולכן להפעיל בהתחלה זול בהרבה מלהפעיל באמצע</td></tr><tr><td><strong>חיבור או ניתוק של MCP</strong></td><td>רק אם הכלים נטענים לתוך התחילית. כברירת מחדל הם נדחים (tool search) ואז אין נזק</td></tr><tr><td><strong>הפעלת או כיבוי תוסף</strong></td><td>רק תוסף שמספק שרת MCP. סקילז, פקודות, סוכנים, הוקים ותימות לא שוברים כלום</td></tr><tr><td><strong>חסימת כלי שלם</strong></td><td>חוק deny על שם כלי חשוף כמו Bash מסיר אותו מההקשר, וזה יושב בשכבת הפרומפט המערכתי</td></tr><tr><td><strong>compact/</strong></td><td>מחליף את ההיסטוריה בסיכום, אז שכבת השיחה מתבטלת מעצם ההגדרה</td></tr><tr><td><strong>שדרוג Claude Code</strong></td><td>גרסה חדשה בדרך כלל משנה את הפרומפט המערכתי. השדרוג נכנס לתוקף בהפעלה הבאה, לא באמצע סשן</td></tr></tbody></table></div>
+<h2 id="מה-לא-שובר-את-הקאש">מה לא שובר את הקאש</h2>
+<p>שווה להכיר גם את הצד השני, כי הרבה אנשים נזהרים סתם:</p>
+<ul>
+<li>עריכת קבצים בריפו: תוכן קובץ נכנס להקשר רק כשקלוד קורא אותו, והקריאה מתווספת בסוף השיחה</li>
+<li>עריכת CLAUDE.md באמצע סשן: לא שוברת את הקאש, אבל גם לא נכנסת לתוקף. הקובץ נקרא פעם אחת בתחילת הסשן</li>
+<li>שינוי סגנון פלט: אותו סיפור בדיוק: לא שובר, וגם לא חל עד clear/ או הפעלה מחדש</li>
+<li>מעבר בין מצבי הרשאה: בטוח לקאש (חוץ מפלאן מוד עם opusplan)</li>
+<li>הפעלת סקילז ופקודות: ההוראות מוזרקות כהודעת משתמש בנקודת ההפעלה</li>
+<li>recap/: מייצר סיכום לתצוגה בלבד, בלי להחליף את ההיסטוריה</li>
+<li>rewind/: חוזר אחורה לתחילית שכבר נמצאת בקאש</li>
+<li>הרצת סאב-אייג’נט: הסוכן פותח שיחה משלו, וההקשר של ההורה נשאר שלם</li>
+</ul>
+<h2 id="כמה-זמן-הקאש-חי">כמה זמן הקאש חי</h2>
+<p>הקאש פג אחרי תקופה של חוסר פעילות. כל בקשה שפוגעת בקאש מאפסת את השעון, אז כל עוד אתם עובדים, הקאש נשאר חם. אחרי הפסקה ארוכה מספיק, התור הראשון בחזרה מחשב הכל מחדש, וזו בדיוק הסיבה שהוא מרגיש איטי.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>איך אתם מחוברים</th><th>אורך חיי הקאש</th><th>איך משנים</th></tr></thead><tbody><tr><td><strong>מנוי Claude (Pro / Max / Team)</strong></td><td><strong>שעה</strong></td><td>אוטומטי</td></tr><tr><td><strong>מנוי שחרג ועובר על Usage Credits</strong></td><td><strong>5 דקות</strong></td><td><code>ENABLE_PROMPT_CACHING_1H=1 מחזיר לשעה</code></td></tr><tr><td><strong>מפתח API או ספק צד שלישי</strong></td><td><strong>5 דקות</strong></td><td><code>ENABLE_PROMPT_CACHING_1H=1 מעלה לשעה</code></td></tr><tr><td><strong>סאב-אייג’נטים</strong></td><td><strong>5 דקות</strong></td><td>תמיד, גם על מנוי</td></tr></tbody></table></div>
+<p>רוצים לכפות 5 דקות לצורכי בדיקה או השוואה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>FORCE_PROMPT_CACHING_5M=1</span></span></code></pre>
+<h2 id="שלושת-ההרגלים-שמייקרים-לכם-את-השיחה">שלושת ההרגלים שמייקרים לכם את השיחה</h2>
+<p>שלושת אלה נעשים דווקא מתוך תחושת חיסכון, ובפועל עושים בדיוק הפוך:</p>
+<h3 id="1-להחליף-מודל-או-אפרט-באמצע">1. להחליף מודל או אפרט באמצע</h3>
+<p>זו בדיוק הקימה מהשולחן. אתם מורידים אפרט כדי לחסוך, ומשלמים על קריאה מחדש של כל השיחה במחיר מלא, שזה בדרך כלל הרבה יותר ממה שחסכתם.</p>
+<p><strong>מה לעשות במקום: תקבעו מודל ואפרט פעם אחת בתחילת הסשן ותעזבו.</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/model      # בתחילת הסשן</span></span>
+<span class="line"><span>/effort     # בתחילת הסשן</span></span>
+<span class="line"><span>/config     # להגדיר ברירת מחדל קבועה</span></span></code></pre>
+<h3 id="2-להריץ-compact-אחרי-שהקאש-כבר-פג">2. להריץ compact/ אחרי שהקאש כבר פג</h3>
+<p>הנקודה העדינה כאן: כדי לייצר את הסיכום, Claude Code שולח בקשה נפרדת עם אותו פרומפט מערכתי, אותם כלים ואותה היסטוריה. כשהקאש חם, הבקשה הזו קוראת את התחילית מהקאש, ולכן compact/ באמצע סשן עולה שבריר ממה שגודל ההקשר מרמז.</p>
+<p>אחרי הפסקה ארוכה מאורך חיי הקאש, אין מה לקרוא, ובקשת הסיכום מעבדת את כל ההיסטוריה כקלט לא מקושר. לכן compact/ הכי יקר כשחוזרים לסשן ישן.</p>
+<p><strong>מה לעשות במקום: תריצו compact/ לפני שאתם קמים, לא אחרי.</strong></p>
+<p>ואם ירדתם למסלול שאתם רוצים לזרוק לגמרי, rewind/ עדיף על compact/. הוא חותך אחורה לתחילית שכבר בקאש, במקום לבנות אחת חדשה.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/compact                                  # בהפסקה טבעית בין משימות</span></span>
+<span class="line"><span>/compact Focus on code samples and API usage   # עם הוראות סיכום משלכם</span></span>
+<span class="line"><span>/rewind                                   # לזרוק מסלול שלם - זול יותר</span></span></code></pre>
+<h3 id="3-לא-לעשות-clear-למשימה-חדשה">3. לא לעשות clear/ למשימה חדשה</h3>
+<p>Claude Code שולח את השיחה המלאה בכל בקשה. גם שאלה של שורה אחת בסשן שפתוח כל היום גוררת את כל ההיסטוריה, במחיר מוזל, אבל היא שם. אם התחלתם משימה חדשה לגמרי, אתם משלמים שוב ושוב על כל מה שגררתם מתחילת השיחה.</p>
+<p><strong>מה לעשות במקום: משימה חדשה = clear/. הוא לא עולה כלום.</strong></p>
+<p>טיפ קטן: תריצו rename/ לפני שאתם מנקים, כדי שתוכלו למצוא את הסשן אחר כך עם resume/.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/rename my-auth-refactor</span></span>
+<span class="line"><span>/clear</span></span>
+<span class="line"><span>/resume     # לחזור לסשן קודם</span></span></code></pre>
+<h2 id="clear-מול-compact-מול-rewind">clear מול compact מול rewind</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>פקודה</th><th>מה היא עושה</th><th>מתי להשתמש</th></tr></thead><tbody><tr><td><code>/clear</code></td><td>מתחיל סשן נקי לגמרי</td><td>משימה חדשה שאין לה קשר לקודמת. לא עולה כלום</td></tr><tr><td><code>/compact</code></td><td>מחליף את ההיסטוריה בסיכום</td><td>ממשיכים את אותה משימה אבל ההקשר תפח. להריץ בהפסקה טבעית</td></tr><tr><td><code>/rewind</code></td><td>חותך את השיחה אחורה לתור מוקדם יותר</td><td>ירדתם למסלול שגוי ורוצים לזרוק אותו. חוזר לתחילית שכבר בקאש</td></tr></tbody></table></div>
+<h2 id="איך-בודקים-שזה-בכלל-עובד">איך בודקים שזה בכלל עובד</h2>
+<p>ה-API מחזיר שני מספרים בכל תשובה:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>שדה</th><th>משמעות</th></tr></thead><tbody><tr><td><code>cache_creation_input_tokens</code></td><td>טוקנים שנכתבו לקאש בתור הזה, מחויבים בתעריף כתיבה</td></tr><tr><td><code>cache_read_input_tokens</code></td><td>טוקנים שהוגשו מהקאש, מחויבים בערך ב-10% מתעריף הקלט הרגיל</td></tr></tbody></table></div>
+<p><strong>יחס קריאה-לכתיבה גבוה = הקאש עובד טוב.</strong> אם הכתיבה נשארת גבוהה תור אחרי תור, משהו בתחילית שלכם משתנה כל הזמן, תחזרו לטבלת מה שובר את הקאש.</p>
+<p>שלוש דרכים לראות את זה בפועל:</p>
+<ul>
+<li>usage/: מציג שימוש בטוקנים, ובתוכניות בתשלום גם דגלי התנהגות שמסמנים cache misses או long context כשאחד מהם אחראי ל-10% ומעלה מהשימוש</li>
+<li>context/: מראה מה תופס מקום בחלון ההקשר שלכם</li>
+<li>סטטוסליין מותאם אישית שקורא את האובייקט current_usage ומציג את המספרים בזמן אמת</li>
+</ul>
+<h2 id="דברים-שכדאי-לדעת">דברים שכדאי לדעת</h2>
+<ul>
+<li>הקאש מוגבל למכונה ולתיקייה. הפרומפט המערכתי מכיל את תיקיית העבודה, הפלטפורמה, השל ומערכת ההפעלה, אז שני סשנים בתיקיות שונות לא יראו את הקאש אחד של השני. זה כולל worktrees של אותו ריפו</li>
+<li>סשנים מקבילים באותה תיקייה כן קוראים את הקאש אחד של השני</li>
+<li>המשך סשן (resume/) אחרי שדרוג של Claude Code מעבד מחדש את כל ההיסטוריה, התור הראשון בחזרה לסשן ארוך יכול להיות הבקשה הכי יקרה ששלחתם</li>
+<li>המינימום לקאש הוא 512 טוקנים ב-Opus 5 ו-1024 ב-Sonnet 5. פרומפט קצר יותר פשוט לא נכנס לקאש, בלי שום הודעת שגיאה</li>
+<li>בתוכניות Pro ו-Max, כשחוזרים לסשן גדול אחרי הפסקה ארוכה, Claude Code מציע להמשיך מסיכום כדי שהבקשות הבאות לא יגררו את כל ההיסטוריה</li>
+</ul>
+<h2 id="צקליסט-איך-לשמור-את-הקאש-חי">צ’קליסט: איך לשמור את הקאש חי</h2>
+<ul>
+<li>תקבעו מודל ואפרט בתחילת הסשן, ואל תיגעו בהם באמצע משימה</li>
+<li>אם אתם מפעילים Fast Mode, תפעילו אותו בהתחלה, לא באמצע</li>
+<li>תריצו compact/ בהפסקה טבעית בין משימות, לא כשחוזרים אחרי שעתיים</li>
+<li>משימה חדשה שאין לה קשר לקודמת = clear/ (rename/ קודם, אם תרצו לחזור)</li>
+<li>מסלול שגוי = rewind/, לא compact/</li>
+<li>כבו שרתי MCP שאתם לא באמת משתמשים בהם</li>
+<li>אל תערכו את CLAUDE.md באמצע סשן ותצפו שזה יעבוד, זה נטען רק בהתחלה</li>
+<li>עובדים מול API ולא מנוי? שקלו ENABLE_PROMPT_CACHING_1H=1</li>
+</ul>
+<h2 id="לינקים">לינקים</h2>
+<ul>
+<li>איך Claude Code משתמש בקאש (התיעוד הרשמי): <a href="https://code.claude.com/docs/en/prompt-caching">code.claude.com/docs/en/prompt-caching</a></li>
+<li>ניהול עלויות ב-Claude Code: <a href="https://code.claude.com/docs/en/costs">code.claude.com/docs/en/costs</a></li>
+<li>המנגנון עצמו ב-API: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">platform.claude.com/docs/en/build-with-claude/prompt-caching</a></li>
+<li>חלון ההקשר: מה נטען ומתי: <a href="https://code.claude.com/docs/en/context-window">code.claude.com/docs/en/context-window</a></li>
+<li>Prompt caching is everything (הבלוג של Anthropic): <a href="https://claude.com/blog/lessons-from-building-claude-code-prompt-caching-is-everything">claude.com/blog/lessons-from-building-claude-code-prompt-caching-is-everything</a></li>
+</ul></div> <div class="author" data-astro-cid-dwrmp7mt> <img src="/_astro/kevin-portrait.Bp8WjBPp_Z1fXe8s.webp" alt data-astro-cid-dwrmp7mt="true" loading="lazy" decoding="async" fetchpriority="auto" width="72" height="72" class="author-img"> <div data-astro-cid-dwrmp7mt> <p class="author-name" data-astro-cid-dwrmp7mt>נכתב על ידי <a href="/about" rel="author" data-astro-cid-dwrmp7mt>קווין ליאקס</a></p> <p class="small muted" data-astro-cid-dwrmp7mt>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <p class="small muted" data-astro-cid-dwrmp7mt>עודכן לאחרונה: <time datetime="2026-08-15T00:00:00.000Z" data-astro-cid-dwrmp7mt>15 באוגוסט 2026</time></p> </div> </div>  </article> <section class="section" aria-labelledby="related-h" data-astro-cid-2u677oxp> <div class="container" data-astro-cid-2u677oxp> <h2 id="related-h" data-astro-cid-2u677oxp>עוד מדריכים על Claude ו-Claude Code</h2> <div class="grid grid-3" data-astro-cid-2u677oxp> <article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-session-tagging" data-astro-cid-2u677oxp>Claude Code Session Tagging: איך לגרום לשני סשנים של Claude Code לדבר אחד עם השני</a></h3> <p class="muted small" data-astro-cid-2u677oxp>עד היום כל סשן של Claude Code חי בבועה משלו. פתחתם שני טרמינלים, אחד עובד על ה-backend והשני על ה-frontend, ואם משהו שקרה באחד היה רלוונטי לשני, הייתם צריכים…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/stop-hook" data-astro-cid-2u677oxp>Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר, ולשאול לפני שהוא מניח</a></h3> <p class="muted small" data-astro-cid-2u677oxp>אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-auto-continue" data-astro-cid-2u677oxp>Claude Auto Continue: הצ&#39;ק בוקס שממשיך את המשימה לבד כשהמכסה מתאפסת</a></h3> <p class="muted small" data-astro-cid-2u677oxp>ב-14 באוגוסט 2026 אנתרופיק הוסיפו לאפליקציית הדסקטופ של Claude Code צ&#39;ק בוקס קטן בשם Auto-continue when limits reset. הוא מופיע בתוך ההודעה שאתם כבר…</p> </article> </div> <p class="all-link" data-astro-cid-2u677oxp><a class="text-link" href="/guides" data-astro-cid-2u677oxp>לכל המדריכים</a></p> </div> </section><section class="section section--alt" aria-labelledby="guide-cta-h" data-astro-cid-2u677oxp> <div class="container cta-grid" data-astro-cid-2u677oxp> <div data-astro-cid-2u677oxp> <h2 id="guide-cta-h" data-astro-cid-2u677oxp>רוצים שהצוות שלכם יעבוד ככה?</h2> <p class="lead" data-astro-cid-2u677oxp>אני עובד עם צוותי פיתוח על Claude Code, סוכני קוד, MCP ותשתיות AI, מהתכנון ועד הייצור.</p> <div class="btn-row" data-astro-cid-2u677oxp> <a class="btn" href="/ai-engineering" data-astro-cid-2u677oxp>AI Engineering לצוותי פיתוח</a> <a class="text-link" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%22Prompt%20Caching%20in%20Claude%20Code%3A%20%D7%90%D7%99%D7%9A%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A8%20%D7%90%D7%AA%20%D7%94%D7%A7%D7%90%D7%A9%20%D7%97%D7%99%20%D7%9C%D7%90%D7%95%D7%A8%D7%9A%20%D7%9B%D7%9C%20%D7%94%D7%A1%D7%A9%D7%9F%20%D7%95%D7%9C%D7%94%D7%A4%D7%A1%D7%99%D7%A7%20%D7%9C%D7%A9%D7%9C%D7%9D%20%D7%A4%D7%99%2010%22%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" rel="noopener" target="_blank" data-astro-cid-2u677oxp>שאלה על המדריך? כתבו לי בוואטסאפ<span class="sr-only" data-astro-cid-2u677oxp> (נפתח בחלון חדש)</span></a> </div> </div> <div class="community" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p> <p class="c-text" data-astro-cid-fxan7676>הקהילה הגדולה בישראל לבנייה עם AI: שאלות, דמואים, מדריכים ומפגשים. בלי ספאם, רק אנשים שבונים.</p> <a class="btn" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a> <p class="small muted c-note" data-astro-cid-fxan7676>המספר מתעדכן ידנית. נכון ל-<span class="ltr" data-astro-cid-fxan7676>10/2026</span>.</p> </div>  <script type="module" src="/_astro/CommunityCounter.astro_astro_type_script_index_0_lang.C7a3xHHQ.js"></script> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="cols" data-astro-cid-sz7xmlte> <div class="col about" data-astro-cid-sz7xmlte> <p class="f-brand" lang="en" dir="ltr" data-astro-cid-sz7xmlte>Kevin Liaks<span data-astro-cid-sz7xmlte>.</span></p> <p class="f-motto" data-astro-cid-sz7xmlte>אדם, תהליך, טכנולוגיה.</p> <p class="muted" data-astro-cid-sz7xmlte>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <div class="community compact" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p>  <a class="btn btn--ghost" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a>  </div>   </div> <nav class="col" aria-label="עמודים" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>עמודים</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops" data-astro-cid-sz7xmlte>סדנאות</a></li><li data-astro-cid-sz7xmlte><a href="/ai-implementation" data-astro-cid-sz7xmlte>הטמעת AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-agents" data-astro-cid-sz7xmlte>סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-engineering" data-astro-cid-sz7xmlte>AI Engineering</a></li><li data-astro-cid-sz7xmlte><a href="/guides" data-astro-cid-sz7xmlte>מדריכים ומאמרים</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>אודות</a></li> <li data-astro-cid-sz7xmlte><a href="/blog" data-astro-cid-sz7xmlte>בלוג</a></li> <li data-astro-cid-sz7xmlte><a href="/faq" data-astro-cid-sz7xmlte>שאלות נפוצות</a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>צור קשר</a></li> </ul> </nav> <nav class="col" aria-label="סדנאות" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>סדנאות</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-employees" data-astro-cid-sz7xmlte>סדנת AI לעובדים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-managers" data-astro-cid-sz7xmlte>סדנת AI למנהלים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-lecture" data-astro-cid-sz7xmlte>הרצאת AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/copilot" data-astro-cid-sz7xmlte>סדנת Copilot</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/claude-code" data-astro-cid-sz7xmlte>סדנת Claude Code</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-agents" data-astro-cid-sz7xmlte>סדנת בניית סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/vibe-coding" data-astro-cid-sz7xmlte>סדנת Vibe Coding</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-teachers" data-astro-cid-sz7xmlte>AI לצוותי הוראה</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-course" data-astro-cid-sz7xmlte>קורס AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-customer-service" data-astro-cid-sz7xmlte>סדנת AI לשירות לקוחות</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-hr" data-astro-cid-sz7xmlte>סדנת AI למשאבי אנוש</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-finance" data-astro-cid-sz7xmlte>סדנת AI לכספים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-sales" data-astro-cid-sz7xmlte>סדנת AI למכירות</a></li> </ul> </nav> <div class="col" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>יצירת קשר</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="mailto:kevin.liaks@gmail.com" data-astro-cid-sz7xmlte>kevin.liaks@gmail.com</a></li> <li data-astro-cid-sz7xmlte><a href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>וואטסאפ<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>השאירו פרטים</a></li> </ul> <h2 class="f-h" data-astro-cid-sz7xmlte>עקבו</h2> <ul class="social" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://www.youtube.com/@kevinliaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>יוטיוב<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.instagram.com/kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>אינסטגרם<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>קבוצת הפייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/kevin.liaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>פייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.linkedin.com/in/kevin-liaks-30b2a698" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>לינקדאין<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.tiktok.com/@kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>טיקטוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> </ul> </div> </div> <div class="legal" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>© <span class="ltr" data-astro-cid-sz7xmlte>2026</span> קווין ליאקס. עודכן לאחרונה: 30 באוקטובר 2026.</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/accessibility" data-astro-cid-sz7xmlte>הצהרת נגישות</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>מדיניות פרטיות</a></li> </ul> </div> </div> </footer>  <aside class="quick" aria-label="יצירת קשר מהירה" data-astro-cid-fbt5meba> <a class="float-contact" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" aria-label="שליחת הודעה בוואטסאפ (נפתח בחלון חדש)" data-astro-cid-fbt5meba> <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" data-astro-cid-fbt5meba><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z" data-astro-cid-fbt5meba></path></svg> <span class="label" data-astro-cid-fbt5meba>וואטסאפ</span> </a> </aside>  <script type="module">const l=[[/^\/workshops\/[^/]+$/,"ראיתי באתר את העמוד על"],[/^\/workshops$/,"ראיתי באתר את הסדנאות."],[/^\/ai-agents/,"מעניין אותי סוכן AI לארגון."],[/^\/ai-implementation/,"מעניין אותי להטמיע AI בארגון."],[/^\/ai-engineering/,"מעניין אותי AI Engineering לצוות הפיתוח."],[/^\/guides\/[^/]+$/,"קראתי באתר את המדריך"],[/^\/blog\/[^/]+$/,"קראתי באתר את המאמר"]];function m(o){const e=location.pathname.replace(/\.html$/,"").replace(/\/$/,"")||"/",n=document.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()??"",t=["היי קווין, הגעתי מהאתר."],r=l.find(([a])=>a.test(e));r&&t.push(r[1].endsWith(".")?r[1]:`${r[1]} "${n}".`);const i=o.closest("form.lead-form")??document.querySelector("form.lead-form"),s=i?.querySelector("select[name=topic]"),c=i?.querySelector("textarea[name=message]")?.value.trim();if(s&&s.value&&s.value!=="other"&&(c||o.closest("form"))&&t.push(`מה מעניין אותי: ${s.options[s.selectedIndex].text}.`),c)t.push(c.slice(0,400));else try{const a=JSON.parse(sessionStorage.getItem("kl-marks")||"[]");a.length&&t.push("מה שקורה אצלנו: "+a.join(" "))}catch{}return t.push("אשמח לשמוע פרטים."),t.join(`
+`)}document.addEventListener("click",o=>{const e=o.target?.closest?.('a[href^="https://wa.me/"]');if(!e)return;const n=new URL(e.href);n.searchParams.set("text",m(e)),e.href=n.toString()},!0);</script> <div class="a11y" data-astro-cid-l6h6emqy> <button class="a11y-btn" type="button" aria-expanded="false" aria-controls="a11y-panel" data-astro-cid-l6h6emqy> <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" data-astro-cid-l6h6emqy><circle cx="12" cy="4" r="2" fill="currentColor" data-astro-cid-l6h6emqy></circle><path fill="currentColor" d="M20 8.5 14 9.6V13l2 7.5a1 1 0 0 1-1.9.5L12 15l-2.1 6a1 1 0 0 1-1.9-.5l2-7.5V9.6L4 8.5a1 1 0 1 1 .3-2l6.2 1.1h3l6.2-1.1a1 1 0 1 1 .3 2Z" data-astro-cid-l6h6emqy></path></svg> <span class="sr-only" data-astro-cid-l6h6emqy>תפריט נגישות</span> </button> <div id="a11y-panel" class="a11y-panel" role="region" aria-label="הגדרות נגישות" hidden data-astro-cid-l6h6emqy> <p class="a11y-title" data-astro-cid-l6h6emqy>נגישות</p> <div class="a11y-row" role="group" aria-label="גודל טקסט" data-astro-cid-l6h6emqy> <span data-astro-cid-l6h6emqy>גודל טקסט</span> <span class="a11y-sizes" data-astro-cid-l6h6emqy> <button type="button" data-scale="-1" aria-label="א- הקטנת טקסט" data-astro-cid-l6h6emqy>א-</button> <button type="button" data-scale="0" aria-label="רגיל: איפוס גודל טקסט" data-astro-cid-l6h6emqy>רגיל</button> <button type="button" data-scale="1" aria-label="א+ הגדלת טקסט" data-astro-cid-l6h6emqy>א+</button> </span> </div> <button type="button" class="a11y-toggle" data-key="contrast" aria-pressed="false" data-astro-cid-l6h6emqy>ניגודיות גבוהה</button> <button type="button" class="a11y-toggle" data-key="links" aria-pressed="false" data-astro-cid-l6h6emqy>הדגשת קישורים</button> <button type="button" class="a11y-toggle" data-key="noMotion" aria-pressed="false" data-astro-cid-l6h6emqy>עצירת אנימציות</button> <button type="button" class="a11y-reset" data-astro-cid-l6h6emqy>איפוס הכול</button> <a href="/accessibility" data-astro-cid-l6h6emqy>הצהרת נגישות</a> </div> </div>  <script type="module">const r=document.documentElement,s=document.querySelector(".a11y-btn"),a=document.getElementById("a11y-panel"),i=()=>{try{return JSON.parse(localStorage.getItem("a11y")||"{}")}catch{return{}}},y=e=>{try{localStorage.setItem("a11y",JSON.stringify(e))}catch{}};let t=i();const l={contrast:"a11y-contrast",links:"a11y-links",noMotion:"a11y-no-motion"},c=()=>{r.style.setProperty("--a11y-scale",String(t.scale||1));for(const e of Object.keys(l))r.classList.toggle(l[e],!!t[e]);a.querySelectorAll(".a11y-toggle").forEach(e=>e.setAttribute("aria-pressed",String(!!t[e.dataset.key]))),y(t),document.dispatchEvent(new CustomEvent("a11y-change"))},o=e=>{s.setAttribute("aria-expanded",String(e)),a.hidden=!e};s.addEventListener("click",()=>o(a.hidden));document.addEventListener("keydown",e=>{e.key==="Escape"&&!a.hidden&&(o(!1),s.focus())});document.addEventListener("click",e=>{!a.hidden&&!e.target.closest(".a11y")&&o(!1)});a.querySelectorAll("[data-scale]").forEach(e=>e.addEventListener("click",()=>{const n=Number(e.dataset.scale),d=t.scale||1;t.scale=n===0?1:Math.min(1.5,Math.max(.9,Math.round((d+n*.1)*10)/10)),c()}));a.querySelectorAll(".a11y-toggle").forEach(e=>e.addEventListener("click",()=>{const n=e.dataset.key;t[n]=!t[n],c()}));a.querySelector(".a11y-reset").addEventListener("click",()=>{t={},c()});c();</script> <script type="module">const t=document.querySelector(".consent");if(t){const a=t.dataset.gtm,n=()=>{const e=document.createElement("script");e.async=!0,e.src=`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(a)}`,document.head.appendChild(e)};let c=null;try{c=localStorage.getItem("consent")}catch{}c==="yes"?n():c||(t.hidden=!1),t.querySelectorAll("[data-consent]").forEach(e=>e.addEventListener("click",()=>{const o=e.dataset.consent;try{localStorage.setItem("consent",o),localStorage.setItem("consent-date",new Date().toISOString())}catch{}t.hidden=!0,o==="yes"&&n()}))}</script> </body></html> 

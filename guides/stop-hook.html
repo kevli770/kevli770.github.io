@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="he" dir="rtl" data-look="control"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר | קווין ליאקס</title><meta name="description" content="אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון…"><link rel="canonical" href="https://kevli770.github.io/guides/stop-hook"><meta name="robots" content="noindex, nofollow"><meta name="author" content="קווין ליאקס"><meta name="theme-color" content="#f6f6f4"><link rel="preload" as="font" type="font/woff2" href="/_astro/rubik-hebrew-wght-normal.BIkpbuMU.woff2" crossorigin><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:site_name" content="קווין ליאקס"><meta property="og:locale" content="he_IL"><meta property="og:title" content="Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר | קווין ליאקס"><meta property="og:description" content="אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון…"><meta property="og:url" content="https://kevli770.github.io/guides/stop-hook"><meta property="og:image" content="https://kevli770.github.io/_astro/hero.BwcWSSb-_1jARW9.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר | קווין ליאקס"><meta name="twitter:description" content="אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון…"><meta name="twitter:image" content="https://kevli770.github.io/_astro/hero.BwcWSSb-_1jARW9.jpg"><meta property="article:published_time" content="2026-08-15T00:00:00.000Z"><meta property="article:modified_time" content="2026-08-15T00:00:00.000Z"><meta property="article:section" content="Claude ו-Claude Code"><meta property="article:tag" content="Claude Code Stop Hook"><meta property="article:tag" content="מדריך Claude Code Stop Hook"><meta property="article:tag" content="מה זה Stop Hook"><meta property="article:tag" content="איך ה-hook עונה"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kevli770.github.io/#website","url":"https://kevli770.github.io/","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","inLanguage":"he-IL","publisher":{"@id":"https://kevli770.github.io/#business"}},{"@type":"ProfessionalService","@id":"https://kevli770.github.io/#business","name":"קווין ליאקס | סדנאות AI, הטמעה וסוכני AI לארגונים","alternateName":"Kevin Liaks","url":"https://kevli770.github.io/","email":"kevin.liaks@gmail.com","telephone":"+972545334770","image":"https://kevli770.github.io/og/default.png","logo":{"@type":"ImageObject","url":"https://kevli770.github.io/logo.png","width":512,"height":512},"description":"סדנאות AI פרקטיות לארגונים, הטמעת AI וסוכני AI בעסקים, ו-AI Engineering לצוותי פיתוח. קווין ליאקס, מוביל AI ודאטה בקבוצה עסקית גדולה.","areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","en"],"founder":{"@id":"https://kevli770.github.io/about#kevin"},"knowsAbout":["סדנאות AI","הדרכות AI לארגונים","הטמעת AI בארגונים","ארכיטקטורת AI","סוכני AI","AI Engineering","Claude Code","Microsoft Copilot","אוטומציות"],"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"Person","@id":"https://kevli770.github.io/about#kevin","name":"קווין ליאקס","alternateName":"Kevin Liaks","jobTitle":"AI Solutions Architect","url":"https://kevli770.github.io/about","image":"https://kevli770.github.io/og/kevin.jpg","email":"kevin.liaks@gmail.com","knowsAbout":["Artificial intelligence","AI agents","AI adoption in organizations","AI engineering","AI architecture","Business intelligence","Claude Code","Automation"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Shenkar College of Engineering and Design"},"worksFor":{"@id":"https://kevli770.github.io/#business"},"sameAs":["https://www.youtube.com/@kevinliaks","https://www.instagram.com/kevinliaksai","https://www.facebook.com/groups/902817888462861","https://www.facebook.com/kevin.liaks","https://www.tiktok.com/@kevinliaksai","https://www.linkedin.com/in/kevin-liaks-30b2a698"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://kevli770.github.io/"},{"@type":"ListItem","position":2,"name":"מדריכים","item":"https://kevli770.github.io/guides"},{"@type":"ListItem","position":3,"name":"Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר, ולשאול לפני שהוא מניח","item":"https://kevli770.github.io/guides/stop-hook"}]},{"@type":"TechArticle","@id":"https://kevli770.github.io/guides/stop-hook#article","headline":"Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר, ולשאול לפני שהוא מניח","alternativeHeadline":"Claude Code Stop Hook","description":"אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון…","abstract":"אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול.","datePublished":"2026-08-15T00:00:00.000Z","dateModified":"2026-08-15T00:00:00.000Z","inLanguage":"he-IL","author":{"@id":"https://kevli770.github.io/about#kevin"},"publisher":{"@id":"https://kevli770.github.io/#business"},"mainEntityOfPage":"https://kevli770.github.io/guides/stop-hook","isPartOf":{"@id":"https://kevli770.github.io/guides#collection"},"image":"https://kevli770.github.io/_astro/hero.BwcWSSb-_1jARW9.jpg","keywords":"Claude Code Stop Hook, מדריך Claude Code Stop Hook, מה זה Stop Hook, איך ה-hook עונה","articleSection":"Claude ו-Claude Code","wordCount":1411}]}</script><script>
+      // העדפות נגישות נשמרות בדפדפן ומוחלות לפני הציור, כדי שלא יהיה הבהוב.
+      try {
+        var p = JSON.parse(localStorage.getItem('a11y') || '{}');
+        var r = document.documentElement;
+        if (p.scale) r.style.setProperty('--a11y-scale', p.scale);
+        if (p.contrast) r.classList.add('a11y-contrast');
+        if (p.links) r.classList.add('a11y-links');
+        if (p.noMotion) r.classList.add('a11y-no-motion');
+      } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/about.DqAyRUrx.css">
+<style>.faq-layout[data-astro-cid-z6gx6xcw]{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:5rem;align-items:start}@media(max-width:880px){.faq-layout[data-astro-cid-z6gx6xcw]{grid-template-columns:minmax(0,1fr);gap:1.6rem}}.faq[data-astro-cid-z6gx6xcw]{border-top:1px solid #d4d9cf}details[data-astro-cid-z6gx6xcw]{border-bottom:1px solid #d4d9cf}summary[data-astro-cid-z6gx6xcw]{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center}summary[data-astro-cid-z6gx6xcw]::-webkit-details-marker{display:none}summary[data-astro-cid-z6gx6xcw] h3[data-astro-cid-z6gx6xcw]{font-size:1.08rem;margin:0;font-weight:800;letter-spacing:-.01em;line-height:1.6}summary[data-astro-cid-z6gx6xcw]:after{content:"+";font:1.7rem/1 var(--latin);color:var(--accent-ink);flex:none}details[data-astro-cid-z6gx6xcw][open] summary[data-astro-cid-z6gx6xcw]:after{content:"−"}.faq-a[data-astro-cid-z6gx6xcw]{padding:0 0 1.2rem;color:var(--soft)}.faq-a[data-astro-cid-z6gx6xcw] p[data-astro-cid-z6gx6xcw]{margin:0;max-width:64ch}
+.author[data-astro-cid-dwrmp7mt]{display:flex;gap:1rem;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:1.25rem;margin-block:2rem;max-width:72ch}.author-img[data-astro-cid-dwrmp7mt]{border-radius:50%;flex:none;object-fit:cover}.author[data-astro-cid-dwrmp7mt] p[data-astro-cid-dwrmp7mt]{margin:0}.author-name[data-astro-cid-dwrmp7mt]{font-weight:600}
+.post[data-astro-cid-2u677oxp]{padding-block:2rem 1rem}.post-head[data-astro-cid-2u677oxp]{max-width:72ch}.post-head[data-astro-cid-2u677oxp] h1[data-astro-cid-2u677oxp]{font-size:clamp(1.9rem,1.3rem + 2.2vw,2.9rem)}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:inherit;text-decoration:none}.tag[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{text-decoration:underline}.tldr[data-astro-cid-2u677oxp]{background:var(--cream);border-inline-start:3px solid var(--accent);border-radius:0;padding:1.1rem 1.3rem;margin-top:1rem}.tldr-h[data-astro-cid-2u677oxp]{font-weight:800;color:var(--accent-ink);margin-bottom:.3rem}.tldr[data-astro-cid-2u677oxp] p[data-astro-cid-2u677oxp]:last-child{margin:0;font-size:1.08rem}.reel[data-astro-cid-2u677oxp]{margin:1.4rem 0 0;max-width:320px}.reel[data-astro-cid-2u677oxp] video[data-astro-cid-2u677oxp]{display:block;width:100%;aspect-ratio:9 / 16;object-fit:cover;border-radius:var(--radius);background:var(--ink)}.reel[data-astro-cid-2u677oxp] figcaption[data-astro-cid-2u677oxp]{margin-top:.5rem}.hero-img[data-astro-cid-2u677oxp]{display:block;width:100%;max-width:760px;height:auto;margin-block:1.6rem .5rem;border:1px solid var(--line);border-radius:var(--radius-sm)}.toc[data-astro-cid-2u677oxp]{max-width:72ch;margin-block:1.5rem;border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.3rem;background:var(--surface)}.toc-h[data-astro-cid-2u677oxp]{font-weight:700;margin-bottom:.4rem}.toc[data-astro-cid-2u677oxp] ol[data-astro-cid-2u677oxp]{margin:0}.guide-body[data-astro-cid-2u677oxp]>:nth-child(n+6){content-visibility:auto;contain-intrinsic-size:auto 140px}.guide-body[data-astro-cid-2u677oxp] th,.guide-body[data-astro-cid-2u677oxp] td{min-width:120px}.guide-body[data-astro-cid-2u677oxp] pre{direction:ltr;text-align:left;padding:1rem 1.2rem;margin-block:1.2rem;border-radius:var(--radius-sm);font-size:.88rem;line-height:1.65;overflow-x:auto;white-space:pre}.guide-body[data-astro-cid-2u677oxp] pre code{background:none;padding:0;border-radius:0;font-size:inherit}.guide-body[data-astro-cid-2u677oxp] :not(pre)>code{direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] img{display:block;border:1px solid var(--line);border-radius:var(--radius-sm);margin-block:1.2rem .4rem}.guide-body[data-astro-cid-2u677oxp] p:has(>img)+p>em:only-child{display:block;font-size:var(--fs-sm);color:var(--mute)}.guide-body[data-astro-cid-2u677oxp] blockquote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--cream);border-inline-start:3px solid var(--accent)}.guide-body[data-astro-cid-2u677oxp] blockquote p:last-child{margin-bottom:0}.guide-body[data-astro-cid-2u677oxp] a{overflow-wrap:anywhere}.guide-body[data-astro-cid-2u677oxp] li+li{margin-top:.35rem}.rel-title[data-astro-cid-2u677oxp]{font-size:1.1rem;line-height:1.5}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]{color:var(--ink);text-decoration:none}.rel-title[data-astro-cid-2u677oxp] a[data-astro-cid-2u677oxp]:hover{color:var(--accent);text-decoration:underline}.all-link[data-astro-cid-2u677oxp]{margin-top:1.4rem}.cta-grid[data-astro-cid-2u677oxp]{display:grid;gap:2rem 4rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start}.cta-grid[data-astro-cid-2u677oxp]>[data-astro-cid-2u677oxp]{min-width:0}
+</style></head> <body> <a class="skip-link" href="#main">דלג לתוכן הראשי</a> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container bar" data-astro-cid-3ef6ksr2> <a class="logo" href="/" data-astro-cid-3ef6ksr2> <span class="logo-word" lang="en" dir="ltr" data-astro-cid-3ef6ksr2>Kevin Liaks<span class="logo-dot" data-astro-cid-3ef6ksr2>.</span></span> <small data-astro-cid-3ef6ksr2>AI בארגונים. בפועל.</small> <span class="sr-only" data-astro-cid-3ef6ksr2>קווין ליאקס, לדף הבית</span> </a> <a class="hdr-cta" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a> <nav class="nav" aria-label="ניווט ראשי" data-astro-cid-3ef6ksr2> <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" data-astro-cid-3ef6ksr2> <span class="bars" aria-hidden="true" data-astro-cid-3ef6ksr2><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i><i data-astro-cid-3ef6ksr2></i></span> <span class="sr-only" data-astro-cid-3ef6ksr2>תפריט</span> </button> <ul id="nav-list" class="nav-list" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/workshops" data-astro-cid-3ef6ksr2>סדנאות</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-implementation" data-astro-cid-3ef6ksr2>הטמעת AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-agents" data-astro-cid-3ef6ksr2>סוכני AI</a></li><li data-astro-cid-3ef6ksr2><a href="/ai-engineering" data-astro-cid-3ef6ksr2>AI Engineering</a></li><li data-astro-cid-3ef6ksr2><a href="/guides" aria-current="page" data-astro-cid-3ef6ksr2>מדריכים ומאמרים</a></li><li data-astro-cid-3ef6ksr2><a href="/about" data-astro-cid-3ef6ksr2>אודות</a></li> <li class="nav-cta" data-astro-cid-3ef6ksr2><a class="btn btn--dark" href="/contact" data-astro-cid-3ef6ksr2>לשיחת היכרות</a></li> </ul> </nav> </div> </header>  <script type="module">const e=document.querySelector(".nav-toggle"),s=document.getElementById("nav-list");if(e&&s){const a=e.querySelector(".sr-only"),n=t=>{e.setAttribute("aria-expanded",String(t)),s.classList.toggle("open",t),a.textContent=t?"סגירת התפריט":"תפריט"};e.addEventListener("click",()=>n(e.getAttribute("aria-expanded")!=="true")),document.addEventListener("keydown",t=>{t.key==="Escape"&&e.getAttribute("aria-expanded")==="true"&&(n(!1),e.focus())}),window.addEventListener("resize",()=>{e.offsetParent||n(!1)})}</script> <div class="crumbs-band" data-astro-cid-ilhxcym7><nav class="crumbs container" aria-label="פירורי לחם" data-astro-cid-ilhxcym7> <ol data-astro-cid-ilhxcym7> <li data-astro-cid-ilhxcym7> <a href="/" data-astro-cid-ilhxcym7>דף הבית</a> </li><li data-astro-cid-ilhxcym7> <a href="/guides" data-astro-cid-ilhxcym7>מדריכים</a> </li><li data-astro-cid-ilhxcym7> <span aria-current="page" data-astro-cid-ilhxcym7>Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר, ולשאול לפני שהוא מניח</span> </li> </ol> </nav></div>  <main id="main" tabindex="-1">     <article class="container post guide-post" data-astro-cid-2u677oxp> <header class="post-head" data-astro-cid-2u677oxp> <ul class="tags" data-astro-cid-2u677oxp> <li class="tag" data-astro-cid-2u677oxp><a href="/guides?topic=Claude%20%D7%95-Claude%20Code#all-h" data-astro-cid-2u677oxp>Claude ו-Claude Code</a></li> <li class="tag" data-astro-cid-2u677oxp>7 דקות קריאה</li> <li class="tag" data-astro-cid-2u677oxp>עודכן <time datetime="2026-08-15T00:00:00.000Z" data-astro-cid-2u677oxp>15 באוגוסט 2026</time></li> </ul> <h1 data-astro-cid-2u677oxp>Claude Code Stop Hook: איך לגרום לסוכן לעצור, לקצר, ולשאול לפני שהוא מניח</h1> <div class="tldr" data-astro-cid-2u677oxp> <p class="tldr-h" data-astro-cid-2u677oxp>בשורה התחתונה</p> <p data-astro-cid-2u677oxp>אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול.</p> </div>  </header> <img src="/_astro/hero.BwcWSSb-_1pxf1c.webp" srcset="/_astro/hero.BwcWSSb-_2sGMtq.webp 480w, /_astro/hero.BwcWSSb-_1OoN0k.webp 800w, /_astro/hero.BwcWSSb-_1pxf1c.webp 1200w" alt="איור פתיחה למדריך: Claude Code Stop Hook" sizes="(min-width: 860px) 760px, 100vw" loading="eager" fetchpriority="high" data-astro-cid-2u677oxp="true" decoding="async" width="1200" height="670" class="hero-img"> <nav class="toc" aria-label="תוכן המדריך" data-astro-cid-2u677oxp> <p class="toc-h" data-astro-cid-2u677oxp>במדריך</p> <ol data-astro-cid-2u677oxp><li data-astro-cid-2u677oxp><a href="#הבעיה-הסוכן-הפסיק-לשאול" data-astro-cid-2u677oxp>הבעיה: הסוכן הפסיק לשאול</a></li><li data-astro-cid-2u677oxp><a href="#למה-הוראה-בקובץ-claudemd-לא-פותרת-את-זה" data-astro-cid-2u677oxp>למה הוראה בקובץ CLAUDE.md לא פותרת את זה</a></li><li data-astro-cid-2u677oxp><a href="#מה-זה-stop-hook" data-astro-cid-2u677oxp>מה זה Stop Hook</a></li><li data-astro-cid-2u677oxp><a href="#שלב-1-יוצרים-את-קובץ-ה-hook" data-astro-cid-2u677oxp>שלב 1: יוצרים את קובץ ה-hook</a></li><li data-astro-cid-2u677oxp><a href="#שלב-2-מחברים-את-ה-hook-להגדרות" data-astro-cid-2u677oxp>שלב 2: מחברים את ה-hook להגדרות</a></li><li data-astro-cid-2u677oxp><a href="#שלב-3-מוודאים-שזה-עובד" data-astro-cid-2u677oxp>שלב 3: מוודאים שזה עובד</a></li><li data-astro-cid-2u677oxp><a href="#קיצור-דרך-לתת-לסוכן-להתקין-את-זה-לבד" data-astro-cid-2u677oxp>קיצור דרך: לתת לסוכן להתקין את זה לבד</a></li><li data-astro-cid-2u677oxp><a href="#התאמות-אישיות" data-astro-cid-2u677oxp>התאמות אישיות</a></li><li data-astro-cid-2u677oxp><a href="#טיפים-מהשטח" data-astro-cid-2u677oxp>טיפים מהשטח</a></li><li data-astro-cid-2u677oxp><a href="#מגבלות-שכדאי-להכיר" data-astro-cid-2u677oxp>מגבלות שכדאי להכיר</a></li><li data-astro-cid-2u677oxp><a href="#לינקים" data-astro-cid-2u677oxp>לינקים</a></li></ol> </nav> <div class="prose post-body guide-body" data-astro-cid-2u677oxp><h2 id="הבעיה-הסוכן-הפסיק-לשאול">הבעיה: הסוכן הפסיק לשאול</h2>
+<p>אם בזמן האחרון קלוד מרגיש לכם פחות מדויק, זה לא אתם וזה לא באג. השתנתה לו ההתנהגות: כשהוא לא בטוח מה בדיוק ביקשתם, הוא כבר לא עוצר לשאול. הוא מנחש בביטחון וממשיך.</p>
+<p>הסיבה מבנית. מודלים מדורגים לפי מבחנים אוטומטיים, ובמבחנים כאלה תשובה בטוחה ושגויה מקבלת יותר נקודות משאלת הבהרה. זה כמו מועמד בריאיון עבודה שאף פעם לא אומר <strong>“אני לא יודע”</strong>. הוא נשמע חד, אבל חלק מהתשובות שלו הן ניחוש.</p>
+<p><strong>התוצאה בקוד:</strong> הסוכן ממציא הנחות, מרחיב לכיוונים שלא ביקשתם, ומחזיר תשובות ארוכות שמכסות כמה אפשרויות במקום לשאול שאלה אחת קצרה.</p>
+<h2 id="למה-הוראה-בקובץ-claudemd-לא-פותרת-את-זה">למה הוראה בקובץ CLAUDE.md לא פותרת את זה</h2>
+<p>האינסטינקט הראשון הוא לכתוב בקובץ ההוראות משהו כמו “תשאל לפני שאתה מניח”. זה עובד בהתחלה, ומפסיק לעבוד אחרי כמה הודעות.</p>
+<p>קובץ ההוראות הוא טקסט שנכנס לתחילת השיחה. ככל שהשיחה מתארכת, נערמים מעליו קוד, פלטים של כלים ותשובות, וההוראה מתפוגגת מול כל מה שקרוב יותר לסוף. היא בקשה, לא מנגנון.</p>
+<p><strong>Hook הוא מנגנון.</strong> זה קוד שרץ בצד שלכם, לא בתוך הפרומפט. הוא לא מושפע מאורך השיחה, הוא לא נשכח, והוא רץ בכל פעם מחדש.</p>
+<h2 id="מה-זה-stop-hook">מה זה Stop Hook</h2>
+<p>Hooks הם יכולת רשמית של Claude Code: פקודות משלכם שהכלי מריץ אוטומטית בנקודות מוגדרות בחיי השיחה. יש כמה סוגים, לפי הרגע שבו הם נורים.</p>
+<p>ה-<strong>Stop hook</strong> נורה בדיוק ברגע שבו הסוכן סיים לענות ולפני שהתור נסגר. זו נקודת החניה האחרונה, ולכן זה המקום היחיד שממנו אפשר להסתכל על התשובה המוגמרת ולהחליט אם לאשר אותה או להחזיר אותה לכתיבה מחדש.</p>
+<h3 id="מה-ה-hook-מקבל">מה ה-hook מקבל</h3>
+<p>Claude Code מריץ את הפקודה שלכם ושולח לה JSON ב-stdin. השדות שרלוונטיים לנו:</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>שדה</th><th>מה יש בו</th></tr></thead><tbody><tr><td><code>last_assistant_message</code></td><td>הטקסט המלא של התשובה שהסוכן הרגע סיים לכתוב. זה מה שאנחנו סופרים.</td></tr><tr><td><code>prompt_id</code></td><td>מזהה ייחודי של התור הנוכחי. משמש אותנו כדי לא להיתקע בלולאה.</td></tr><tr><td><code>session_id</code></td><td>מזהה השיחה. גיבוי למקרה שאין prompt_id.</td></tr><tr><td><code>cwd</code></td><td>התיקייה שממנה רצה השיחה. שימושי אם רוצים כללים שונים לפרויקטים שונים.</td></tr><tr><td><code>stop_reason</code></td><td>למה הסוכן עצר, למשל end_turn.</td></tr></tbody></table></div>
+<h3 id="איך-ה-hook-עונה">איך ה-hook עונה</h3>
+<p>שתי דרכים. הפשוטה: לצאת עם קוד יציאה 2 ולכתוב את הסיבה ל-stderr. המדויקת יותר, וזו שנשתמש בה: לצאת עם 0 ולהדפיס JSON ל-stdout.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>קוד יציאה</th><th>מה קורה</th></tr></thead><tbody><tr><td><code>0</code></td><td>הצלחה. אם הודפס JSON ל-stdout, Claude Code קורא ממנו את ההחלטה. בלי JSON, התשובה מאושרת והתור נסגר.</td></tr><tr><td><code>2</code></td><td>חסימה. התור לא נסגר, הסוכן ממשיך לעבוד, ומה שכתבתם ל-stderr הופך לסיבת החסימה.</td></tr><tr><td><code>אחר</code></td><td>שגיאה לא חוסמת. התור נסגר כרגיל ומוצגת הודעת שגיאה קטנה.</td></tr></tbody></table></div>
+<p>ה-JSON שמחזיר חסימה נראה כך, וה-<strong>reason</strong> הוא ההוראה שהסוכן מקבל כדי לתקן את עצמו:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "hookSpecificOutput"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "hookEventName"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Stop"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "decision"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"block"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "reason"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"התשובה ארוכה מדי. קצר אותה, או שאל שאלת הבהרה."</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="שלב-1-יוצרים-את-קובץ-ה-hook">שלב 1: יוצרים את קובץ ה-hook</h2>
+<p>צרו תיקייה בשם <strong>hooks</strong> בתוך תיקיית ההגדרות של Claude Code בבית שלכם, ובתוכה קובץ בשם <strong>word-limit.js</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Windows:    C:\Users\YOUR_NAME\.claude\hooks\word-limit.js</span></span>
+<span class="line"><span>Mac/Linux:  ~/.claude/hooks/word-limit.js</span></span></code></pre>
+<p><em>הקוד כתוב ב-Node.js בלי ספריות חיצוניות, כי Node כבר מותקן אצל כל מי שמריץ Claude Code. אין מה להתקין.</em></p>
+<p><strong>זה הקוד המלא. העתיקו אותו כמו שהוא:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>#!/usr/bin/env node</span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Stop hook - word limit</span></span>
+<span class="line"><span> * חוסם כל תשובה של הסוכן שעוברת את מגבלת המילים,</span></span>
+<span class="line"><span> * ומחזיר לו הוראה לקצר או לשאול שאלה במקום לנחש.</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const fs = require("fs");</span></span>
+<span class="line"><span>const os = require("os");</span></span>
+<span class="line"><span>const path = require("path");</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const LIMIT = 150;        // מגבלת המילים</span></span>
+<span class="line"><span>const MAX_BLOCKS = 2;     // כמה פעמים מותר לחסום את אותו תור</span></span>
+<span class="line"><span>const IGNORE_CODE = true; // לא לספור בלוקים של קוד</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>let raw = "";</span></span>
+<span class="line"><span>process.stdin.setEncoding("utf8");</span></span>
+<span class="line"><span>process.stdin.on("data", (chunk) => (raw += chunk));</span></span>
+<span class="line"><span>process.stdin.on("end", () => {</span></span>
+<span class="line"><span>  let input;</span></span>
+<span class="line"><span>  try {</span></span>
+<span class="line"><span>    input = JSON.parse(raw);</span></span>
+<span class="line"><span>  } catch (e) {</span></span>
+<span class="line"><span>    process.exit(0); // קלט לא תקין - לא חוסמים</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  let text = input.last_assistant_message || "";</span></span>
+<span class="line"><span>  if (IGNORE_CODE) {</span></span>
+<span class="line"><span>    text = text.replace(/```[\s\S]*?```/g, " ");</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  const words = text.trim().split(/\s+/).filter(Boolean).length;</span></span>
+<span class="line"><span>  if (words &#x3C;= LIMIT) process.exit(0);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // מונע לולאה אינסופית: חוסמים לכל היותר MAX_BLOCKS פעמים בתור</span></span>
+<span class="line"><span>  const turnId = String(input.prompt_id || input.session_id || "unknown");</span></span>
+<span class="line"><span>  const stateFile = path.join(</span></span>
+<span class="line"><span>    os.tmpdir(),</span></span>
+<span class="line"><span>    "cc-word-limit-" + turnId.replace(/[^A-Za-z0-9_-]/g, "") + ".json"</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  let blocks = 0;</span></span>
+<span class="line"><span>  try {</span></span>
+<span class="line"><span>    blocks = JSON.parse(fs.readFileSync(stateFile, "utf8")).blocks || 0;</span></span>
+<span class="line"><span>  } catch (e) {}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (blocks >= MAX_BLOCKS) process.exit(0);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  try {</span></span>
+<span class="line"><span>    fs.writeFileSync(stateFile, JSON.stringify({ blocks: blocks + 1 }));</span></span>
+<span class="line"><span>  } catch (e) {}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  const reason =</span></span>
+<span class="line"><span>    "התשובה שלך היא " + words + " מילים, מעל המגבלה של " + LIMIT + ". " +</span></span>
+<span class="line"><span>    "כתוב אותה מחדש בקצרה. אם היא ארוכה כי לא היית בטוח מה ביקשו ממך " +</span></span>
+<span class="line"><span>    "וכיסית כמה אפשרויות - אל תנחש: שאל שאלת הבהרה אחת קצרה ועצור.";</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  process.stdout.write(</span></span>
+<span class="line"><span>    JSON.stringify({</span></span>
+<span class="line"><span>      hookSpecificOutput: {</span></span>
+<span class="line"><span>        hookEventName: "Stop",</span></span>
+<span class="line"><span>        decision: "block",</span></span>
+<span class="line"><span>        reason: reason,</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      systemMessage: "Stop hook: נחסם (" + words + "/" + LIMIT + " מילים)",</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span>  process.exit(0);</span></span>
+<span class="line"><span>});</span></span></code></pre>
+<p>על Mac או Linux, תנו לו הרשאת הרצה:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>chmod +x ~/.claude/hooks/word-limit.js</span></span></code></pre>
+<h2 id="שלב-2-מחברים-את-ה-hook-להגדרות">שלב 2: מחברים את ה-hook להגדרות</h2>
+<p>עכשיו צריך להגיד ל-Claude Code להריץ את הקובץ בכל סיום תשובה. פותחים את קובץ ההגדרות ומוסיפים את הבלוק הבא. אם כבר יש בקובץ תוכן, מוסיפים רק את המפתח <strong>hooks</strong> ולא מוחקים את השאר.</p>
+<h3 id="windows">Windows</h3>
+<p>הקובץ: <strong>C:\Users\YOUR_NAME\.claude\settings.json</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "hooks"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "Stop"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "hooks"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"command"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"node"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "args"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"C:</span><span style="color:#79B8FF">\\</span><span style="color:#9ECBFF">Users</span><span style="color:#79B8FF">\\</span><span style="color:#9ECBFF">YOUR_NAME</span><span style="color:#79B8FF">\\</span><span style="color:#9ECBFF">.claude</span><span style="color:#79B8FF">\\</span><span style="color:#9ECBFF">hooks</span><span style="color:#79B8FF">\\</span><span style="color:#9ECBFF">word-limit.js"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">            "timeout"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="mac--linux">Mac / Linux</h3>
+<p>הקובץ: <strong>~/.claude/settings.json</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "hooks"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "Stop"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "hooks"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"command"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "command"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"node"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "args"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"/Users/YOUR_NAME/.claude/hooks/word-limit.js"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">            "timeout"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>שלוש נקודות שמפילות את רוב האנשים:</strong></p>
+<ul>
+<li>החליפו את YOUR_NAME בשם המשתמש האמיתי שלכם.</li>
+<li>כשמשתמשים ב-args, הנתיב חייב להיות מלא. הקיצור ~ לא מתורגם בצורה הזאת.</li>
+<li>ב-Windows, כל בקסלאש בנתיב נכתב פעמיים בתוך JSON.</li>
+</ul>
+<h2 id="שלב-3-מוודאים-שזה-עובד">שלב 3: מוודאים שזה עובד</h2>
+<p>הפעילו מחדש את Claude Code, ואז הריצו בתוכו:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/hooks</span></span></code></pre>
+<p>ייפתח מסך שמראה את כל ה-hooks המוגדרים. אתם אמורים לראות שורה תחת <strong>Stop</strong> עם התווית <strong>User Settings</strong>. אם היא שם, החיבור תקין.</p>
+<p><strong>בדיקה אמיתית:</strong> בקשו מהסוכן משהו שגורר תשובה ארוכה, למשל “תסביר לי לעומק איך עובד מנגנון ההרשאות”. במקום מסה של טקסט, אתם אמורים לראות שהתשובה נחסמת והסוכן מחזיר גרסה קצרה, או שואל שאלת הבהרה.</p>
+<h2 id="קיצור-דרך-לתת-לסוכן-להתקין-את-זה-לבד">קיצור דרך: לתת לסוכן להתקין את זה לבד</h2>
+<p>אם לא בא לכם לגעת בקבצים, אפשר פשוט לבקש. הדביקו לסוכן את המשפט הבא:</p>
+<p>“תוסיף לי Stop hook ב-settings.json הגלובלי שלי: סקריפט Node שקורא את last_assistant_message מה-stdin, סופר מילים בלי בלוקים של קוד, ואם יש יותר מ-150 מילים מחזיר JSON עם decision: block וסיבה שמבקשת לקצר או לשאול שאלת הבהרה. תוסיף גם מגן מפני לולאה לפי prompt_id.”</p>
+<p>אחרי שהוא מסיים, הריצו <strong>/hooks</strong> ותוודאו שהשורה מופיעה.</p>
+<h2 id="התאמות-אישיות">התאמות אישיות</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="טבלה (אפשר לגלול לצדדים)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>מה לשנות</th><th>איך</th></tr></thead><tbody><tr><td><strong>אורך התשובה</strong></td><td>שנו את LIMIT בראש הקובץ. 150 זה נוקשה ומצוין לעבודה יומיומית, 300 נוח יותר להסברים.</td></tr><tr><td><strong>לספור גם קוד</strong></td><td>הפכו את IGNORE_CODE ל-false. כברירת מחדל בלוקים של קוד לא נספרים, כי אין סיבה להעניש על קוד ארוך.</td></tr><tr><td><strong>כמה נסיונות תיקון</strong></td><td>MAX_BLOCKS קובע כמה פעמים ה-hook יחסום את אותו תור לפני שהוא מוותר. 2 זה איזון טוב.</td></tr><tr><td><strong>רק בפרויקט מסוים</strong></td><td>שימו את אותו בלוק בקובץ .claude/settings.json שבתוך הפרויקט, במקום בקובץ הגלובלי. הגדרות משני המקומות מתמזגות.</td></tr><tr><td><strong>לכבות לרגע</strong></td><td>הוסיפו disableAllHooks: true לקובץ ההגדרות, או פשוט הוציאו את בלוק ה-Stop.</td></tr></tbody></table></div>
+<h2 id="טיפים-מהשטח">טיפים מהשטח</h2>
+<ul>
+<li>הכוח האמיתי הוא לא בקיצור אלא בניסוח ה-reason. זה הטקסט היחיד שהסוכן קורא, ולכן שם כדאי להגיד לו במפורש לשאול במקום לנחש.</li>
+<li>אל תוותרו על מגן הלולאה. בלי MAX_BLOCKS, סוכן שמתעקש על תשובה ארוכה יכול להיתקע במעגל ולשרוף טוקנים.</li>
+<li>התחילו ממגבלה גבוהה יחסית, למשל 250, ותרדו בהדרגה. קפיצה ישר ל-150 מרגישה חונקת ביום הראשון.</li>
+<li>ה-hook רץ אצלכם על המחשב עם ההרשאות שלכם. אל תריצו hooks שלא קראתם, בדיוק כמו כל סקריפט אחר.</li>
+<li>אותו רעיון עובד גם למטרות אחרות: להריץ לינטר בסיום כל תשובה, לחסום סיום כשיש בדיקות שנכשלות, או לשלוח התראה כשהסוכן סיים משימה ארוכה.</li>
+<li>הקובץ הגלובלי חל על כל הפרויקטים. אם אתם עובדים גם על תיעוד ארוך, שקלו להגדיר אותו ברמת הפרויקט בלבד.</li>
+</ul>
+<h2 id="מגבלות-שכדאי-להכיר">מגבלות שכדאי להכיר</h2>
+<ul>
+<li>ה-hook לא הופך את המודל לחכם יותר. הוא רק לא נותן לו לסיים תור בתשובה מנופחת, ודוחף אותו לשאול.</li>
+<li>ספירת מילים היא קירוב. תשובה של 149 מילים מלאה בהנחות תעבור.</li>
+<li>אם הפקודה חורגת מה-timeout שהגדרתם, היא מבוטלת והתור נסגר כרגיל, בלי חסימה.</li>
+<li>hooks ברמת פרויקט דורשים אישור אמון לתיקייה בפעם הראשונה.</li>
+<li>מבנה השדות של Hooks מתעדכן מדי פעם. אם משהו מפסיק לעבוד, הדוקומנטציה הרשמית היא מקור האמת.</li>
+</ul>
+<h2 id="לינקים">לינקים</h2>
+<ul>
+<li>התיעוד הרשמי של Hooks: <a href="https://code.claude.com/docs/en/hooks">code.claude.com/docs/en/hooks</a></li>
+<li>קובצי ההגדרות של Claude Code: <a href="https://code.claude.com/docs/en/settings">code.claude.com/docs/en/settings</a></li>
+<li>Claude Code, דף המוצר: <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a></li>
+</ul></div> <div class="author" data-astro-cid-dwrmp7mt> <img src="/_astro/kevin-portrait.Bp8WjBPp_Z1fXe8s.webp" alt data-astro-cid-dwrmp7mt="true" loading="lazy" decoding="async" fetchpriority="auto" width="72" height="72" class="author-img"> <div data-astro-cid-dwrmp7mt> <p class="author-name" data-astro-cid-dwrmp7mt>נכתב על ידי <a href="/about" rel="author" data-astro-cid-dwrmp7mt>קווין ליאקס</a></p> <p class="small muted" data-astro-cid-dwrmp7mt>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <p class="small muted" data-astro-cid-dwrmp7mt>עודכן לאחרונה: <time datetime="2026-08-15T00:00:00.000Z" data-astro-cid-dwrmp7mt>15 באוגוסט 2026</time></p> </div> </div>  </article> <section class="section" aria-labelledby="related-h" data-astro-cid-2u677oxp> <div class="container" data-astro-cid-2u677oxp> <h2 id="related-h" data-astro-cid-2u677oxp>עוד מדריכים על Claude ו-Claude Code</h2> <div class="grid grid-3" data-astro-cid-2u677oxp> <article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-cache" data-astro-cid-2u677oxp>Prompt Caching in Claude Code: איך לשמור את הקאש חי לאורך כל הסשן ולהפסיק לשלם פי 10</a></h3> <p class="muted small" data-astro-cid-2u677oxp>המודל לא זוכר כלום בין בקשה לבקשה. כל הודעה שאתם שולחים ל-Claude Code מייצרת בקשה חדשה לגמרי ל-API, וכדי שהמודל יבין על מה מדובר, Claude Code שולח מחדש את כל…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-session-tagging" data-astro-cid-2u677oxp>Claude Code Session Tagging: איך לגרום לשני סשנים של Claude Code לדבר אחד עם השני</a></h3> <p class="muted small" data-astro-cid-2u677oxp>עד היום כל סשן של Claude Code חי בבועה משלו. פתחתם שני טרמינלים, אחד עובד על ה-backend והשני על ה-frontend, ואם משהו שקרה באחד היה רלוונטי לשני, הייתם צריכים…</p> </article><article class="card" data-astro-cid-2u677oxp> <h3 class="rel-title" data-astro-cid-2u677oxp><a href="/guides/claude-auto-continue" data-astro-cid-2u677oxp>Claude Auto Continue: הצ&#39;ק בוקס שממשיך את המשימה לבד כשהמכסה מתאפסת</a></h3> <p class="muted small" data-astro-cid-2u677oxp>ב-14 באוגוסט 2026 אנתרופיק הוסיפו לאפליקציית הדסקטופ של Claude Code צ&#39;ק בוקס קטן בשם Auto-continue when limits reset. הוא מופיע בתוך ההודעה שאתם כבר…</p> </article> </div> <p class="all-link" data-astro-cid-2u677oxp><a class="text-link" href="/guides" data-astro-cid-2u677oxp>לכל המדריכים</a></p> </div> </section><section class="section section--alt" aria-labelledby="guide-cta-h" data-astro-cid-2u677oxp> <div class="container cta-grid" data-astro-cid-2u677oxp> <div data-astro-cid-2u677oxp> <h2 id="guide-cta-h" data-astro-cid-2u677oxp>רוצים שהצוות שלכם יעבוד ככה?</h2> <p class="lead" data-astro-cid-2u677oxp>אני עובד עם צוותי פיתוח על Claude Code, סוכני קוד, MCP ותשתיות AI, מהתכנון ועד הייצור.</p> <div class="btn-row" data-astro-cid-2u677oxp> <a class="btn" href="/ai-engineering" data-astro-cid-2u677oxp>AI Engineering לצוותי פיתוח</a> <a class="text-link" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%22Claude%20Code%20Stop%20Hook%3A%20%D7%90%D7%99%D7%9A%20%D7%9C%D7%92%D7%A8%D7%95%D7%9D%20%D7%9C%D7%A1%D7%95%D7%9B%D7%9F%20%D7%9C%D7%A2%D7%A6%D7%95%D7%A8%2C%20%D7%9C%D7%A7%D7%A6%D7%A8%2C%20%D7%95%D7%9C%D7%A9%D7%90%D7%95%D7%9C%20%D7%9C%D7%A4%D7%A0%D7%99%20%D7%A9%D7%94%D7%95%D7%90%20%D7%9E%D7%A0%D7%99%D7%97%22%20%D7%95%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" rel="noopener" target="_blank" data-astro-cid-2u677oxp>שאלה על המדריך? כתבו לי בוואטסאפ<span class="sr-only" data-astro-cid-2u677oxp> (נפתח בחלון חדש)</span></a> </div> </div> <div class="community" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p> <p class="c-text" data-astro-cid-fxan7676>הקהילה הגדולה בישראל לבנייה עם AI: שאלות, דמואים, מדריכים ומפגשים. בלי ספאם, רק אנשים שבונים.</p> <a class="btn" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a> <p class="small muted c-note" data-astro-cid-fxan7676>המספר מתעדכן ידנית. נכון ל-<span class="ltr" data-astro-cid-fxan7676>10/2026</span>.</p> </div>  <script type="module" src="/_astro/CommunityCounter.astro_astro_type_script_index_0_lang.C7a3xHHQ.js"></script> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="cols" data-astro-cid-sz7xmlte> <div class="col about" data-astro-cid-sz7xmlte> <p class="f-brand" lang="en" dir="ltr" data-astro-cid-sz7xmlte>Kevin Liaks<span data-astro-cid-sz7xmlte>.</span></p> <p class="f-motto" data-astro-cid-sz7xmlte>אדם, תהליך, טכנולוגיה.</p> <p class="muted" data-astro-cid-sz7xmlte>מוביל AI ודאטה בקבוצה עסקית גדולה, מעביר סדנאות ובונה סוכני AI לארגונים.</p> <div class="community compact" data-astro-cid-fxan7676> <p class="c-num" data-astro-cid-fxan7676> <b class="ltr" data-astro-cid-fxan7676><span data-count="5000" data-astro-cid-fxan7676>5,000</span><span class="plus" data-astro-cid-fxan7676>+</span></b> <span data-astro-cid-fxan7676>חברים בקהילת Vibe Coding Israel</span> </p>  <a class="btn btn--ghost" href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-fxan7676>
+הצטרפות לקבוצה<span class="sr-only" data-astro-cid-fxan7676> (נפתח בחלון חדש)</span> </a>  </div>   </div> <nav class="col" aria-label="עמודים" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>עמודים</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops" data-astro-cid-sz7xmlte>סדנאות</a></li><li data-astro-cid-sz7xmlte><a href="/ai-implementation" data-astro-cid-sz7xmlte>הטמעת AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-agents" data-astro-cid-sz7xmlte>סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/ai-engineering" data-astro-cid-sz7xmlte>AI Engineering</a></li><li data-astro-cid-sz7xmlte><a href="/guides" data-astro-cid-sz7xmlte>מדריכים ומאמרים</a></li><li data-astro-cid-sz7xmlte><a href="/about" data-astro-cid-sz7xmlte>אודות</a></li> <li data-astro-cid-sz7xmlte><a href="/blog" data-astro-cid-sz7xmlte>בלוג</a></li> <li data-astro-cid-sz7xmlte><a href="/faq" data-astro-cid-sz7xmlte>שאלות נפוצות</a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>צור קשר</a></li> </ul> </nav> <nav class="col" aria-label="סדנאות" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>סדנאות</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-employees" data-astro-cid-sz7xmlte>סדנת AI לעובדים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-managers" data-astro-cid-sz7xmlte>סדנת AI למנהלים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-lecture" data-astro-cid-sz7xmlte>הרצאת AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/copilot" data-astro-cid-sz7xmlte>סדנת Copilot</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/claude-code" data-astro-cid-sz7xmlte>סדנת Claude Code</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-agents" data-astro-cid-sz7xmlte>סדנת בניית סוכני AI</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/vibe-coding" data-astro-cid-sz7xmlte>סדנת Vibe Coding</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-teachers" data-astro-cid-sz7xmlte>AI לצוותי הוראה</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-course" data-astro-cid-sz7xmlte>קורס AI לארגונים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-customer-service" data-astro-cid-sz7xmlte>סדנת AI לשירות לקוחות</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-hr" data-astro-cid-sz7xmlte>סדנת AI למשאבי אנוש</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-finance" data-astro-cid-sz7xmlte>סדנת AI לכספים</a></li><li data-astro-cid-sz7xmlte><a href="/workshops/ai-for-sales" data-astro-cid-sz7xmlte>סדנת AI למכירות</a></li> </ul> </nav> <div class="col" data-astro-cid-sz7xmlte> <h2 class="f-h" data-astro-cid-sz7xmlte>יצירת קשר</h2> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="mailto:kevin.liaks@gmail.com" data-astro-cid-sz7xmlte>kevin.liaks@gmail.com</a></li> <li data-astro-cid-sz7xmlte><a href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>וואטסאפ<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="/contact" data-astro-cid-sz7xmlte>השאירו פרטים</a></li> </ul> <h2 class="f-h" data-astro-cid-sz7xmlte>עקבו</h2> <ul class="social" data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="https://www.youtube.com/@kevinliaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>יוטיוב<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.instagram.com/kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>אינסטגרם<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/groups/902817888462861" rel="noopener" target="_blank" data-astro-cid-sz7xmlte>קבוצת הפייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.facebook.com/kevin.liaks" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>פייסבוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.linkedin.com/in/kevin-liaks-30b2a698" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>לינקדאין<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> <li data-astro-cid-sz7xmlte><a href="https://www.tiktok.com/@kevinliaksai" rel="noopener me" target="_blank" data-astro-cid-sz7xmlte>טיקטוק<span class="sr-only" data-astro-cid-sz7xmlte> (נפתח בחלון חדש)</span></a></li> </ul> </div> </div> <div class="legal" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>© <span class="ltr" data-astro-cid-sz7xmlte>2026</span> קווין ליאקס. עודכן לאחרונה: 30 באוקטובר 2026.</p> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/accessibility" data-astro-cid-sz7xmlte>הצהרת נגישות</a></li> <li data-astro-cid-sz7xmlte><a href="/privacy" data-astro-cid-sz7xmlte>מדיניות פרטיות</a></li> </ul> </div> </div> </footer>  <aside class="quick" aria-label="יצירת קשר מהירה" data-astro-cid-fbt5meba> <a class="float-contact" href="https://wa.me/972545334770?text=%D7%94%D7%99%D7%99%20%D7%A7%D7%95%D7%95%D7%99%D7%9F%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D" rel="noopener" target="_blank" aria-label="שליחת הודעה בוואטסאפ (נפתח בחלון חדש)" data-astro-cid-fbt5meba> <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" data-astro-cid-fbt5meba><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z" data-astro-cid-fbt5meba></path></svg> <span class="label" data-astro-cid-fbt5meba>וואטסאפ</span> </a> </aside>  <script type="module">const l=[[/^\/workshops\/[^/]+$/,"ראיתי באתר את העמוד על"],[/^\/workshops$/,"ראיתי באתר את הסדנאות."],[/^\/ai-agents/,"מעניין אותי סוכן AI לארגון."],[/^\/ai-implementation/,"מעניין אותי להטמיע AI בארגון."],[/^\/ai-engineering/,"מעניין אותי AI Engineering לצוות הפיתוח."],[/^\/guides\/[^/]+$/,"קראתי באתר את המדריך"],[/^\/blog\/[^/]+$/,"קראתי באתר את המאמר"]];function m(o){const e=location.pathname.replace(/\.html$/,"").replace(/\/$/,"")||"/",n=document.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()??"",t=["היי קווין, הגעתי מהאתר."],r=l.find(([a])=>a.test(e));r&&t.push(r[1].endsWith(".")?r[1]:`${r[1]} "${n}".`);const i=o.closest("form.lead-form")??document.querySelector("form.lead-form"),s=i?.querySelector("select[name=topic]"),c=i?.querySelector("textarea[name=message]")?.value.trim();if(s&&s.value&&s.value!=="other"&&(c||o.closest("form"))&&t.push(`מה מעניין אותי: ${s.options[s.selectedIndex].text}.`),c)t.push(c.slice(0,400));else try{const a=JSON.parse(sessionStorage.getItem("kl-marks")||"[]");a.length&&t.push("מה שקורה אצלנו: "+a.join(" "))}catch{}return t.push("אשמח לשמוע פרטים."),t.join(`
+`)}document.addEventListener("click",o=>{const e=o.target?.closest?.('a[href^="https://wa.me/"]');if(!e)return;const n=new URL(e.href);n.searchParams.set("text",m(e)),e.href=n.toString()},!0);</script> <div class="a11y" data-astro-cid-l6h6emqy> <button class="a11y-btn" type="button" aria-expanded="false" aria-controls="a11y-panel" data-astro-cid-l6h6emqy> <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" data-astro-cid-l6h6emqy><circle cx="12" cy="4" r="2" fill="currentColor" data-astro-cid-l6h6emqy></circle><path fill="currentColor" d="M20 8.5 14 9.6V13l2 7.5a1 1 0 0 1-1.9.5L12 15l-2.1 6a1 1 0 0 1-1.9-.5l2-7.5V9.6L4 8.5a1 1 0 1 1 .3-2l6.2 1.1h3l6.2-1.1a1 1 0 1 1 .3 2Z" data-astro-cid-l6h6emqy></path></svg> <span class="sr-only" data-astro-cid-l6h6emqy>תפריט נגישות</span> </button> <div id="a11y-panel" class="a11y-panel" role="region" aria-label="הגדרות נגישות" hidden data-astro-cid-l6h6emqy> <p class="a11y-title" data-astro-cid-l6h6emqy>נגישות</p> <div class="a11y-row" role="group" aria-label="גודל טקסט" data-astro-cid-l6h6emqy> <span data-astro-cid-l6h6emqy>גודל טקסט</span> <span class="a11y-sizes" data-astro-cid-l6h6emqy> <button type="button" data-scale="-1" aria-label="א- הקטנת טקסט" data-astro-cid-l6h6emqy>א-</button> <button type="button" data-scale="0" aria-label="רגיל: איפוס גודל טקסט" data-astro-cid-l6h6emqy>רגיל</button> <button type="button" data-scale="1" aria-label="א+ הגדלת טקסט" data-astro-cid-l6h6emqy>א+</button> </span> </div> <button type="button" class="a11y-toggle" data-key="contrast" aria-pressed="false" data-astro-cid-l6h6emqy>ניגודיות גבוהה</button> <button type="button" class="a11y-toggle" data-key="links" aria-pressed="false" data-astro-cid-l6h6emqy>הדגשת קישורים</button> <button type="button" class="a11y-toggle" data-key="noMotion" aria-pressed="false" data-astro-cid-l6h6emqy>עצירת אנימציות</button> <button type="button" class="a11y-reset" data-astro-cid-l6h6emqy>איפוס הכול</button> <a href="/accessibility" data-astro-cid-l6h6emqy>הצהרת נגישות</a> </div> </div>  <script type="module">const r=document.documentElement,s=document.querySelector(".a11y-btn"),a=document.getElementById("a11y-panel"),i=()=>{try{return JSON.parse(localStorage.getItem("a11y")||"{}")}catch{return{}}},y=e=>{try{localStorage.setItem("a11y",JSON.stringify(e))}catch{}};let t=i();const l={contrast:"a11y-contrast",links:"a11y-links",noMotion:"a11y-no-motion"},c=()=>{r.style.setProperty("--a11y-scale",String(t.scale||1));for(const e of Object.keys(l))r.classList.toggle(l[e],!!t[e]);a.querySelectorAll(".a11y-toggle").forEach(e=>e.setAttribute("aria-pressed",String(!!t[e.dataset.key]))),y(t),document.dispatchEvent(new CustomEvent("a11y-change"))},o=e=>{s.setAttribute("aria-expanded",String(e)),a.hidden=!e};s.addEventListener("click",()=>o(a.hidden));document.addEventListener("keydown",e=>{e.key==="Escape"&&!a.hidden&&(o(!1),s.focus())});document.addEventListener("click",e=>{!a.hidden&&!e.target.closest(".a11y")&&o(!1)});a.querySelectorAll("[data-scale]").forEach(e=>e.addEventListener("click",()=>{const n=Number(e.dataset.scale),d=t.scale||1;t.scale=n===0?1:Math.min(1.5,Math.max(.9,Math.round((d+n*.1)*10)/10)),c()}));a.querySelectorAll(".a11y-toggle").forEach(e=>e.addEventListener("click",()=>{const n=e.dataset.key;t[n]=!t[n],c()}));a.querySelector(".a11y-reset").addEventListener("click",()=>{t={},c()});c();</script> <script type="module">const t=document.querySelector(".consent");if(t){const a=t.dataset.gtm,n=()=>{const e=document.createElement("script");e.async=!0,e.src=`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(a)}`,document.head.appendChild(e)};let c=null;try{c=localStorage.getItem("consent")}catch{}c==="yes"?n():c||(t.hidden=!1),t.querySelectorAll("[data-consent]").forEach(e=>e.addEventListener("click",()=>{const o=e.dataset.consent;try{localStorage.setItem("consent",o),localStorage.setItem("consent-date",new Date().toISOString())}catch{}t.hidden=!0,o==="yes"&&n()}))}</script> </body></html> 
